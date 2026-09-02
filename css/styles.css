@@ -1,78 +1,106 @@
-/* Custom Design System & Utility Styles for Oasis GEC Idukki */
+/* Custom Design System for Oasis GEC Idukki
+   Color Palette strictly configured to:
+   - Primary Background: #30AFFF
+   - Section Background: #92EEFF
+   - Auxiliary / Accent 1: #D8FFC5
+   - Auxiliary / Accent 2: #C4F7CA
+   - High-contrast Text: #031b33
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 :root {
-  --primary: #059669;
-  --primary-hover: #047857;
-  --secondary: #0d9488;
-  --accent: #f59e0b;
-  --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e6fffa 50%, #f8fafc 100%);
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --card-border: rgba(5, 150, 105, 0.15);
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-}
-
-.dark {
-  --primary: #10b981;
-  --primary-hover: #059669;
-  --secondary: #14b8a6;
-  --accent: #fbbf24;
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #064e3b 50%, #022c22 100%);
-  --card-bg: rgba(15, 23, 42, 0.75);
-  --card-border: rgba(16, 185, 129, 0.2);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --nav-bg: rgba(15, 23, 42, 0.85);
+  --primary-bg: #30AFFF;
+  --section-bg: #92EEFF;
+  --accent-1: #D8FFC5;
+  --accent-2: #C4F7CA;
+  --text-dark: #031b33;
+  --text-muted: #1e3b5e;
+  --card-bg: #92EEFF;
+  --card-border: #D8FFC5;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--text-main);
-  background: var(--bg-gradient);
-  background-attachment: fixed;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--text-dark);
+  background-color: var(--primary-bg);
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
 }
 
-/* Glassmorphism Cards & Nav */
+/* Specific Brand Layout Helpers */
+.bg-brand-primary {
+  background-color: #30AFFF !important;
+}
+
+.bg-brand-section {
+  background-color: #92EEFF !important;
+}
+
+.bg-brand-accent1 {
+  background-color: #D8FFC5 !important;
+}
+
+.bg-brand-accent2 {
+  background-color: #C4F7CA !important;
+}
+
+.text-brand-dark {
+  color: #031b33 !important;
+}
+
+.text-brand-muted {
+  color: #1e3b5e !important;
+}
+
+.border-brand-accent1 {
+  border-color: #D8FFC5 !important;
+}
+
+.border-brand-accent2 {
+  border-color: #C4F7CA !important;
+}
+
+.border-brand-primary {
+  border-color: #30AFFF !important;
+}
+
+/* Glassmorphism Cards & Nav tuned to user colors */
 .glass-nav {
-  background: var(--nav-bg);
+  background-color: rgba(146, 238, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 2px solid #D8FFC5;
 }
 
 .glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  background-color: #92EEFF;
+  border: 2px solid #D8FFC5;
+  box-shadow: 0 10px 25px -5px rgba(3, 27, 51, 0.1);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .glass-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.15);
-  border-color: rgba(5, 150, 105, 0.4);
+  border-color: #C4F7CA;
+  box-shadow: 0 18px 30px -5px rgba(3, 27, 51, 0.15);
 }
 
-/* Gradient Text */
+/* Secondary Card Variant (Primary Bg Card) */
+.glass-card-primary {
+  background-color: #30AFFF;
+  border: 2px solid #C4F7CA;
+  color: #031b33;
+}
+
+/* Gradient Text using exact user palette */
 .gradient-text {
-  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0284c7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dark .gradient-text {
-  background: linear-gradient(135deg, #34d399 0%, #2dd4bf 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #031b33 0%, #06457a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -87,16 +115,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Pulse Glow */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
 /* Modal Overlay Animation */
 @keyframes modalFadeIn {
   from { opacity: 0; transform: scale(0.95); }
@@ -109,23 +127,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: #30AFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #059669;
-  border-radius: 4px;
+  background: #D8FFC5;
+  border-radius: 5px;
+  border: 2px solid #30AFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #047857;
+  background: #C4F7CA;
 }
 
-/* Image preview box styling */
+/* Image preview box */
 .photo-preview-box {
   background-size: cover;
   background-position: center;

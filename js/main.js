@@ -9,37 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
-  // --- 1. Dark / Light Theme Switching ---
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const themeIcon = document.getElementById('theme-icon');
-
-  function initTheme() {
-    const savedTheme = localStorage.getItem('oasis-theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      if (themeIcon) themeIcon.setAttribute('data-lucide', 'sun');
-    } else {
-      document.documentElement.classList.remove('dark');
-      if (themeIcon) themeIcon.setAttribute('data-lucide', 'moon');
-    }
-    if (window.lucide) lucide.createIcons();
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('oasis-theme', isDark ? 'dark' : 'light');
-      
-      if (themeIcon) {
-        themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-        if (window.lucide) lucide.createIcons();
-      }
-    });
-  }
-  initTheme();
-
-  // --- 2. Mobile Navigation Drawer ---
+  // --- 1. Mobile Navigation Drawer ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
@@ -66,17 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // --- 3. Sticky Navbar Background on Scroll ---
+  // --- 2. Sticky Navbar Background on Scroll ---
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar?.classList.add('shadow-md');
+      navbar?.classList.add('shadow-lg');
     } else {
-      navbar?.classList.remove('shadow-md');
+      navbar?.classList.remove('shadow-lg');
     }
   });
 
-  // --- 4. Impact Metrics Counter Animation ---
+  // --- 3. Impact Metrics Counter Animation ---
   const counterElements = document.querySelectorAll('.counter-value');
   let animated = false;
 
@@ -114,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(impactSection);
   }
 
-  // --- 5. Interactive Initiatives Modal ---
+  // --- 4. Interactive Initiatives Modal ---
   const initiativeData = {
     harsham: {
       title: "Harsham - Annual Palliative Fest & Awareness Drive",
@@ -179,8 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalHighlights) {
       modalHighlights.innerHTML = data.highlights
-        .map(h => `<li class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
-          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0"></i>
+        .map(h => `<li class="flex items-start gap-2 text-sm text-[#031b33] font-medium">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-[#031b33] mt-0.5 shrink-0"></i>
           <span>${h}</span>
         </li>`)
         .join('');
@@ -222,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 6. Volunteer Form Photo Upload Preview ---
+  // --- 5. Volunteer Form Photo Upload Preview ---
   const photoInput = document.getElementById('photo-input');
   const photoPreview = document.getElementById('photo-preview');
   const photoPlaceholder = document.getElementById('photo-placeholder');
@@ -244,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 7. Volunteer Form Submission & Toast ---
+  // --- 6. Volunteer Form Submission & Toast ---
   const volunteerForm = document.getElementById('volunteer-form');
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toast-msg');
@@ -253,8 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toast) return;
     if (toastMsg) toastMsg.textContent = message;
     
-    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md transition-all duration-300 transform translate-y-0 opacity-100 ${
-      isSuccess ? 'bg-emerald-600/95 text-white' : 'bg-rose-600/95 text-white'
+    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md transition-all duration-300 transform translate-y-0 opacity-100 border-2 ${
+      isSuccess ? 'bg-[#D8FFC5] text-[#031b33] border-[#C4F7CA]' : 'bg-rose-500 text-white border-rose-700'
     }`;
 
     setTimeout(() => {
@@ -276,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Successful client side registration simulate
+      // Successful registration simulate
       showToast(`Welcome to Oasis, ${name}! Your volunteer application has been submitted successfully.`);
       volunteerForm.reset();
       
