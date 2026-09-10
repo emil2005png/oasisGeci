@@ -254,4 +254,203 @@ document.addEventListener('DOMContentLoaded', () => {
       if (photoPlaceholder) photoPlaceholder.classList.remove('hidden');
     });
   }
+
+  // --- 7. Hero Section Background & Card Auto-Slideshow ---
+  const heroSlidesData = [
+    {
+      bg: 'assets/hero-slide-1.jpg',
+      tag: 'Hrudayathil Ennum',
+      caption: '"Hrudayathil Ennum - Oasis GEC Idukki team united in compassion, care, and lifelong brotherhood."',
+      badge: '1 / 3'
+    },
+    {
+      bg: 'assets/hero-slide-2.jpg',
+      tag: 'Farewell Celebration',
+      caption: '"Bringing warmth, smiles, and unity to every event at Government Engineering College Idukki."',
+      badge: '2 / 3'
+    },
+    {
+      bg: 'assets/hero-palliative.jpg',
+      tag: 'Palliative Care Mission',
+      caption: '"Palliative care is not just medical support; it is human connection, dignity, and unconditional warmth."',
+      badge: '3 / 3'
+    }
+  ];
+
+  let currentHeroIndex = 0;
+  let heroSlideshowInterval = null;
+  let isSlideshowPlaying = true;
+
+  const bgSlides = document.querySelectorAll('.hero-bg-slide');
+  const cardSlides = document.querySelectorAll('.hero-card-slide');
+  const slideBadge = document.getElementById('hero-slide-badge');
+  const slideTag = document.getElementById('hero-slide-tag');
+  const slideCaption = document.getElementById('hero-slide-caption');
+  const dotBtns = document.querySelectorAll('.hero-dot-btn');
+  const prevBtn = document.getElementById('hero-prev-btn');
+  const nextBtn = document.getElementById('hero-next-btn');
+  const togglePlayBtn = document.getElementById('hero-toggle-play');
+  const playPauseIcon = document.getElementById('play-pause-icon');
+  const heroCardContainer = document.getElementById('hero-card-container');
+
+  function showHeroSlide(index) {
+    currentHeroIndex = (index + heroSlidesData.length) % heroSlidesData.length;
+    const currentData = heroSlidesData[currentHeroIndex];
+
+    // 1. Update background slide opacities
+    bgSlides.forEach((slide, i) => {
+      if (i === currentHeroIndex) {
+        slide.classList.remove('opacity-0');
+        slide.classList.add('opacity-100');
+      } else {
+        slide.classList.remove('opacity-100');
+        slide.classList.add('opacity-0');
+      }
+    });
+
+    // 2. Update card slide opacities
+    cardSlides.forEach((slide, i) => {
+      if (i === currentHeroIndex) {
+        slide.classList.remove('opacity-0');
+        slide.classList.add('opacity-100');
+      } else {
+        slide.classList.remove('opacity-100');
+        slide.classList.add('opacity-0');
+      }
+    });
+
+    // 3. Update text details
+    if (slideBadge) slideBadge.textContent = currentData.badge;
+    if (slideTag) slideTag.textContent = currentData.tag;
+    if (slideCaption) slideCaption.textContent = currentData.caption;
+
+    // 4. Update dot indicators
+    dotBtns.forEach((dot, i) => {
+      if (i === currentHeroIndex) {
+        dot.className = 'hero-dot-btn w-2.5 h-2.5 rounded-full bg-[#031b33] transition-all scale-125';
+      } else {
+        dot.className = 'hero-dot-btn w-2.5 h-2.5 rounded-full bg-[#031b33]/30 hover:bg-[#031b33]/60 transition-all';
+      }
+    });
+  }
+
+  function startHeroSlideshow() {
+    if (heroSlideshowInterval) clearInterval(heroSlideshowInterval);
+    heroSlideshowInterval = setInterval(() => {
+      showHeroSlide(currentHeroIndex + 1);
+    }, 4500);
+    isSlideshowPlaying = true;
+    if (playPauseIcon) {
+      playPauseIcon.setAttribute('data-lucide', 'pause');
+      if (window.lucide) lucide.createIcons();
+    }
+  }
+
+  function pauseHeroSlideshow() {
+    if (heroSlideshowInterval) {
+      clearInterval(heroSlideshowInterval);
+      heroSlideshowInterval = null;
+    }
+    isSlideshowPlaying = false;
+    if (playPauseIcon) {
+      playPauseIcon.setAttribute('data-lucide', 'play');
+      if (window.lucide) lucide.createIcons();
+    }
+  }
+
+  if (bgSlides.length > 0) {
+    startHeroSlideshow();
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showHeroSlide(currentHeroIndex - 1);
+        if (isSlideshowPlaying) startHeroSlideshow();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showHeroSlide(currentHeroIndex + 1);
+        if (isSlideshowPlaying) startHeroSlideshow();
+      });
+    }
+
+    if (togglePlayBtn) {
+      togglePlayBtn.addEventListener('click', () => {
+        if (isSlideshowPlaying) {
+          pauseHeroSlideshow();
+        } else {
+          startHeroSlideshow();
+        }
+      });
+    }
+
+    dotBtns.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const idx = parseInt(e.currentTarget.getAttribute('data-slide-index'), 10);
+        showHeroSlide(idx);
+        if (isSlideshowPlaying) startHeroSlideshow();
+      });
+    });
+
+    if (heroCardContainer) {
+      heroCardContainer.addEventListener('mouseenter', () => {
+        if (isSlideshowPlaying && heroSlideshowInterval) {
+          clearInterval(heroSlideshowInterval);
+        }
+      });
+      heroCardContainer.addEventListener('mouseleave', () => {
+        if (isSlideshowPlaying) {
+          startHeroSlideshow();
+        }
+      });
+    }
+  }
+
+  // --- 8. Gallery Lightbox Modal Handler ---
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryModal = document.getElementById('gallery-lightbox-modal');
+  const galleryImg = document.getElementById('gallery-lightbox-img');
+  const galleryTitle = document.getElementById('gallery-lightbox-title');
+  const galleryTag = document.getElementById('gallery-lightbox-tag');
+  const galleryDesc = document.getElementById('gallery-lightbox-desc');
+  const closeGalleryBtn = document.getElementById('close-gallery-modal-btn');
+  const closeGalleryFooterBtn = document.getElementById('close-gallery-modal-footer');
+
+  function openGalleryModal(item) {
+    if (!galleryModal) return;
+    const imgSrc = item.getAttribute('data-image');
+    const title = item.getAttribute('data-title');
+    const tag = item.getAttribute('data-tag');
+    const desc = item.getAttribute('data-desc');
+
+    if (galleryImg) galleryImg.src = imgSrc;
+    if (galleryTitle) galleryTitle.textContent = title;
+    if (galleryTag) galleryTag.textContent = tag;
+    if (galleryDesc) galleryDesc.textContent = desc;
+
+    galleryModal.classList.remove('hidden');
+    galleryModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGalleryModal() {
+    if (!galleryModal) return;
+    galleryModal.classList.add('hidden');
+    galleryModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => openGalleryModal(item));
+  });
+
+  if (closeGalleryBtn) closeGalleryBtn.addEventListener('click', closeGalleryModal);
+  if (closeGalleryFooterBtn) closeGalleryFooterBtn.addEventListener('click', closeGalleryModal);
+
+  if (galleryModal) {
+    galleryModal.addEventListener('click', (e) => {
+      if (e.target === galleryModal) closeGalleryModal();
+    });
+  }
 });

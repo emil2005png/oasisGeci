@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oasis Pain & Palliative Care Unit | GEC Idukki</title>
-  <meta name="description" content="Official website of Oasis Pain and Palliative Care Unit at Government Engineering College (GEC) Idukki, Kerala. Promoting student palliative awareness, community outreach, and compassionate care.">
-  
+  <meta name="description"
+    content="Official website of Oasis Pain and Palliative Care Unit at Government Engineering College (GEC) Idukki, Kerala. Promoting student palliative awareness, community outreach, and compassionate care.">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -24,44 +26,56 @@
       }
     }
   </script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/oasis-logo.png">
+  <link rel="apple-touch-icon" href="assets/oasis-logo.png">
 </head>
+
 <body class="min-h-screen bg-[#30AFFF] text-[#031b33] antialiased">
 
   <!-- ==================== HEADER / NAVBAR ==================== -->
   <header id="navbar" class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
+
       <!-- Brand Logo -->
       <a href="#" class="flex items-center gap-3 group" id="nav-brand">
-        <div class="w-11 h-11 rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform duration-300">
-          <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+        <div
+          class="w-11 h-11 rounded-2xl bg-white text-[#031b33] flex items-center justify-center shadow-md border border-[#D8FFC5] p-1 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain">
         </div>
         <div>
           <div class="flex items-center gap-2">
             <span class="font-heading font-extrabold text-xl tracking-tight text-[#031b33]">OASIS</span>
-            <span class="px-2 py-0.5 text-xs font-bold rounded-full bg-[#C4F7CA] text-[#031b33] border border-[#D8FFC5]">GEC Idukki</span>
+            <span
+              class="px-2 py-0.5 text-xs font-bold rounded-full bg-[#C4F7CA] text-[#031b33] border border-[#D8FFC5]">GEC
+              Idukki</span>
           </div>
           <p class="text-xs text-[#1e3b5e] font-semibold">Pain & Palliative Care Unit</p>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-[#031b33]">
+      <nav class="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-bold text-[#031b33]">
         <a href="#about" class="hover:underline transition-colors" id="nav-link-about">About</a>
+        <a href="#committee" class="hover:underline transition-colors" id="nav-link-committee">Committee</a>
         <a href="#initiatives" class="hover:underline transition-colors" id="nav-link-initiatives">Initiatives</a>
         <a href="#harsham" class="hover:underline transition-colors" id="nav-link-harsham">Harsham Fest</a>
         <a href="#impact" class="hover:underline transition-colors" id="nav-link-impact">Impact</a>
+        <a href="#gallery" class="hover:underline transition-colors" id="nav-link-gallery">Gallery</a>
         <a href="#volunteer" class="hover:underline transition-colors" id="nav-link-volunteer">Join Us</a>
         <a href="#contact" class="hover:underline transition-colors" id="nav-link-contact">Contact</a>
       </nav>
@@ -69,13 +83,16 @@
       <!-- Action Button -->
       <div class="flex items-center gap-3">
         <!-- Volunteer CTA Button (Desktop) -->
-        <a href="#volunteer" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm shadow-md transition-all duration-300 hover:-translate-y-0.5 border border-[#C4F7CA]" id="nav-cta-btn">
+        <a href="#volunteer"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm shadow-md transition-all duration-300 hover:-translate-y-0.5 border border-[#C4F7CA]"
+          id="nav-cta-btn">
           <i data-lucide="user-plus" class="w-4 h-4"></i>
           <span>Become a Volunteer</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" class="md:hidden p-2.5 rounded-xl bg-[#D8FFC5] text-[#031b33]">
+        <button id="mobile-menu-btn" aria-label="Open Mobile Menu"
+          class="md:hidden p-2.5 rounded-xl bg-[#D8FFC5] text-[#031b33]">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
@@ -83,14 +100,17 @@
   </header>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+  <div id="mobile-drawer"
+    class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
     <div class="absolute inset-0 bg-[#031b33]/60 backdrop-blur-sm" id="close-mobile-menu-btn"></div>
-    <nav class="relative ml-auto w-4/5 max-w-sm h-full bg-[#92EEFF] shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l-4 border-[#D8FFC5]">
+    <nav
+      class="relative ml-auto w-4/5 max-w-sm h-full bg-[#92EEFF] shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l-4 border-[#D8FFC5]">
       <div>
         <div class="flex items-center justify-between pb-6 border-b border-[#D8FFC5]">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
-              <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+            <div
+              class="w-9 h-9 rounded-xl bg-white p-0.5 text-[#031b33] flex items-center justify-center font-bold border border-[#D8FFC5] overflow-hidden">
+              <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain">
             </div>
             <span class="font-heading font-bold text-lg text-[#031b33]">Oasis GEC Idukki</span>
           </div>
@@ -101,16 +121,19 @@
 
         <div class="mt-8 flex flex-col gap-4 text-base font-bold text-[#031b33]">
           <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">About Oasis</a>
+          <a href="#committee" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Committee Members</a>
           <a href="#initiatives" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Key Initiatives</a>
           <a href="#harsham" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Harsham Fest</a>
           <a href="#impact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Impact Metrics</a>
+          <a href="#gallery" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Our Gallery</a>
           <a href="#volunteer" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Volunteer Form</a>
           <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Contact & Helpline</a>
         </div>
       </div>
 
       <div class="pt-6 border-t border-[#D8FFC5]">
-        <a href="#volunteer" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold shadow-md">
+        <a href="#volunteer"
+          class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold shadow-md">
           <i data-lucide="user-plus" class="w-5 h-5"></i>
           <span>Join as Volunteer</span>
         </a>
@@ -119,194 +142,411 @@
   </div>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 bg-[#30AFFF]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Left Content -->
-        <div class="lg:col-span-7 space-y-6 text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D8FFC5] border border-[#C4F7CA] text-[#031b33] text-xs sm:text-sm font-bold">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#031b33] animate-ping"></span>
-            <span>Student-Led Palliative Movement • GEC Idukki</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-tight text-[#031b33]">
-            Spreading <span class="bg-[#D8FFC5] px-2 py-0.5 rounded-lg text-[#031b33]">Hope</span>,<br>
-            Building <span class="bg-[#C4F7CA] px-2 py-0.5 rounded-lg text-[#031b33]">Empathy.</span>
-          </h1>
-
-          <p class="text-lg sm:text-xl text-[#031b33] max-w-2xl font-medium leading-relaxed bg-[#92EEFF]/40 p-4 rounded-2xl border border-[#D8FFC5]">
-            Welcome to <strong>Oasis Pain and Palliative Care Unit</strong> at Government Engineering College, Idukki. We empower young engineering minds to deliver compassionate companion care, relief drives, and dignity to palliative care patients across Painavu and Kerala.
-          </p>
-
-          <!-- CTAs -->
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="#volunteer" id="hero-cta-primary" class="px-7 py-3.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-base shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 border border-[#C4F7CA]">
-              <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
-              <span>Become a Volunteer</span>
-            </a>
-            <a href="#initiatives" id="hero-cta-secondary" class="px-7 py-3.5 rounded-xl bg-[#92EEFF] hover:bg-[#D8FFC5] text-[#031b33] font-extrabold text-base transition-all duration-300 flex items-center gap-2 border border-[#D8FFC5]">
-              <i data-lucide="sparkles" class="w-5 h-5"></i>
-              <span>Explore Initiatives</span>
-            </a>
-          </div>
-
-          <!-- Highlight Stats Pills -->
-          <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t-2 border-[#92EEFF]">
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-[#92EEFF] border border-[#D8FFC5]">
-              <div class="w-10 h-10 rounded-xl bg-[#D8FFC5] flex items-center justify-center text-[#031b33] font-bold">
-                <i data-lucide="users" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Active Network</p>
-                <p class="font-extrabold text-sm text-[#031b33]">250+ Volunteers</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-[#92EEFF] border border-[#D8FFC5]">
-              <div class="w-10 h-10 rounded-xl bg-[#C4F7CA] flex items-center justify-center text-[#031b33] font-bold">
-                <i data-lucide="phone-call" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Helpline Service</p>
-                <p class="font-extrabold text-sm text-[#031b33]">Painavu Helpline</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-2xl bg-[#92EEFF] border border-[#D8FFC5] col-span-2 sm:col-span-1">
-              <div class="w-10 h-10 rounded-xl bg-[#D8FFC5] flex items-center justify-center text-[#031b33] font-bold">
-                <i data-lucide="award" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Flagship Fest</p>
-                <p class="font-extrabold text-sm text-[#031b33]">Harsham 2026</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Visual Showcase -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#D8FFC5] group">
-            <img src="assets/hero-palliative.jpg" alt="Oasis Palliative Care GEC Idukki Student Volunteers" class="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent"></div>
-            
-            <div class="absolute bottom-6 left-6 right-6 p-5 bg-[#92EEFF] rounded-2xl border-2 border-[#D8FFC5]">
-              <div class="flex items-center gap-3">
-                <div class="w-3 h-3 rounded-full bg-[#031b33] animate-pulse"></div>
-                <span class="text-xs font-extrabold text-[#031b33] uppercase tracking-wider">Compassion in Action</span>
-              </div>
-              <p class="text-sm font-bold text-[#031b33] mt-1">
-                "Palliative care is not just medical support; it is human connection, dignity, and unconditional warmth."
-              </p>
-            </div>
-          </div>
-        </div>
-
+  <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[#031b33]">
+    <!-- Background Image Layer -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/hero-bg-hands.jpg" alt="Reaching hands" class="w-full h-full object-cover">
+      <!-- Light overlay for text readability — low opacity to keep image visible -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[#031b33]/40 via-[#031b33]/25 to-[#031b33]/60">
       </div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+
+      <div
+        class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] text-[#031b33] text-xs sm:text-sm font-bold shadow-md mb-6">
+        <img src="assets/oasis-logo.png" alt="Oasis Logo" class="w-5 h-5 object-contain">
+        <span>Student-Led Palliative Movement • GEC Idukki</span>
+      </div>
+
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.2] text-white drop-shadow-lg mb-6">
+        Spreading <span
+          class="inline-block bg-[#D8FFC5]/90 px-3 py-1 rounded-xl text-[#031b33] shadow-md">Hope</span>,<br
+          class="hidden sm:inline">
+        Building <span
+          class="inline-block bg-[#C4F7CA]/90 px-3 py-1 rounded-xl text-[#031b33] shadow-md">Empathy.</span>
+      </h1>
+
+      <p
+        class="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_8px_32px_rgba(0,0,0,0.25)] mb-8"
+        style="box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
+        Welcome to OASIS Pain and Palliative Care Unit at Government Engineering College, Idukki — where the precision
+        of young engineering minds meets the soft touch of raw human empathy.
+        <strong class="block mt-3 text-[#D8FFC5]">Healing Hands, Resilient Hearts</strong>
+        We transform ambition into altruism, empowering students to deliver tender
+        companion care, vital relief drives, and restored dignity to palliative patients across Idukki and Kerala.
+      </p>
+
+      <!-- Highlight Stats Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] shadow-md">
+          <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#D8FFC5] font-bold">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[11px] text-[#031b33] font-semibold">Active Network</p>
+            <p class="font-extrabold text-sm text-[#031b33]">250+ Volunteers</p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#C4F7CA]/90 backdrop-blur-sm border border-[#D8FFC5] shadow-md">
+          <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#C4F7CA] font-bold">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[11px] text-[#031b33] font-semibold">Helpline Service</p>
+            <p class="font-extrabold text-sm text-[#031b33]">Emotional Support</p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] shadow-md">
+          <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#D8FFC5] font-bold">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[11px] text-[#031b33] font-semibold">Flagship Programme</p>
+            <p class="font-extrabold text-sm text-[#031b33]">Harsham</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ==================== ABOUT OASIS SECTION ==================== -->
-  <section id="about" class="py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
+  <section id="about" class="py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="px-4 py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">About Oasis Unit</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-[#031b33]">
-          Empowerment Through Empathy
+
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">About
+          Oasis Unit</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+          True education does not merely train the mind, It awakens the soul to the pain of others.
         </h2>
-        <p class="text-base sm:text-lg text-[#031b33] font-medium leading-relaxed">
-          Founded at Government Engineering College (GEC) Idukki, Oasis is a student-driven initiative operating under the guiding principles of community-based palliative care in Kerala. We instill social responsibility and compassionate care among engineering undergraduates.
+        <p class="text-sm sm:text-base md:text-lg text-[#031b33] font-medium leading-relaxed">
+          Established in 2010
+          by Dr. Latha Raj and expanded under the dedicated stewardship of Prof. Mubarak A.K., OASIS stands as the
+          beating heart of social conscience at GEC Idukki. By transforming engineering students into messengers of
+          palliative relief, this unit has transcended institutional boundaries to touch countless lives in the wider
+          community. OASIS is a living reminder that care is an action, hope is a shared responsibility, and young hands
+          hold the power to heal broken spirits.
         </p>
       </div>
 
       <!-- Core Pillars Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
         <!-- Pillar 1 -->
-        <div class="bg-[#30AFFF] p-8 rounded-2xl space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
-            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+        <div
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
+            <i data-lucide="graduation-cap" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-extrabold font-heading text-[#031b33]">Youth Awareness</h3>
-          <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-            Conducting seminars, orientation workshops, and interactive sessions for college students to build an empathetic youth mindset.
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Our Vision</h3>
+          <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+            Driven by purpose, this open club instills the sacred value of palliative care in young hearts, rapidly
+            scaling unexpected heights to turn student empathy into an unstoppable movement of hope.
           </p>
         </div>
 
         <!-- Pillar 2 -->
-        <div class="bg-[#30AFFF] p-8 rounded-2xl space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
-            <i data-lucide="hand-heart" class="w-6 h-6"></i>
+        <div
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
+            <i data-lucide="hand-heart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-extrabold font-heading text-[#031b33]">Companion Care</h3>
-          <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-            Visiting bedridden and chronic patients in Painavu to provide warm companionship, friendly conversations, and emotional support.
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Companion Care</h3>
+          <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+            Visiting bedridden and chronic patients in Idukki to provide warm companionship, friendly conversations,
+            and emotional support.
           </p>
         </div>
 
         <!-- Pillar 3 -->
-        <div class="bg-[#30AFFF] p-8 rounded-2xl space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
-            <i data-lucide="box" class="w-6 h-6"></i>
+        <div
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
+            <i data-lucide="box" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-extrabold font-heading text-[#031b33]">Material Pooling</h3>
-          <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-            Organizing campus donation drives for essential medical items, water beds, adult diapers, and daily care kits for needy families.
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Material Pooling</h3>
+          <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+            Organizing campus donation drives for essential medical items, water beds, adult diapers, and daily care
+            kits for needy families.
           </p>
         </div>
 
         <!-- Pillar 4 -->
-        <div class="bg-[#30AFFF] p-8 rounded-2xl space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
-            <i data-lucide="stethoscope" class="w-6 h-6"></i>
+        <div
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
+            <i data-lucide="stethoscope" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-extrabold font-heading text-[#031b33]">Home Care Support</h3>
-          <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-            Collaborating with local government palliative nurses and community doctors during regular home-care patient rounds.
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Home Care Support</h3>
+          <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+            Collaborating with local government palliative nurses and community doctors during regular home-care patient
+            rounds.
           </p>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COMMITTEE MEMBERS SECTION ==================== -->
+  <section id="committee" class="py-12 sm:py-16 md:py-24 bg-[#92EEFF] border-b-4 border-[#D8FFC5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
+          Leadership & Governance
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+          Committee Members & Leadership
+        </h2>
+        <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium leading-relaxed">
+          Guiding Oasis Pain & Palliative Care Unit at GEC Idukki with vision, institutional support, and dedicated
+          student leadership.
+        </p>
+      </div>
+
+      <!-- Part 1: Patrons & Faculty Advisors -->
+      <div class="mb-10 sm:mb-14">
+        <div class="flex items-center gap-3 mb-6 pb-2 border-b-2 border-[#D8FFC5]">
+          <div
+            class="w-8 h-8 rounded-xl bg-[#D8FFC5] flex items-center justify-center text-[#031b33] font-bold shadow-sm">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Patrons & Faculty Advisors</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+          <!-- Member 1: Principal -->
+          <div
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-4">
+              <div
+                class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white">
+                <img src="assets/committee-principal.jpg" alt="Dr. Principal GEC Idukki"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="space-y-1">
+                <span
+                  class="inline-block px-3 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold border border-[#C4F7CA]">
+                  Patron & Principal
+                </span>
+                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Dr. Santhosh Kumar</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Principal, GEC Idukki</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed pt-3 border-t border-[#D8FFC5]/60 mt-4 w-full">
+              Providing institutional leadership and patron support to empower student palliative initiatives.
+            </p>
+          </div>
+
+          <!-- Member 2: Staff Advisor -->
+          <div
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-4">
+              <div
+                class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white">
+                <img src="assets/committee-advisor.jpg" alt="Prof. Mubarak A.K. Staff Advisor"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="space-y-1">
+                <span
+                  class="inline-block px-3 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold border border-[#D8FFC5]">
+                  Staff Advisor
+                </span>
+                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Prof. Mubarak A.K.</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Faculty In-Charge, Oasis Unit</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed pt-3 border-t border-[#D8FFC5]/60 mt-4 w-full">
+              Guiding campus palliative activities, mentoring student volunteers, and directing community outreach.
+            </p>
+          </div>
+
+          <!-- Member 3: Founder & Mentor -->
+          <div
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-4">
+              <div
+                class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white flex items-center justify-center p-3">
+                <img src="assets/oasis-logo.png" alt="Oasis Founder Mentor" class="w-full h-full object-contain">
+              </div>
+              <div class="space-y-1">
+                <span
+                  class="inline-block px-3 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold border border-[#C4F7CA]">
+                  Founder & Chief Mentor
+                </span>
+                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Dr. Latha Raj</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Founder, Oasis GEC Idukki (2010)</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed pt-3 border-t border-[#D8FFC5]/60 mt-4 w-full">
+              Pioneered the student palliative care unit at GEC Idukki to awaken empathy and social action.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Part 2: Student Executive Committee -->
+      <div>
+        <div class="flex items-center gap-3 mb-6 pb-2 border-b-2 border-[#D8FFC5]">
+          <div
+            class="w-8 h-8 rounded-xl bg-[#C4F7CA] flex items-center justify-center text-[#031b33] font-bold shadow-sm">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Student Executive Committee (2026)
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+          <!-- Executive 1: Convenor -->
+          <div
+            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-3">
+              <div
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                <i data-lucide="user-check" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+              </div>
+              <div class="space-y-0.5">
+                <span
+                  class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Student
+                  Convenor</span>
+                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Student Convenor</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Mechanical Engg</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+              Directs volunteer team, event planning, and outreach operations.
+            </p>
+          </div>
+
+          <!-- Executive 2: Joint Convenor -->
+          <div
+            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-3">
+              <div
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                <i data-lucide="user-plus" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+              </div>
+              <div class="space-y-0.5">
+                <span
+                  class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint
+                  Convenor</span>
+                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Joint Convenor</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Computer Science</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+              Coordinates volunteer mobilization and Harsham festival management.
+            </p>
+          </div>
+
+          <!-- Executive 3: Treasurer -->
+          <div
+            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-3">
+              <div
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                <i data-lucide="wallet" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+              </div>
+              <div class="space-y-0.5">
+                <span
+                  class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Treasurer</span>
+                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Student Treasurer</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Electrical Engg</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+              Manages patient relief funds, equipment pooling, and financial accounts.
+            </p>
+          </div>
+
+          <!-- Executive 4: Joint Treasurer -->
+          <div
+            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+            <div class="w-full flex flex-col items-center space-y-3">
+              <div
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                <i data-lucide="piggy-bank" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+              </div>
+              <div class="space-y-0.5">
+                <span
+                  class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint
+                  Treasurer</span>
+                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Joint Treasurer</h4>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Electronics Engg</p>
+              </div>
+            </div>
+            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+              Oversees donation collection and care kit procurement for home visits.
+            </p>
+          </div>
+
+        </div>
       </div>
 
     </div>
   </section>
 
   <!-- ==================== KEY INITIATIVES GRID ==================== -->
-  <section id="initiatives" class="py-24 bg-[#30AFFF]">
+  <section id="initiatives" class="py-12 sm:py-16 md:py-24 bg-[#30AFFF]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="px-4 py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Outreach & Programs</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-[#031b33]">
+
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Outreach
+          & Programs</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Our Key Initiatives
         </h2>
-        <p class="text-base text-[#031b33] font-medium">
+        <p class="text-sm sm:text-base text-[#031b33] font-medium">
           Discover how Oasis GEC Idukki brings tangible relief, festival joy, and awareness across the district.
         </p>
       </div>
 
       <!-- Initiative Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
         <!-- Initiative Card 1: Harsham -->
-        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
           <div>
-            <div class="relative h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
-              <img src="assets/harsham-fest.jpg" alt="Harsham Fest Oasis GEC Idukki" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold shadow-md border border-[#C4F7CA]">Flagship Fest</span>
+            <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
+              <img src="assets/harsham-fest.jpg" alt="Harsham Fest Oasis GEC Idukki"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold shadow-md border border-[#C4F7CA]">Flagship
+                Fest</span>
             </div>
-            <div class="p-6 space-y-3 text-left">
-              <h3 class="text-2xl font-extrabold font-heading text-[#031b33]">Harsham Palliative Fest</h3>
-              <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-                The annual palliative care awareness festival hosted at GEC Idukki featuring cultural events, seminars, street plays, and fundraising drives for care equipment.
+            <div class="p-5 sm:p-6 space-y-2 sm:space-y-3 text-left">
+              <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-[#031b33]">Harsham Palliative Fest</h3>
+              <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+                The annual palliative care awareness festival hosted at GEC Idukki featuring cultural events, seminars,
+                street plays, and fundraising drives for care equipment.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <button data-initiative="harsham" class="open-initiative-modal w-full py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
+          <div class="p-5 sm:p-6 pt-0">
+            <button data-initiative="harsham"
+              class="open-initiative-modal w-full py-2.5 sm:py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
               <span>Learn More</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -314,21 +554,26 @@
         </div>
 
         <!-- Initiative Card 2: Old Age Home Outreach -->
-        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
           <div>
-            <div class="relative h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
-              <img src="assets/outreach-care.jpg" alt="Elderly Care Home Visit GEC Idukki" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-xs font-extrabold shadow-md border border-[#D8FFC5]">Community Visits</span>
+            <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
+              <img src="assets/outreach-care.jpg" alt="Elderly Care Home Visit GEC Idukki"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] sm:text-xs font-extrabold shadow-md border border-[#D8FFC5]">Community
+                Visits</span>
             </div>
-            <div class="p-6 space-y-3 text-left">
-              <h3 class="text-2xl font-extrabold font-heading text-[#031b33]">Old Age Home Outreach</h3>
-              <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-                Bi-weekly visits to elder care homes in Idukki. Student volunteers share companion care, record life stories, and supply essential care kits.
+            <div class="p-5 sm:p-6 space-y-2 sm:space-y-3 text-left">
+              <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-[#031b33]">Old Age Home Outreach</h3>
+              <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+                Bi-weekly visits to elder care homes in Idukki. Student volunteers share companion care, record life
+                stories, and supply essential care kits.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <button data-initiative="outreach" class="open-initiative-modal w-full py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
+          <div class="p-5 sm:p-6 pt-0">
+            <button data-initiative="outreach"
+              class="open-initiative-modal w-full py-2.5 sm:py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
               <span>Learn More</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -336,21 +581,26 @@
         </div>
 
         <!-- Initiative Card 3: Festive Care -->
-        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
           <div>
-            <div class="relative h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
-              <img src="assets/festive-care.jpg" alt="Onam Kit Distribution Palliative Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold shadow-md border border-[#C4F7CA]">Festive Joy</span>
+            <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
+              <img src="assets/festive-care.jpg" alt="Onam Kit Distribution Palliative Care"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold shadow-md border border-[#C4F7CA]">Festive
+                Joy</span>
             </div>
-            <div class="p-6 space-y-3 text-left">
-              <h3 class="text-2xl font-extrabold font-heading text-[#031b33]">Festive Care Drives</h3>
-              <p class="text-sm text-[#031b33] font-medium leading-relaxed">
-                Spreading Onam and Christmas cheer directly to homebound bedridden patients with customized feast kits, traditional wear, and musical visits.
+            <div class="p-5 sm:p-6 space-y-2 sm:space-y-3 text-left">
+              <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-[#031b33]">Festive Care Drives</h3>
+              <p class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">
+                Spreading Onam and Christmas cheer directly to homebound bedridden patients with customized feast kits,
+                traditional wear, and musical visits.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <button data-initiative="festive" class="open-initiative-modal w-full py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
+          <div class="p-5 sm:p-6 pt-0">
+            <button data-initiative="festive"
+              class="open-initiative-modal w-full py-2.5 sm:py-3 px-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#C4F7CA]">
               <span>Learn More</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -363,57 +613,64 @@
   </section>
 
   <!-- ==================== HARSHAM FEATURE SPOTLIGHT ==================== -->
-  <section id="harsham" class="py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
+  <section id="harsham" class="py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-7 space-y-6 text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
-            <i data-lucide="sparkles" class="w-4 h-4"></i>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
             <span>Annual Palliative Fest</span>
           </div>
 
-          <h2 class="text-3xl sm:text-5xl font-extrabold font-heading leading-tight text-[#031b33]">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading leading-tight text-[#031b33]">
             HARSHAM FEST <span class="bg-[#D8FFC5] px-2 py-0.5 rounded-xl">2026</span>
           </h2>
 
-          <p class="text-base sm:text-lg text-[#031b33] font-medium leading-relaxed">
-            Harsham is more than an annual festival; it is a movement of youthful empathy. Every year, GEC Idukki comes alive with student competitions, art installations, medical relief rallies, and workshops dedicated to honoring palliative care heroes.
+          <p class="text-sm sm:text-base md:text-lg text-[#031b33] font-medium leading-relaxed">
+            Harsham is more than an annual festival; it is a movement of youthful empathy. Every year, GEC Idukki comes
+            alive with student competitions, art installations, medical relief rallies, and workshops dedicated to
+            honoring palliative care heroes.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-sm font-bold">
-            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
-              <i data-lucide="calendar" class="w-5 h-5"></i>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 text-xs sm:text-sm font-bold">
+            <div
+              class="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
+              <i data-lucide="calendar" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0"></i>
               <span>Annual Campus Awareness Week</span>
             </div>
-            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
-              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            <div
+              class="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
+              <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0"></i>
               <span>GEC Idukki Auditorium, Painavu</span>
             </div>
           </div>
 
-          <div class="pt-4">
-            <a href="#volunteer" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-sm shadow-md transition-all border border-[#C4F7CA]">
-              <i data-lucide="ticket" class="w-5 h-5"></i>
+          <div class="pt-2 sm:pt-4">
+            <a href="#volunteer"
+              class="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-xs sm:text-sm shadow-md transition-all border border-[#C4F7CA]">
+              <i data-lucide="ticket" class="w-4 h-4 sm:w-5 sm:h-5"></i>
               <span>Participate / Join Harsham Volunteers</span>
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-5">
-          <div class="p-8 rounded-3xl bg-[#30AFFF] border-4 border-[#D8FFC5] text-left space-y-6 shadow-xl">
-            <h3 class="text-2xl font-extrabold font-heading text-[#031b33]">Harsham Highlights</h3>
-            <ul class="space-y-4 text-sm text-[#031b33] font-semibold">
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle" class="w-5 h-5 shrink-0 mt-0.5"></i>
+          <div
+            class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#30AFFF] border-3 sm:border-4 border-[#D8FFC5] text-left space-y-4 sm:space-y-6 shadow-xl">
+            <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-[#031b33]">Harsham Highlights</h3>
+            <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-[#031b33] font-semibold">
+              <li class="flex items-start gap-2.5 sm:gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
                 <span><strong>Palliative Youth Convention:</strong> Delegates from colleges across Kerala.</span>
               </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle" class="w-5 h-5 shrink-0 mt-0.5"></i>
+              <li class="flex items-start gap-2.5 sm:gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
                 <span><strong>Cultural Evening:</strong> Performances dedicated to palliative care awareness.</span>
               </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle" class="w-5 h-5 shrink-0 mt-0.5"></i>
+              <li class="flex items-start gap-2.5 sm:gap-3">
+                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
                 <span><strong>Patient Care Fundraiser:</strong> 100% of proceeds fund emergency medical kits.</span>
               </li>
             </ul>
@@ -425,60 +682,74 @@
   </section>
 
   <!-- ==================== IMPACT METRICS SECTION ==================== -->
-  <section id="impact" class="py-20 bg-[#30AFFF]">
+  <section id="impact" class="py-12 sm:py-16 md:py-20 bg-[#30AFFF]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="px-4 py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Our Impact</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-[#031b33]">
+
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Our
+          Impact</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Measuring Our Community Footprint
         </h2>
-        <p class="text-sm sm:text-base text-[#031b33] font-medium">
+        <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium">
           Through student dedication and community trust, Oasis GEC Idukki continues to extend its reach.
         </p>
       </div>
 
       <!-- Counter Grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
         <!-- Metric 1 -->
-        <div class="glass-card p-8 rounded-3xl text-center space-y-2">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-4 font-bold">
-            <i data-lucide="users" class="w-6 h-6"></i>
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
+            <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <p class="text-4xl sm:text-5xl font-extrabold font-heading text-[#031b33] counter-value" data-target="250">0</p>
-          <p class="text-sm font-extrabold text-[#031b33]">Active Volunteers</p>
-          <p class="text-xs text-[#1e3b5e] font-semibold">Student & Faculty Team</p>
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#031b33] counter-value"
+            data-target="250">0
+          </p>
+          <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Active Volunteers</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Student & Faculty Team</p>
         </div>
 
         <!-- Metric 2 -->
-        <div class="glass-card p-8 rounded-3xl text-center space-y-2">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-4 font-bold">
-            <i data-lucide="home" class="w-6 h-6"></i>
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
+            <i data-lucide="home" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <p class="text-4xl sm:text-5xl font-extrabold font-heading text-[#031b33] counter-value" data-target="500">0</p>
-          <p class="text-sm font-extrabold text-[#031b33]">Families Supported</p>
-          <p class="text-xs text-[#1e3b5e] font-semibold">Across Idukki District</p>
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#031b33] counter-value"
+            data-target="500">0
+          </p>
+          <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Families Supported</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Across Idukki District</p>
         </div>
 
         <!-- Metric 3 -->
-        <div class="glass-card p-8 rounded-3xl text-center space-y-2">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-4 font-bold">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
+            <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <p class="text-4xl sm:text-5xl font-extrabold font-heading text-[#031b33] counter-value" data-target="15">0</p>
-          <p class="text-sm font-extrabold text-[#031b33]">Annual Events</p>
-          <p class="text-xs text-[#1e3b5e] font-semibold">Fests & Awareness Drives</p>
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#031b33] counter-value"
+            data-target="15">0
+          </p>
+          <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Annual Events</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Fests & Awareness Drives</p>
         </div>
 
         <!-- Metric 4 -->
-        <div class="glass-card p-8 rounded-3xl text-center space-y-2">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-4 font-bold">
-            <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+          <div
+            class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
+            <i data-lucide="heart-pulse" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <p class="text-4xl sm:text-5xl font-extrabold font-heading text-[#031b33] counter-value" data-target="40">0</p>
-          <p class="text-sm font-extrabold text-[#031b33]">Outreach Drives</p>
-          <p class="text-xs text-[#1e3b5e] font-semibold">Care Kits & Home Visits</p>
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#031b33] counter-value"
+            data-target="40">0
+          </p>
+          <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Outreach Drives</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Care Kits & Home Visits</p>
         </div>
 
       </div>
@@ -487,60 +758,68 @@
   </section>
 
   <!-- ==================== VOLUNTEER ONBOARDING FORM ==================== -->
-  <section id="volunteer" class="py-24 bg-[#92EEFF] border-t-4 border-[#D8FFC5]">
+  <section id="volunteer" class="py-12 sm:py-16 md:py-24 bg-[#92EEFF] border-t-4 border-[#D8FFC5]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
-        <span class="px-4 py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Join The Movement</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-[#031b33]">
+
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Join
+          The Movement</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Become an Oasis Volunteer
         </h2>
-        <p class="text-sm sm:text-base text-[#031b33] font-medium">
+        <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium">
           Are you a student at GEC Idukki? Register below to join our active palliative volunteer team.
         </p>
       </div>
 
       <!-- Registration Form Card -->
-      <div class="p-8 sm:p-12 rounded-3xl bg-[#30AFFF] border-4 border-[#D8FFC5] shadow-2xl relative">
-        <form id="volunteer-form" class="space-y-8">
-          
+      <div
+        class="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#30AFFF] border-3 sm:border-4 border-[#D8FFC5] shadow-2xl relative">
+        <form id="volunteer-form" class="space-y-6 sm:space-y-8">
+
           <!-- Photo Upload Section with Preview -->
-          <div class="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b-2 border-[#92EEFF]">
-            <div class="relative w-24 h-24 rounded-full border-4 border-dashed border-[#D8FFC5] flex items-center justify-center bg-[#92EEFF] overflow-hidden shrink-0 group">
+          <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pb-6 border-b-2 border-[#92EEFF]">
+            <div
+              class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-dashed border-[#D8FFC5] flex items-center justify-center bg-[#92EEFF] overflow-hidden shrink-0 group">
               <div id="photo-preview" class="absolute inset-0 photo-preview-box hidden"></div>
               <div id="photo-placeholder" class="flex flex-col items-center text-[#031b33]">
-                <i data-lucide="camera" class="w-8 h-8"></i>
+                <i data-lucide="camera" class="w-6 h-6 sm:w-8 sm:h-8"></i>
                 <span class="text-[10px] mt-1 font-bold">Add Photo</span>
               </div>
             </div>
 
             <div class="text-center sm:text-left space-y-2">
-              <label for="photo-input" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] text-xs font-bold cursor-pointer transition-colors border border-[#C4F7CA]">
+              <label for="photo-input"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] text-xs font-bold cursor-pointer transition-colors border border-[#C4F7CA]">
                 <i data-lucide="upload" class="w-4 h-4"></i>
                 <span>Upload Profile Photo</span>
               </label>
               <input type="file" id="photo-input" accept="image/*" class="hidden">
-              <p class="text-xs text-[#031b33] font-semibold">Optional profile picture for volunteer ID badge preview.</p>
+              <p class="text-xs text-[#031b33] font-semibold">Optional profile picture for volunteer ID badge preview.
+              </p>
             </div>
           </div>
 
           <!-- Input Fields Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-            
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+
             <!-- Full Name -->
-            <div class="space-y-2">
-              <label for="vol-name" class="block text-sm font-bold text-[#031b33]">
+            <div class="space-y-1.5 sm:space-y-2">
+              <label for="vol-name" class="block text-xs sm:text-sm font-bold text-[#031b33]">
                 Full Name <span class="text-rose-600">*</span>
               </label>
-              <input type="text" id="vol-name" required placeholder="e.g. Anjali Nair" class="w-full px-4 py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-sm outline-none transition-all placeholder-[#1e3b5e]">
+              <input type="text" id="vol-name" required placeholder="e.g. Anjali Nair"
+                class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-xs sm:text-sm outline-none transition-all placeholder-[#1e3b5e]">
             </div>
 
             <!-- Department -->
-            <div class="space-y-2">
-              <label for="vol-dept" class="block text-sm font-bold text-[#031b33]">
+            <div class="space-y-1.5 sm:space-y-2">
+              <label for="vol-dept" class="block text-xs sm:text-sm font-bold text-[#031b33]">
                 Department <span class="text-rose-600">*</span>
               </label>
-              <select id="vol-dept" required class="w-full px-4 py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-sm outline-none transition-all">
+              <select id="vol-dept" required
+                class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-xs sm:text-sm outline-none transition-all">
                 <option value="" disabled selected>Select Department</option>
                 <option value="CSE">Computer Science & Engg (CSE)</option>
                 <option value="ECE">Electronics & Comm. Engg (ECE)</option>
@@ -551,11 +830,12 @@
             </div>
 
             <!-- Academic Year -->
-            <div class="space-y-2">
-              <label for="vol-year" class="block text-sm font-bold text-[#031b33]">
+            <div class="space-y-1.5 sm:space-y-2">
+              <label for="vol-year" class="block text-xs sm:text-sm font-bold text-[#031b33]">
                 Academic Year <span class="text-rose-600">*</span>
               </label>
-              <select id="vol-year" required class="w-full px-4 py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-sm outline-none transition-all">
+              <select id="vol-year" required
+                class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-xs sm:text-sm outline-none transition-all">
                 <option value="" disabled selected>Select Academic Year</option>
                 <option value="1st Year">1st Year (S1 / S2)</option>
                 <option value="2nd Year">2nd Year (S3 / S4)</option>
@@ -565,19 +845,21 @@
             </div>
 
             <!-- Phone / WhatsApp Number -->
-            <div class="space-y-2">
-              <label for="vol-phone" class="block text-sm font-bold text-[#031b33]">
+            <div class="space-y-1.5 sm:space-y-2">
+              <label for="vol-phone" class="block text-xs sm:text-sm font-bold text-[#031b33]">
                 WhatsApp Contact Number <span class="text-rose-600">*</span>
               </label>
-              <input type="tel" id="vol-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-sm outline-none transition-all placeholder-[#1e3b5e]">
+              <input type="tel" id="vol-phone" required placeholder="+91 98765 43210"
+                class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#92EEFF] border-2 border-[#D8FFC5] focus:border-[#031b33] text-[#031b33] font-semibold text-xs sm:text-sm outline-none transition-all placeholder-[#1e3b5e]">
             </div>
 
           </div>
 
           <!-- Submit Button -->
-          <div class="pt-4 text-center">
-            <button type="submit" id="submit-volunteer-btn" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-base shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto border border-[#C4F7CA]">
-              <i data-lucide="check-circle" class="w-5 h-5"></i>
+          <div class="pt-2 sm:pt-4 text-center">
+            <button type="submit" id="submit-volunteer-btn"
+              class="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-sm sm:text-base shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto border border-[#C4F7CA]">
+              <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
               <span>Submit Volunteer Application</span>
             </button>
           </div>
@@ -588,22 +870,188 @@
     </div>
   </section>
 
+  <!-- ==================== OUR GALLERY SECTION ==================== -->
+  <section id="gallery" class="py-12 sm:py-16 md:py-24 bg-[#30AFFF] border-t-4 border-[#D8FFC5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <span
+          class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
+          Visual Memories
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+          Our Gallery
+        </h2>
+        <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium leading-relaxed">
+          Explore moments of compassion, student fellowship, and community service from Oasis Pain & Palliative Care Unit at GEC Idukki.
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- Photo 1 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/hero-slide-1.jpg"
+          data-title="Hrudayathil Ennum - Farewell & Gratitude"
+          data-tag="Farewell Event"
+          data-desc="Oasis GEC Idukki team gathering to celebrate lifelong fellowship, gratitude, and palliative service.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/hero-slide-1.jpg" alt="Oasis Farewell Event GEC Idukki"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#C4F7CA]">
+              Farewell Event
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Hrudayathil Ennum - Farewell</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Always in our hearts • OASIS GEC Idukki</p>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/hero-slide-2.jpg"
+          data-title="Oasis Farewell Celebration Group Photo"
+          data-tag="Celebration"
+          data-desc="Volunteers united with red balloon celebrations celebrating student unity and service impact.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/hero-slide-2.jpg" alt="Oasis Farewell Group Celebration"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#D8FFC5]">
+              Celebration
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Farewell Celebration</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Student Volunteers Gathering • GEC Idukki</p>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/hero-palliative.jpg"
+          data-title="Palliative Companion Care Visit"
+          data-tag="Outreach"
+          data-desc="Student volunteers spending meaningful quality time with homebound patients in Painavu.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/hero-palliative.jpg" alt="Palliative Companion Care"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#C4F7CA]">
+              Outreach
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Palliative Care Companion Visit</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Home Care Support • Idukki</p>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/harsham-fest.jpg"
+          data-title="Harsham Annual Palliative Fest"
+          data-tag="Flagship Event"
+          data-desc="Inter-college palliative awareness fest featuring student competitions and seminars.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/harsham-fest.jpg" alt="Harsham Fest GEC Idukki"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#D8FFC5]">
+              Flagship Event
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Harsham Palliative Fest</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Annual Campus Fest • GEC Idukki</p>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/outreach-care.jpg"
+          data-title="Old Age Home Outreach"
+          data-tag="Community Outreach"
+          data-desc="Regular student visits to elderly homes in Painavu providing joy and companionship.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/outreach-care.jpg" alt="Old Age Home Outreach"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#C4F7CA]">
+              Community Outreach
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Old Age Home Outreach</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Elderly Companion Visits • Idukki</p>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          data-image="assets/festive-care.jpg"
+          data-title="Festive Care Drives"
+          data-tag="Festive Drive"
+          data-desc="Hand-delivering Onam feast kits and Christmas gifts directly to palliative patients' homes.">
+          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
+            <img src="assets/festive-care.jpg" alt="Festive Onam Care Drive"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#D8FFC5]">
+              Festive Drive
+            </span>
+            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="p-5 text-left space-y-1">
+            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Festive Care Kit Distribution</h4>
+            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Onam & Christmas Joy • Oasis Unit</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ==================== CONTACT & FOOTER ==================== -->
   <footer id="contact" class="bg-[#92EEFF] text-[#031b33] pt-16 pb-12 border-t-4 border-[#D8FFC5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b-2 border-[#D8FFC5] text-left">
-        
+
         <!-- Address & Identity -->
         <div class="md:col-span-5 space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#D8FFC5] flex items-center justify-center font-bold text-[#031b33]">
-              <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+            <div
+              class="w-11 h-11 rounded-2xl bg-white p-1 flex items-center justify-center font-bold text-[#031b33] border border-[#D8FFC5] shadow-sm overflow-hidden">
+              <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain">
             </div>
             <span class="font-heading font-extrabold text-xl text-[#031b33]">Oasis GEC Idukki</span>
           </div>
           <p class="text-sm text-[#031b33] font-medium leading-relaxed max-w-md">
-            Oasis Pain and Palliative Care Unit is a student-administered palliative care organization at Government Engineering College Idukki, Painavu.
+            Oasis Pain and Palliative Care Unit is a student-administered palliative care organization at Government
+            Engineering College Idukki, Painavu.
           </p>
           <div class="flex items-start gap-3 text-sm text-[#031b33] font-semibold pt-2">
             <i data-lucide="map-pin" class="w-5 h-5 text-[#031b33] shrink-0 mt-0.5"></i>
@@ -637,13 +1085,16 @@
         <div class="md:col-span-3 space-y-4">
           <h4 class="font-heading font-extrabold text-[#031b33] text-base">Connect With Oasis</h4>
           <div class="flex items-center gap-4 pt-1">
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
+              class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
               <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+              class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
               <i data-lucide="facebook" class="w-5 h-5"></i>
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"
+              class="w-10 h-10 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold transition-colors">
               <i data-lucide="youtube" class="w-5 h-5"></i>
             </a>
           </div>
@@ -668,33 +1119,40 @@
   </footer>
 
   <!-- ==================== INTERACTIVE INITIATIVE MODAL ==================== -->
-  <div id="initiative-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-[#031b33]/70 backdrop-blur-md">
-    <div class="w-full max-w-2xl bg-[#92EEFF] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[90vh]">
-      
+  <div id="initiative-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-[#031b33]/70 backdrop-blur-md">
+    <div
+      class="w-full max-w-2xl bg-[#92EEFF] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[92vh]">
+
       <!-- Modal Header Image -->
-      <div class="relative h-64 sm:h-72 overflow-hidden shrink-0 border-b-2 border-[#D8FFC5]">
+      <div class="relative h-48 sm:h-64 md:h-72 overflow-hidden shrink-0 border-b-2 border-[#D8FFC5]">
         <img id="modal-img" src="" alt="Initiative Image" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent"></div>
-        <button id="close-modal-btn" class="absolute top-4 right-4 p-2 rounded-full bg-[#D8FFC5] text-[#031b33] font-bold hover:bg-[#C4F7CA] transition-colors">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/85 via-[#031b33]/20 to-transparent"></div>
+        <button id="close-modal-btn"
+          class="absolute top-3 sm:top-4 right-3 sm:right-4 p-1.5 sm:p-2 rounded-full bg-[#D8FFC5] text-[#031b33] font-bold hover:bg-[#C4F7CA] transition-colors">
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
-        <div class="absolute bottom-4 left-6 right-6">
-          <span id="modal-tag" class="px-3 py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-xs font-extrabold shadow-md border border-[#C4F7CA]">Tag</span>
-          <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-1">Title</h3>
+        <div class="absolute bottom-3 sm:bottom-4 left-4 sm:left-6 right-4 sm:right-6">
+          <span id="modal-tag"
+            class="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-xs font-extrabold shadow-md border border-[#C4F7CA]">Tag</span>
+          <h3 id="modal-title" class="text-xl sm:text-2xl md:text-3xl font-extrabold font-heading text-white mt-1">Title
+          </h3>
         </div>
       </div>
 
       <!-- Modal Content Body -->
-      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+      <div class="p-4 sm:p-6 md:p-8 overflow-y-auto space-y-4 sm:space-y-6">
         <div>
-          <h4 id="modal-subtitle" class="text-base font-extrabold text-[#031b33]">Subtitle</h4>
-          <p id="modal-description" class="text-sm text-[#031b33] font-medium mt-2 leading-relaxed">
+          <h4 id="modal-subtitle" class="text-sm sm:text-base font-extrabold text-[#031b33]">Subtitle</h4>
+          <p id="modal-description"
+            class="text-xs sm:text-sm text-[#031b33] font-medium mt-1.5 sm:mt-2 leading-relaxed">
             Description
           </p>
         </div>
 
-        <div class="space-y-3">
-          <h5 class="text-sm font-extrabold font-heading text-[#031b33] uppercase tracking-wider">Key Highlights</h5>
+        <div class="space-y-2.5 sm:space-y-3">
+          <h5 class="text-xs sm:text-sm font-extrabold font-heading text-[#031b33] uppercase tracking-wider">Key
+            Highlights</h5>
           <ul id="modal-highlights" class="space-y-2">
             <!-- Dynamic highlights inserted via JS -->
           </ul>
@@ -702,11 +1160,13 @@
       </div>
 
       <!-- Modal Footer -->
-      <div class="p-4 sm:p-6 border-t-2 border-[#D8FFC5] bg-[#30AFFF] flex items-center justify-between shrink-0">
-        <a href="#volunteer" id="close-modal-footer-btn" class="px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] text-xs font-extrabold shadow-md transition-colors border border-[#C4F7CA]">
+      <div class="p-3.5 sm:p-5 border-t-2 border-[#D8FFC5] bg-[#30AFFF] flex items-center justify-between shrink-0">
+        <a href="#volunteer" id="close-modal-footer-btn"
+          class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] text-xs font-extrabold shadow-md transition-colors border border-[#C4F7CA]">
           Join This Initiative
         </a>
-        <button onclick="document.getElementById('initiative-modal').classList.add('hidden')" class="px-4 py-2 rounded-xl text-xs font-bold text-[#031b33] hover:underline">
+        <button onclick="document.getElementById('initiative-modal').classList.add('hidden')"
+          class="px-3 sm:px-4 py-2 rounded-xl text-xs font-bold text-[#031b33] hover:underline">
           Close
         </button>
       </div>
@@ -714,8 +1174,46 @@
     </div>
   </div>
 
+  <!-- ==================== GALLERY LIGHTBOX MODAL ==================== -->
+  <div id="gallery-lightbox-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-[#031b33]/85 backdrop-blur-md">
+    <div
+      class="w-full max-w-4xl bg-[#92EEFF] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[92vh] relative">
+
+      <!-- Modal Close Button -->
+      <button id="close-gallery-modal-btn"
+        class="absolute top-3 sm:top-4 right-3 sm:right-4 z-30 p-2 rounded-full bg-[#D8FFC5] text-[#031b33] font-bold hover:bg-[#C4F7CA] transition-colors shadow-lg border border-[#C4F7CA]">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Lightbox Main Image Container -->
+      <div class="relative w-full h-[300px] sm:h-[420px] md:h-[480px] bg-[#031b33] flex items-center justify-center overflow-hidden">
+        <img id="gallery-lightbox-img" src="" alt="Gallery Image Preview" class="w-full h-full object-contain">
+      </div>
+
+      <!-- Lightbox Content Details Footer -->
+      <div class="p-4 sm:p-6 bg-[#30AFFF] border-t-2 border-[#D8FFC5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shrink-0">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span id="gallery-lightbox-tag" class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold border border-[#C4F7CA]">Tag</span>
+            <span class="text-xs font-semibold text-[#031b33]">Oasis GEC Idukki Gallery</span>
+          </div>
+          <h3 id="gallery-lightbox-title" class="text-base sm:text-xl font-extrabold font-heading text-[#031b33]">Title</h3>
+          <p id="gallery-lightbox-desc" class="text-xs sm:text-sm text-[#031b33] font-medium leading-relaxed">Description</p>
+        </div>
+
+        <button id="close-gallery-modal-footer"
+          class="px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] text-xs font-extrabold shadow-md transition-colors border border-[#C4F7CA] shrink-0 self-end sm:self-auto">
+          Close Preview
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ==================== TOAST NOTIFICATION ==================== -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md opacity-0 translate-y-12 transition-all duration-300 pointer-events-none bg-[#D8FFC5] text-[#031b33] border-2 border-[#C4F7CA]">
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md opacity-0 translate-y-12 transition-all duration-300 pointer-events-none bg-[#D8FFC5] text-[#031b33] border-2 border-[#C4F7CA]">
     <i data-lucide="check-circle-2" class="w-5 h-5 text-[#031b33]"></i>
     <span id="toast-msg" class="text-sm font-extrabold">Notification Message</span>
   </div>
@@ -723,4 +1221,5 @@
   <!-- JavaScript File -->
   <script src="js/main.js"></script>
 </body>
+
 </html>
