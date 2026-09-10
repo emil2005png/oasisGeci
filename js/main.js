@@ -407,7 +407,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- 8. Gallery Lightbox Modal Handler ---
+  // --- 8. Committee Carousel ---
+  const commTrack = document.getElementById('committee-track');
+  const commPrev = document.getElementById('comm-prev');
+  const commNext = document.getElementById('comm-next');
+  const COMM_PAGES = 3;
+  let commPage = 0;
+
+  function updateCommCarousel() {
+    if (!commTrack) return;
+    commTrack.style.transform = `translateX(-${(commPage * 100) / COMM_PAGES}%)`;
+    if (commPrev) commPrev.disabled = commPage === 0;
+    if (commNext) commNext.disabled = commPage === COMM_PAGES - 1;
+  }
+
+  if (commPrev) commPrev.addEventListener('click', () => { if (commPage > 0) { commPage--; updateCommCarousel(); } });
+  if (commNext) commNext.addEventListener('click', () => { if (commPage < COMM_PAGES - 1) { commPage++; updateCommCarousel(); } });
+  updateCommCarousel();
+
+  // --- 9. Gallery Lightbox Modal Handler ---
   const galleryItems = document.querySelectorAll('.gallery-item');
   const galleryModal = document.getElementById('gallery-lightbox-modal');
   const galleryImg = document.getElementById('gallery-lightbox-img');
@@ -453,4 +471,63 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === galleryModal) closeGalleryModal();
     });
   }
+
+  // --- 10. Buttery Smooth Scroll Reveal Intersection Observer ---
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.12
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
+
+  // --- 11. Interactive Ripple Effect on Click ---
+  function createRipple(e, target) {
+    const rect = target.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple-wave');
+    const diameter = Math.max(rect.width, rect.height);
+    const radius = diameter / 2;
+
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${e.clientX - rect.left - radius}px`;
+    ripple.style.top = `${e.clientY - rect.top - radius}px`;
+
+    if (!target.classList.contains('ripple-target')) {
+      target.classList.add('ripple-target');
+    }
+
+    const existingRipple = target.querySelector('.ripple-wave');
+    if (existingRipple) {
+      existingRipple.remove();
+    }
+
+    target.appendChild(ripple);
+
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
+  }
+
+  const interactiveTargets = document.querySelectorAll(
+    'button, .open-initiative-modal, a.inline-flex, a.flex, .glass-card, .gallery-item'
+  );
+  interactiveTargets.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      createRipple(e, btn);
+    });
+  });
 });

@@ -18,8 +18,12 @@
   --text-muted: #1e3b5e;
   --card-bg: #92EEFF;
   --card-border: #D8FFC5;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* ==================== BASE ==================== */
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text-dark);
@@ -33,79 +37,367 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: var(--text-dark);
 }
 
-/* Specific Brand Layout Helpers */
-.bg-brand-primary {
-  background-color: #30AFFF !important;
-}
+/* ==================== BRAND HELPERS ==================== */
+.bg-brand-primary { background-color: #30AFFF !important; }
+.bg-brand-section { background-color: #92EEFF !important; }
+.bg-brand-accent1 { background-color: #D8FFC5 !important; }
+.bg-brand-accent2 { background-color: #C4F7CA !important; }
+.text-brand-dark { color: #031b33 !important; }
+.text-brand-muted { color: #1e3b5e !important; }
+.border-brand-accent1 { border-color: #D8FFC5 !important; }
+.border-brand-accent2 { border-color: #C4F7CA !important; }
+.border-brand-primary { border-color: #30AFFF !important; }
 
-.bg-brand-section {
-  background-color: #92EEFF !important;
-}
-
-.bg-brand-accent1 {
-  background-color: #D8FFC5 !important;
-}
-
-.bg-brand-accent2 {
-  background-color: #C4F7CA !important;
-}
-
-.text-brand-dark {
-  color: #031b33 !important;
-}
-
-.text-brand-muted {
-  color: #1e3b5e !important;
-}
-
-.border-brand-accent1 {
-  border-color: #D8FFC5 !important;
-}
-
-.border-brand-accent2 {
-  border-color: #C4F7CA !important;
-}
-
-.border-brand-primary {
-  border-color: #30AFFF !important;
-}
-
-/* Glassmorphism Cards & Nav tuned to user colors */
+/* ==================== GLASSMORPHISM ==================== */
 .glass-nav {
   background-color: rgba(146, 238, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 2px solid #D8FFC5;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .glass-card {
   background-color: #92EEFF;
   border: 2px solid #D8FFC5;
   box-shadow: 0 10px 25px -5px rgba(3, 27, 51, 0.1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.5s var(--ease-smooth), box-shadow 0.5s var(--ease-smooth), border-color 0.4s ease;
+  will-change: transform;
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.01);
   border-color: #C4F7CA;
-  box-shadow: 0 18px 30px -5px rgba(3, 27, 51, 0.15);
+  box-shadow: 0 24px 48px -8px rgba(3, 27, 51, 0.18);
 }
 
-/* Secondary Card Variant (Primary Bg Card) */
+.glass-card:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 0.1s;
+}
+
 .glass-card-primary {
   background-color: #30AFFF;
   border: 2px solid #C4F7CA;
   color: #031b33;
+  transition: transform 0.5s var(--ease-smooth), box-shadow 0.5s var(--ease-smooth), border-color 0.4s ease;
+  will-change: transform;
 }
 
-/* Gradient Text using exact user palette */
+.glass-card-primary:hover {
+  box-shadow: 0 20px 40px -8px rgba(3, 27, 51, 0.15);
+}
+
+/* ==================== GRADIENT TEXT ==================== */
 .gradient-text {
   background: linear-gradient(135deg, #031b33 0%, #06457a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Floating animation */
+/* ==================== HERO HANDS COMING TOGETHER ANIMATION ==================== */
+.hero-hands-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: #031b33;
+}
+
+.hero-hand-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.hero-hand-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Left Hand Layer: Reaches from initial bottom-left direction towards center, closing the gap */
+.hero-hand-left {
+  -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 44%, rgba(0,0,0,0) 58%);
+  mask-image: linear-gradient(135deg, rgba(0,0,0,1) 44%, rgba(0,0,0,0) 58%);
+  animation: handLeftReachAndHold 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             handHoldBreathingLeft 7s 2.4s ease-in-out infinite alternate;
+}
+
+/* Right Hand Layer: Reaches from initial top-right direction towards center, closing the gap */
+.hero-hand-right {
+  -webkit-mask-image: linear-gradient(315deg, rgba(0,0,0,1) 44%, rgba(0,0,0,0) 58%);
+  mask-image: linear-gradient(315deg, rgba(0,0,0,1) 44%, rgba(0,0,0,0) 58%);
+  animation: handRightReachAndHold 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             handHoldBreathingRight 7s 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes handLeftReachAndHold {
+  0% {
+    transform: translate3d(-100px, 70px, 0) scale(0.95);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  25% {
+    opacity: 1;
+    filter: blur(1.5px);
+  }
+  75% {
+    transform: translate3d(24px, -16px, 0) scale(1.02);
+    filter: blur(0px);
+  }
+  88% {
+    transform: translate3d(18px, -12px, 0) scale(1.005);
+  }
+  100% {
+    transform: translate3d(20px, -13px, 0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes handRightReachAndHold {
+  0% {
+    transform: translate3d(100px, -70px, 0) scale(0.95);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  25% {
+    opacity: 1;
+    filter: blur(1.5px);
+  }
+  75% {
+    transform: translate3d(-24px, 16px, 0) scale(1.02);
+    filter: blur(0px);
+  }
+  88% {
+    transform: translate3d(-18px, 12px, 0) scale(1.005);
+  }
+  100% {
+    transform: translate3d(-20px, 13px, 0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Gentle synchronized breathing/holding together once joined */
+@keyframes handHoldBreathingLeft {
+  0% {
+    transform: translate3d(20px, -13px, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -16px, 0) scale(1.018);
+  }
+  100% {
+    transform: translate3d(18px, -11px, 0) scale(0.995);
+  }
+}
+
+@keyframes handHoldBreathingRight {
+  0% {
+    transform: translate3d(-20px, 13px, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, 16px, 0) scale(1.018);
+  }
+  100% {
+    transform: translate3d(-18px, 11px, 0) scale(0.995);
+  }
+}
+
+/* Connection Touch Glow / Radiance at the meeting point */
+.hands-connection-glow {
+  position: absolute;
+  left: 49%;
+  top: 58%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(216, 255, 197, 0.9) 0%, rgba(48, 175, 255, 0.5) 45%, transparent 70%);
+  filter: blur(10px);
+  transform: translate(-50%, -50%) scale(0);
+  animation: connectionGlowBloom 2.6s 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             connectionGlowPulse 4s 3.8s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes connectionGlowBloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  55% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes connectionGlowPulse {
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@keyframes heroOverlayFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.hero-overlay-anim {
+  animation: heroOverlayFade 1.8s 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* ==================== BUTTERY SMOOTH SCROLL-REVEAL SYSTEM ==================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.revealed {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+.reveal-left.revealed {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+.reveal-right.revealed {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.reveal-scale {
+  transform: scale(0.92);
+}
+.reveal-scale.revealed {
+  transform: scale(1) !important;
+}
+
+.reveal-pop {
+  transform: translateY(28px) scale(0.93);
+  transition-timing-function: cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+.reveal-pop.revealed {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+/* Fluid Stagger Delays */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+.reveal-delay-7 { transition-delay: 0.56s; }
+.reveal-delay-8 { transition-delay: 0.64s; }
+
+/* ==================== HERO CONTENT ANIMATIONS ==================== */
+@keyframes heroTagDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroParagraphReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPillPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+  }
+  60% {
+    transform: scale(1.05) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-tag-anim {
+  opacity: 0;
+  animation: heroTagDrop 0.8s 0.6s var(--ease-bounce) forwards;
+}
+
+.hero-title-anim {
+  opacity: 0;
+  animation: heroTitleReveal 1s 0.9s var(--ease-out-expo) forwards;
+}
+
+.hero-paragraph-anim {
+  opacity: 0;
+  animation: heroParagraphReveal 0.9s 1.3s var(--ease-out-expo) forwards;
+}
+
+.hero-pill-anim-1 {
+  opacity: 0;
+  animation: heroPillPop 0.7s 1.6s var(--ease-bounce) forwards;
+}
+
+.hero-pill-anim-2 {
+  opacity: 0;
+  animation: heroPillPop 0.7s 1.8s var(--ease-bounce) forwards;
+}
+
+/* ==================== FLOATING ANIMATION ==================== */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
@@ -115,58 +407,218 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Modal Overlay Animation */
+/* ==================== MODAL ANIMATIONS ==================== */
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.9) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .animate-modal {
-  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalFadeIn 0.4s var(--ease-bounce) forwards;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* ==================== BUTTON & BOX RIPPLE & PRESS MICRO-INTERACTIONS ==================== */
+.ripple-target {
+  position: relative;
+  overflow: hidden;
 }
 
-::-webkit-scrollbar-track {
-  background: #30AFFF;
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(216, 255, 197, 0.4) 60%, transparent 100%);
+  transform: scale(0);
+  animation: rippleSpread 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  pointer-events: none;
+  z-index: 10;
 }
 
+@keyframes rippleSpread {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+a[href], button, .open-initiative-modal, .glass-card, .glass-card-primary, .gallery-item {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.2s ease,
+              opacity 0.2s ease !important;
+}
+
+/* Crisp button active press */
+button:active,
+a[href].inline-flex:active,
+a[href].flex:active,
+.open-initiative-modal:active {
+  transform: scale(0.95) translateY(1px) !important;
+  box-shadow: 0 4px 12px -2px rgba(3, 27, 51, 0.15) !important;
+  transition-duration: 0.08s !important;
+}
+
+/* Glass cards active press feedback */
+.glass-card:active,
+.glass-card-primary:active,
+.gallery-item:active {
+  transform: scale(0.985) translateY(-2px) !important;
+  transition-duration: 0.1s !important;
+}
+
+/* Subtle pulse for primary CTA buttons */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(216, 255, 197, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(216, 255, 197, 0); }
+}
+
+.cta-pulse {
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+/* Nav link hover underline animation */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 1px;
+  transition: width 0.35s var(--ease-smooth);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ==================== SECTION DIVIDER SHIMMER ==================== */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.section-divider-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ==================== COUNTER NUMBER ANIMATION ==================== */
+.counter-value {
+  transition: transform 0.3s var(--ease-bounce);
+}
+
+.counter-value.counting {
+  transform: scale(1.1);
+}
+
+/* ==================== GALLERY ITEM HOVER ==================== */
+.gallery-item {
+  transition: transform 0.5s var(--ease-smooth), box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 50px -10px rgba(3, 27, 51, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item img {
+  transition: transform 0.7s var(--ease-smooth);
+}
+
+/* ==================== FORM INPUT FOCUS ANIMATION ==================== */
+input, select, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #D8FFC5 !important;
+  box-shadow: 0 0 0 4px rgba(216, 255, 197, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+/* ==================== COMMITTEE CAROUSEL ==================== */
+#committee-track {
+  transition: transform 0.6s var(--ease-out-expo);
+  will-change: transform;
+}
+
+#comm-prev, #comm-next {
+  transition: transform 0.25s var(--ease-smooth), opacity 0.3s ease, background-color 0.2s ease !important;
+}
+
+#comm-prev:hover, #comm-next:hover {
+  transform: scale(1.15);
+}
+
+#comm-prev:active, #comm-next:active {
+  transform: scale(0.9) !important;
+}
+
+#comm-prev:disabled, #comm-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ==================== CUSTOM SCROLLBAR ==================== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #30AFFF; }
 ::-webkit-scrollbar-thumb {
   background: #D8FFC5;
   border-radius: 5px;
   border: 2px solid #30AFFF;
+  transition: background 0.3s ease;
 }
+::-webkit-scrollbar-thumb:hover { background: #C4F7CA; }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #C4F7CA;
-}
-
-/* Image preview box */
+/* ==================== UTILITY ==================== */
 .photo-preview-box {
   background-size: cover;
   background-position: center;
 }
 
-/* Toast alert notification */
 #toast {
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* ==================== FLUID RESPONSIVE TYPOGRAPHY ==================== */
+/* ==================== SMOOTH SCROLL ==================== */
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 380px) {
-  html {
-    font-size: 14px;
-  }
+  html { font-size: 14px; }
 }
 
+/* ==================== FLUID RESPONSIVE TYPOGRAPHY ==================== */
 h1, .hero-title-responsive {
   font-size: clamp(1.75rem, 3.8vw + 0.8rem, 3.5rem) !important;
   line-height: 1.25 !important;
@@ -194,7 +646,6 @@ p, .body-text-responsive {
   font-size: clamp(0.7rem, 0.4vw + 0.55rem, 0.875rem);
 }
 
-/* Prevent horizontal overflow on any device screen */
 img, svg, video, iframe {
   max-width: 100%;
 }
@@ -204,3 +655,34 @@ img, svg, video, iframe {
   word-break: break-word;
 }
 
+/* ==================== PARALLAX-LIKE DEPTH ON SECTIONS ==================== */
+section {
+  position: relative;
+}
+
+/* ==================== PREFERS REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-pop, .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-hand-layer {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .hands-connection-glow {
+    opacity: 0.5 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    animation: none !important;
+  }
+  .hero-overlay-anim { opacity: 1; }
+  .hero-tag-anim, .hero-title-anim, .hero-paragraph-anim,
+  .hero-pill-anim-1, .hero-pill-anim-2 { opacity: 1; }
+}

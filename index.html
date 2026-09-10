@@ -73,7 +73,6 @@
         <a href="#about" class="hover:underline transition-colors" id="nav-link-about">About</a>
         <a href="#committee" class="hover:underline transition-colors" id="nav-link-committee">Committee</a>
         <a href="#initiatives" class="hover:underline transition-colors" id="nav-link-initiatives">Initiatives</a>
-        <a href="#harsham" class="hover:underline transition-colors" id="nav-link-harsham">Harsham Fest</a>
         <a href="#impact" class="hover:underline transition-colors" id="nav-link-impact">Impact</a>
         <a href="#gallery" class="hover:underline transition-colors" id="nav-link-gallery">Gallery</a>
         <a href="#volunteer" class="hover:underline transition-colors" id="nav-link-volunteer">Join Us</a>
@@ -84,7 +83,7 @@
       <div class="flex items-center gap-3">
         <!-- Volunteer CTA Button (Desktop) -->
         <a href="#volunteer"
-          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm shadow-md transition-all duration-300 hover:-translate-y-0.5 border border-[#C4F7CA]"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold text-sm shadow-md transition-all duration-300 hover:-translate-y-0.5 border border-[#C4F7CA] cta-pulse"
           id="nav-cta-btn">
           <i data-lucide="user-plus" class="w-4 h-4"></i>
           <span>Become a Volunteer</span>
@@ -123,7 +122,6 @@
           <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">About Oasis</a>
           <a href="#committee" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Committee Members</a>
           <a href="#initiatives" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Key Initiatives</a>
-          <a href="#harsham" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Harsham Fest</a>
           <a href="#impact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Impact Metrics</a>
           <a href="#gallery" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Our Gallery</a>
           <a href="#volunteer" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Volunteer Form</a>
@@ -143,25 +141,40 @@
 
   <!-- ==================== HERO SECTION ==================== -->
   <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[#031b33]">
-    <!-- Background Image Layer -->
-    <div class="absolute inset-0 z-0">
-      <img src="assets/hero-bg-hands.jpg" alt="Reaching hands" class="w-full h-full object-cover">
-      <!-- Light overlay for text readability — low opacity to keep image visible -->
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-[#031b33]/40 via-[#031b33]/25 to-[#031b33]/60">
+    <!-- Animated Hands Coming Together & Holding Background -->
+    <div class="hero-hands-container">
+      <!-- Ambient Backdrop -->
+      <div class="absolute inset-0 bg-[#031b33]">
+        <img src="assets/hero-bg-hands.jpg" alt="" class="w-full h-full object-cover opacity-25 filter blur-[2px]">
       </div>
+
+      <!-- Left Hand: Glides in from initial bottom-left direction towards center, closing gap to hold -->
+      <div class="hero-hand-layer hero-hand-left">
+        <img src="assets/hero-bg-hands.jpg" alt="Left reaching hand holding together">
+      </div>
+
+      <!-- Right Hand: Glides in from initial top-right direction towards center, closing gap to hold -->
+      <div class="hero-hand-layer hero-hand-right">
+        <img src="assets/hero-bg-hands.jpg" alt="Right reaching hand holding together">
+      </div>
+
+      <!-- Compassionate Touch Connection Glow at contact point -->
+      <div class="hands-connection-glow"></div>
+
+      <!-- Gradient Overlay for Contrast -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#031b33]/45 via-[#031b33]/25 to-[#031b33]/65 hero-overlay-anim"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
 
       <div
-        class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] text-[#031b33] text-xs sm:text-sm font-bold shadow-md mb-6">
+        class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] text-[#031b33] text-xs sm:text-sm font-bold shadow-md mb-6 hero-tag-anim">
         <img src="assets/oasis-logo.png" alt="Oasis Logo" class="w-5 h-5 object-contain">
         <span>Student-Led Palliative Movement • GEC Idukki</span>
       </div>
 
       <h1
-        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.2] text-white drop-shadow-lg mb-6">
+        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.2] text-white drop-shadow-lg mb-6 hero-title-anim">
         Spreading <span
           class="inline-block bg-[#D8FFC5]/90 px-3 py-1 rounded-xl text-[#031b33] shadow-md">Hope</span>,<br
           class="hidden sm:inline">
@@ -170,7 +183,7 @@
       </h1>
 
       <p
-        class="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_8px_32px_rgba(0,0,0,0.25)] mb-8"
+        class="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_8px_32px_rgba(0,0,0,0.25)] mb-8 hero-paragraph-anim"
         style="box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
         Welcome to OASIS Pain and Palliative Care Unit at Government Engineering College, Idukki — where the precision
         of young engineering minds meets the soft touch of raw human empathy.
@@ -182,7 +195,7 @@
       <!-- Highlight Stats Pills -->
       <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
         <div
-          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] shadow-md">
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] shadow-md hero-pill-anim-1">
           <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#D8FFC5] font-bold">
             <i data-lucide="users" class="w-4 h-4"></i>
           </div>
@@ -193,7 +206,7 @@
         </div>
 
         <div
-          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#C4F7CA]/90 backdrop-blur-sm border border-[#D8FFC5] shadow-md">
+          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#C4F7CA]/90 backdrop-blur-sm border border-[#D8FFC5] shadow-md hero-pill-anim-2">
           <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#C4F7CA] font-bold">
             <i data-lucide="phone-call" class="w-4 h-4"></i>
           </div>
@@ -203,16 +216,6 @@
           </div>
         </div>
 
-        <div
-          class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] shadow-md">
-          <div class="w-9 h-9 rounded-xl bg-[#031b33] flex items-center justify-center text-[#D8FFC5] font-bold">
-            <i data-lucide="award" class="w-4 h-4"></i>
-          </div>
-          <div class="text-left">
-            <p class="text-[11px] text-[#031b33] font-semibold">Flagship Programme</p>
-            <p class="font-extrabold text-sm text-[#031b33]">Harsham</p>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -222,7 +225,7 @@
   <section id="about" class="py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">About
           Oasis Unit</span>
@@ -244,7 +247,7 @@
 
         <!-- Pillar 1 -->
         <div
-          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg reveal reveal-pop reveal-delay-1">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
             <i data-lucide="graduation-cap" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -258,7 +261,7 @@
 
         <!-- Pillar 2 -->
         <div
-          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg reveal reveal-pop reveal-delay-2">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
             <i data-lucide="hand-heart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -272,7 +275,7 @@
 
         <!-- Pillar 3 -->
         <div
-          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg reveal reveal-pop reveal-delay-3">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center font-bold">
             <i data-lucide="box" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -286,7 +289,7 @@
 
         <!-- Pillar 4 -->
         <div
-          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg">
+          class="bg-[#30AFFF] p-5 sm:p-6 md:p-8 rounded-2xl space-y-3 sm:space-y-4 text-left border-2 border-[#D8FFC5] shadow-lg reveal reveal-pop reveal-delay-4">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center font-bold">
             <i data-lucide="stethoscope" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -308,13 +311,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
           Leadership & Governance
         </span>
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
-          Committee Members & Leadership
+          Committee Members 
         </h2>
         <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium leading-relaxed">
           Guiding Oasis Pain & Palliative Care Unit at GEC Idukki with vision, institutional support, and dedicated
@@ -324,19 +327,19 @@
 
       <!-- Part 1: Patrons & Faculty Advisors -->
       <div class="mb-10 sm:mb-14">
-        <div class="flex items-center gap-3 mb-6 pb-2 border-b-2 border-[#D8FFC5]">
+        <div class="flex items-center gap-3 mb-6 pb-2 border-b-2 border-[#D8FFC5] reveal reveal-left">
           <div
             class="w-8 h-8 rounded-xl bg-[#D8FFC5] flex items-center justify-center text-[#031b33] font-bold shadow-sm">
             <i data-lucide="award" class="w-4 h-4"></i>
           </div>
-          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Patrons & Faculty Advisors</h3>
+          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Institutional Advisors</h3>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
           <!-- Member 1: Principal -->
           <div
-            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5] reveal reveal-pop reveal-delay-1">
             <div class="w-full flex flex-col items-center space-y-4">
               <div
                 class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white">
@@ -346,9 +349,9 @@
               <div class="space-y-1">
                 <span
                   class="inline-block px-3 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] font-extrabold border border-[#C4F7CA]">
-                  Patron & Principal
+                  Principal
                 </span>
-                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Dr. Santhosh Kumar</h4>
+                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Dr. Manju Manuel</h4>
                 <p class="text-xs text-[#1e3b5e] font-semibold">Principal, GEC Idukki</p>
               </div>
             </div>
@@ -359,7 +362,7 @@
 
           <!-- Member 2: Staff Advisor -->
           <div
-            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5] reveal reveal-pop reveal-delay-2">
             <div class="w-full flex flex-col items-center space-y-4">
               <div
                 class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white">
@@ -371,7 +374,7 @@
                   class="inline-block px-3 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold border border-[#D8FFC5]">
                   Staff Advisor
                 </span>
-                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Prof. Mubarak A.K.</h4>
+                <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Prince V Jose</h4>
                 <p class="text-xs text-[#1e3b5e] font-semibold">Faculty In-Charge, Oasis Unit</p>
               </div>
             </div>
@@ -382,7 +385,7 @@
 
           <!-- Member 3: Founder & Mentor -->
           <div
-            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5]">
+            class="glass-card-primary rounded-2xl sm:rounded-3xl p-6 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-lg border-2 border-[#D8FFC5] reveal reveal-pop reveal-delay-3">
             <div class="w-full flex flex-col items-center space-y-4">
               <div
                 class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-4 border-[#D8FFC5] shadow-md group-hover:scale-105 transition-transform duration-500 bg-white flex items-center justify-center p-3">
@@ -394,11 +397,11 @@
                   Founder & Chief Mentor
                 </span>
                 <h4 class="text-base sm:text-lg font-extrabold font-heading text-[#031b33] pt-1">Dr. Latha Raj</h4>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Founder, Oasis GEC Idukki (2010)</p>
+                <p class="text-xs text-[#1e3b5e] font-semibold">Founder, Oasis GEC Thrissur (2010)</p>
               </div>
             </div>
             <p class="text-xs text-[#031b33] font-medium leading-relaxed pt-3 border-t border-[#D8FFC5]/60 mt-4 w-full">
-              Pioneered the student palliative care unit at GEC Idukki to awaken empathy and social action.
+              Pioneered the student palliative care unit at GEC Thrissur to awaken empathy and social action.
             </p>
           </div>
 
@@ -406,101 +409,203 @@
       </div>
 
       <!-- Part 2: Student Executive Committee -->
-      <div>
-        <div class="flex items-center gap-3 mb-6 pb-2 border-b-2 border-[#D8FFC5]">
-          <div
-            class="w-8 h-8 rounded-xl bg-[#C4F7CA] flex items-center justify-center text-[#031b33] font-bold shadow-sm">
-            <i data-lucide="users" class="w-4 h-4"></i>
+      <div class="reveal reveal-up">
+        <div class="flex items-center justify-between mb-6 pb-2 border-b-2 border-[#D8FFC5]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-[#C4F7CA] flex items-center justify-center text-[#031b33] font-bold shadow-sm">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Student Executive Committee 2026-27</h3>
           </div>
-          <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Student Executive Committee (2026)
-          </h3>
+          <div class="flex items-center gap-2">
+            <button id="comm-prev" class="w-8 h-8 rounded-full bg-[#D8FFC5] flex items-center justify-center text-[#031b33] hover:bg-[#C4F7CA] transition-colors shadow-sm disabled:opacity-50"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+            <button id="comm-next" class="w-8 h-8 rounded-full bg-[#D8FFC5] flex items-center justify-center text-[#031b33] hover:bg-[#C4F7CA] transition-colors shadow-sm"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-
-          <!-- Executive 1: Convenor -->
-          <div
-            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
-            <div class="w-full flex flex-col items-center space-y-3">
-              <div
-                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
-                <i data-lucide="user-check" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+        <div class="relative overflow-hidden w-full px-1">
+          <div id="committee-track" class="flex transition-transform duration-500 ease-in-out w-[300%]">
+            
+            <!-- PAGE 1 (Group 1) -->
+            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <!-- Executive 1 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                    <i data-lucide="user-check" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Student Convenor</span>
+                    <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Ebin Mathews</h4>
+                    <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Computer Science</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+                  Directs volunteer team, event planning, and outreach operations.
+                </p>
               </div>
-              <div class="space-y-0.5">
-                <span
-                  class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Student
-                  Convenor</span>
-                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Student Convenor</h4>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Mechanical Engg</p>
+
+              <!-- Executive 2 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                    <i data-lucide="user-plus" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint Convenor</span>
+                    <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Daniya O V</h4>
+                    <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Electronics and Communication</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+                  Coordinates volunteer mobilization and festival management.
+                </p>
+              </div>
+
+              <!-- Executive 3 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                    <i data-lucide="wallet" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Treasurer</span>
+                    <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Prethyush Babu</h4>
+                    <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Information Technology</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+                  Manages patient relief funds, equipment pooling, and financial accounts.
+                </p>
+              </div>
+
+              <!-- Executive 4 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
+                    <i data-lucide="piggy-bank" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint Treasurer</span>
+                    <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Shanih</h4>
+                    <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Electronics Engg</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+                  Oversees donation collection and care kit procurement for home visits.
+                </p>
               </div>
             </div>
-            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
-              Directs volunteer team, event planning, and outreach operations.
-            </p>
-          </div>
 
-          <!-- Executive 2: Joint Convenor -->
-          <div
-            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
-            <div class="w-full flex flex-col items-center space-y-3">
-              <div
-                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
-                <i data-lucide="user-plus" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+            <!-- PAGE 2 (Group 2) -->
+            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <!-- Placeholder 1 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Content Lead</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">Neha Varghese</h4>
+                    <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Computer Science</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
+                  Manages all communication and social media handles of Oasis.
+                </p>
               </div>
-              <div class="space-y-0.5">
-                <span
-                  class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint
-                  Convenor</span>
-                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Joint Convenor</h4>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Computer Science</p>
+              <!-- Placeholder 2 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Placeholder 3 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Placeholder 4 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
               </div>
             </div>
-            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
-              Coordinates volunteer mobilization and Harsham festival management.
-            </p>
-          </div>
 
-          <!-- Executive 3: Treasurer -->
-          <div
-            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
-            <div class="w-full flex flex-col items-center space-y-3">
-              <div
-                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
-                <i data-lucide="wallet" class="w-9 h-9 sm:w-10 sm:h-10"></i>
+            <!-- PAGE 3 (Group 3) -->
+            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <!-- Placeholder 5 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
               </div>
-              <div class="space-y-0.5">
-                <span
-                  class="px-2.5 py-0.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Treasurer</span>
-                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Student Treasurer</h4>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Final Year • Electrical Engg</p>
+              <!-- Placeholder 6 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Placeholder 7 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Placeholder 8 -->
+              <div class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
+                <div class="w-full flex flex-col items-center space-y-3">
+                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/50 border-2 border-dashed border-[#D8FFC5] flex items-center justify-center text-[#031b33]/40">
+                    <i data-lucide="user" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-0.5">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/50 text-[#031b33] text-[10px] font-extrabold">Committee Member</span>
+                    <h4 class="text-sm font-extrabold font-heading text-[#031b33] pt-1">To Be Announced</h4>
+                  </div>
+                </div>
               </div>
             </div>
-            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
-              Manages patient relief funds, equipment pooling, and financial accounts.
-            </p>
-          </div>
 
-          <!-- Executive 4: Joint Treasurer -->
-          <div
-            class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
-            <div class="w-full flex flex-col items-center space-y-3">
-              <div
-                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-3 border-[#D8FFC5] shadow-sm bg-[#92EEFF] flex items-center justify-center text-[#031b33]">
-                <i data-lucide="piggy-bank" class="w-9 h-9 sm:w-10 sm:h-10"></i>
-              </div>
-              <div class="space-y-0.5">
-                <span
-                  class="px-2.5 py-0.5 rounded-full bg-[#C4F7CA] text-[#031b33] text-[10px] sm:text-[11px] font-extrabold">Joint
-                  Treasurer</span>
-                <h4 class="text-sm sm:text-base font-extrabold font-heading text-[#031b33] pt-1">Joint Treasurer</h4>
-                <p class="text-xs text-[#1e3b5e] font-semibold">Third Year • Electronics Engg</p>
-              </div>
-            </div>
-            <p class="text-xs text-[#031b33] font-medium pt-2 border-t border-[#D8FFC5]/60 mt-3 w-full">
-              Oversees donation collection and care kit procurement for home visits.
-            </p>
           </div>
-
         </div>
       </div>
 
@@ -511,7 +616,7 @@
   <section id="initiatives" class="py-12 sm:py-16 md:py-24 bg-[#30AFFF]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Outreach
           & Programs</span>
@@ -527,7 +632,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
 
         <!-- Initiative Card 1: Harsham -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-pop reveal-delay-1">
           <div>
             <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
               <img src="assets/harsham-fest.jpg" alt="Harsham Fest Oasis GEC Idukki"
@@ -554,7 +659,7 @@
         </div>
 
         <!-- Initiative Card 2: Old Age Home Outreach -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-pop reveal-delay-2">
           <div>
             <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
               <img src="assets/outreach-care.jpg" alt="Elderly Care Home Visit GEC Idukki"
@@ -581,7 +686,7 @@
         </div>
 
         <!-- Initiative Card 3: Festive Care -->
-        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-pop reveal-delay-3">
           <div>
             <div class="relative h-48 sm:h-56 overflow-hidden border-b-2 border-[#D8FFC5]">
               <img src="assets/festive-care.jpg" alt="Onam Kit Distribution Palliative Care"
@@ -612,80 +717,12 @@
     </div>
   </section>
 
-  <!-- ==================== HARSHAM FEATURE SPOTLIGHT ==================== -->
-  <section id="harsham" class="py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
-          <div
-            class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-            <span>Annual Palliative Fest</span>
-          </div>
-
-          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading leading-tight text-[#031b33]">
-            HARSHAM FEST <span class="bg-[#D8FFC5] px-2 py-0.5 rounded-xl">2026</span>
-          </h2>
-
-          <p class="text-sm sm:text-base md:text-lg text-[#031b33] font-medium leading-relaxed">
-            Harsham is more than an annual festival; it is a movement of youthful empathy. Every year, GEC Idukki comes
-            alive with student competitions, art installations, medical relief rallies, and workshops dedicated to
-            honoring palliative care heroes.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 text-xs sm:text-sm font-bold">
-            <div
-              class="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
-              <i data-lucide="calendar" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0"></i>
-              <span>Annual Campus Awareness Week</span>
-            </div>
-            <div
-              class="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-[#30AFFF] border border-[#D8FFC5] text-[#031b33]">
-              <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0"></i>
-              <span>GEC Idukki Auditorium, Painavu</span>
-            </div>
-          </div>
-
-          <div class="pt-2 sm:pt-4">
-            <a href="#volunteer"
-              class="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-xs sm:text-sm shadow-md transition-all border border-[#C4F7CA]">
-              <i data-lucide="ticket" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-              <span>Participate / Join Harsham Volunteers</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5">
-          <div
-            class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#30AFFF] border-3 sm:border-4 border-[#D8FFC5] text-left space-y-4 sm:space-y-6 shadow-xl">
-            <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-[#031b33]">Harsham Highlights</h3>
-            <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-[#031b33] font-semibold">
-              <li class="flex items-start gap-2.5 sm:gap-3">
-                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
-                <span><strong>Palliative Youth Convention:</strong> Delegates from colleges across Kerala.</span>
-              </li>
-              <li class="flex items-start gap-2.5 sm:gap-3">
-                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
-                <span><strong>Cultural Evening:</strong> Performances dedicated to palliative care awareness.</span>
-              </li>
-              <li class="flex items-start gap-2.5 sm:gap-3">
-                <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5"></i>
-                <span><strong>Patient Care Fundraiser:</strong> 100% of proceeds fund emergency medical kits.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ==================== IMPACT METRICS SECTION ==================== -->
   <section id="impact" class="py-12 sm:py-16 md:py-20 bg-[#30AFFF]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Our
           Impact</span>
@@ -701,7 +738,7 @@
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
 
         <!-- Metric 1 -->
-        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2 reveal reveal-pop reveal-delay-1">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
             <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -710,11 +747,11 @@
             data-target="250">0
           </p>
           <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Active Volunteers</p>
-          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Student & Faculty Team</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Students</p>
         </div>
 
         <!-- Metric 2 -->
-        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2 reveal reveal-pop reveal-delay-2">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
             <i data-lucide="home" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -727,7 +764,7 @@
         </div>
 
         <!-- Metric 3 -->
-        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2 reveal reveal-pop reveal-delay-3">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
             <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -736,11 +773,11 @@
             data-target="15">0
           </p>
           <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Annual Events</p>
-          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Fests & Awareness Drives</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Palliative Programs </p>
         </div>
 
         <!-- Metric 4 -->
-        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2">
+        <div class="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl text-center space-y-1.5 sm:space-y-2 reveal reveal-pop reveal-delay-4">
           <div
             class="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-xl sm:rounded-2xl bg-[#C4F7CA] text-[#031b33] flex items-center justify-center mb-2 sm:mb-4 font-bold">
             <i data-lucide="heart-pulse" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -749,7 +786,7 @@
             data-target="40">0
           </p>
           <p class="text-xs sm:text-sm font-extrabold text-[#031b33]">Outreach Drives</p>
-          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Care Kits & Home Visits</p>
+          <p class="text-[11px] sm:text-xs text-[#1e3b5e] font-semibold">Onam Kits & Home Visits</p>
         </div>
 
       </div>
@@ -761,7 +798,7 @@
   <section id="volunteer" class="py-12 sm:py-16 md:py-24 bg-[#92EEFF] border-t-4 border-[#D8FFC5]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Join
           The Movement</span>
@@ -775,7 +812,7 @@
 
       <!-- Registration Form Card -->
       <div
-        class="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#30AFFF] border-3 sm:border-4 border-[#D8FFC5] shadow-2xl relative">
+        class="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#30AFFF] border-3 sm:border-4 border-[#D8FFC5] shadow-2xl relative reveal reveal-scale reveal-delay-1">
         <form id="volunteer-form" class="space-y-6 sm:space-y-8">
 
           <!-- Photo Upload Section with Preview -->
@@ -858,7 +895,7 @@
           <!-- Submit Button -->
           <div class="pt-2 sm:pt-4 text-center">
             <button type="submit" id="submit-volunteer-btn"
-              class="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-sm sm:text-base shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto border border-[#C4F7CA]">
+              class="ripple-target w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-extrabold text-sm sm:text-base shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto border border-[#C4F7CA]">
               <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
               <span>Submit Volunteer Application</span>
             </button>
@@ -875,7 +912,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
           Visual Memories
@@ -892,7 +929,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
         <!-- Photo 1 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 reveal reveal-pop reveal-delay-1"
           data-image="assets/hero-slide-1.jpg"
           data-title="Hrudayathil Ennum - Farewell & Gratitude"
           data-tag="Farewell Event"
@@ -915,7 +952,7 @@
         </div>
 
         <!-- Photo 2 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 reveal reveal-pop reveal-delay-2"
           data-image="assets/hero-slide-2.jpg"
           data-title="Oasis Farewell Celebration Group Photo"
           data-tag="Celebration"
@@ -938,7 +975,7 @@
         </div>
 
         <!-- Photo 3 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 reveal reveal-pop reveal-delay-3"
           data-image="assets/hero-palliative.jpg"
           data-title="Palliative Companion Care Visit"
           data-tag="Outreach"
@@ -960,31 +997,8 @@
           </div>
         </div>
 
-        <!-- Photo 4 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
-          data-image="assets/harsham-fest.jpg"
-          data-title="Harsham Annual Palliative Fest"
-          data-tag="Flagship Event"
-          data-desc="Inter-college palliative awareness fest featuring student competitions and seminars.">
-          <div class="relative h-60 sm:h-64 overflow-hidden border-b-2 border-[#D8FFC5] bg-[#031b33]">
-            <img src="assets/harsham-fest.jpg" alt="Harsham Fest GEC Idukki"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#C4F7CA] text-[#031b33] text-[11px] font-extrabold shadow-md border border-[#D8FFC5]">
-              Flagship Event
-            </span>
-            <div class="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-[#92EEFF]/90 backdrop-blur-md flex items-center justify-center text-[#031b33] group-hover:scale-110 transition-transform">
-              <i data-lucide="maximize-2" class="w-4 h-4"></i>
-            </div>
-          </div>
-          <div class="p-5 text-left space-y-1">
-            <h4 class="text-base font-extrabold font-heading text-[#031b33]">Harsham Palliative Fest</h4>
-            <p class="text-xs text-[#031b33] font-medium leading-relaxed">Annual Campus Fest • GEC Idukki</p>
-          </div>
-        </div>
-
         <!-- Photo 5 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 reveal reveal-pop reveal-delay-4"
           data-image="assets/outreach-care.jpg"
           data-title="Old Age Home Outreach"
           data-tag="Community Outreach"
@@ -1007,7 +1021,7 @@
         </div>
 
         <!-- Photo 6 -->
-        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        <div class="gallery-item glass-card rounded-2xl sm:rounded-3xl overflow-hidden group shadow-xl border-2 border-[#D8FFC5] cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 reveal reveal-pop reveal-delay-5"
           data-image="assets/festive-care.jpg"
           data-title="Festive Care Drives"
           data-tag="Festive Drive"
@@ -1041,7 +1055,7 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b-2 border-[#D8FFC5] text-left">
 
         <!-- Address & Identity -->
-        <div class="md:col-span-5 space-y-4">
+        <div class="md:col-span-5 space-y-4 reveal reveal-left reveal-delay-1">
           <div class="flex items-center gap-3">
             <div
               class="w-11 h-11 rounded-2xl bg-white p-1 flex items-center justify-center font-bold text-[#031b33] border border-[#D8FFC5] shadow-sm overflow-hidden">
@@ -1060,7 +1074,7 @@
         </div>
 
         <!-- Emergency Helpline Cards -->
-        <div class="md:col-span-4 space-y-4">
+        <div class="md:col-span-4 space-y-4 reveal reveal-pop reveal-delay-2">
           <h4 class="font-heading font-extrabold text-[#031b33] text-base">Emergency Contacts & Helpline</h4>
           <div class="space-y-3 text-sm">
             <div class="p-3.5 rounded-xl bg-[#30AFFF] border-2 border-[#D8FFC5] flex items-center justify-between">
@@ -1082,7 +1096,7 @@
         </div>
 
         <!-- Quick Links & Social -->
-        <div class="md:col-span-3 space-y-4">
+        <div class="md:col-span-3 space-y-4 reveal reveal-right reveal-delay-3">
           <h4 class="font-heading font-extrabold text-[#031b33] text-base">Connect With Oasis</h4>
           <div class="flex items-center gap-4 pt-1">
             <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
@@ -1106,7 +1120,7 @@
       </div>
 
       <!-- Copyright Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-[#031b33]">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-[#031b33] reveal reveal-up reveal-delay-2">
         <p>© 2026 Oasis Pain & Palliative Care Unit, GEC Idukki. All rights reserved.</p>
         <div class="flex gap-6">
           <a href="#about" class="hover:underline">About</a>
