@@ -38,13 +38,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 2. Sticky Navbar Background on Scroll ---
   const navbar = document.getElementById('navbar');
+  const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
       navbar?.classList.add('shadow-lg');
     } else {
       navbar?.classList.remove('shadow-lg');
     }
-  });
+
+    // Scroll to Top Arrow visibility
+    if (scrollToTopBtn) {
+      if (window.scrollY > 350) {
+        scrollToTopBtn.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+        scrollToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      } else {
+        scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        scrollToTopBtn.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+      }
+    }
+  }, { passive: true });
+
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
   // --- 3. Impact Metrics Counter Animation ---
   const counterElements = document.querySelectorAll('.counter-value');
