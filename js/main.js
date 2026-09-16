@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileDrawer) {
       mobileDrawer.classList.remove('translate-x-full');
       document.body.style.overflow = 'hidden';
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
     }
   }
 
@@ -26,11 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileDrawer) {
       mobileDrawer.classList.add('translate-x-full');
       document.body.style.overflow = '';
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
   }
 
   if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
   if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+
+  // Close button inside the mobile drawer
+  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+  if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileMenu);
 
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
@@ -447,6 +453,33 @@ document.addEventListener('DOMContentLoaded', () => {
   if (commNext) commNext.addEventListener('click', () => { if (commPage < COMM_PAGES - 1) { commPage++; updateCommCarousel(); } });
   updateCommCarousel();
 
+  // Touch swipe support for committee carousel
+  let commTouchStartX = 0;
+  let commTouchEndX = 0;
+  if (commTrack) {
+    commTrack.addEventListener('touchstart', (e) => {
+      commTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    commTrack.addEventListener('touchend', (e) => {
+      commTouchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = commTouchStartX - commTouchEndX;
+      if (Math.abs(swipeDistance) > 50) {
+        if (swipeDistance > 0 && commPage < COMM_PAGES - 1) {
+          commPage++;
+          updateCommCarousel();
+        } else if (swipeDistance < 0 && commPage > 0) {
+          commPage--;
+          updateCommCarousel();
+        }
+      }
+    }, { passive: true });
+  }
+
+  // Reset carousel page on window resize to prevent layout issues
+  window.addEventListener('resize', () => {
+    updateCommCarousel();
+  }, { passive: true });
+
   // --- 9. Gallery Lightbox Modal Handler ---
   const galleryItems = document.querySelectorAll('.gallery-item');
   const galleryModal = document.getElementById('gallery-lightbox-modal');
@@ -493,6 +526,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === galleryModal) closeGalleryModal();
     });
   }
+
+  // Escape key closes gallery modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && galleryModal && !galleryModal.classList.contains('hidden')) {
+      closeGalleryModal();
+    }
+  });
 
   // --- 10. Buttery Smooth Scroll Reveal Intersection Observer ---
   const revealElements = document.querySelectorAll('.reveal');

@@ -3,10 +3,63 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oasis Pain & Palliative Care Unit | GEC Idukki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Oasis Pain & Palliative Care Unit | GEC Idukki, Kerala</title>
   <meta name="description"
     content="Official website of Oasis Pain and Palliative Care Unit at Government Engineering College (GEC) Idukki, Kerala. Promoting student palliative awareness, community outreach, and compassionate care.">
+
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Oasis, GEC Idukki, Palliative Care, Pain Care, Student Volunteers, Kerala, Government Engineering College, Painavu, Idukki, Community Outreach, Harsham Fest, Home Care, Elder Care">
+  <meta name="author" content="Oasis Pain & Palliative Care Unit, GEC Idukki">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#30AFFF">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://oasisgecidukki.org/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oasisgecidukki.org/">
+  <meta property="og:title" content="Oasis Pain & Palliative Care Unit | GEC Idukki, Kerala">
+  <meta property="og:description" content="Student-led palliative care movement at Government Engineering College Idukki. Spreading hope, building empathy through companion care, community outreach, and awareness programs.">
+  <meta property="og:image" content="https://oasisgecidukki.org/assets/oasis-logo.png">
+  <meta property="og:site_name" content="Oasis GEC Idukki">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://oasisgecidukki.org/">
+  <meta name="twitter:title" content="Oasis Pain & Palliative Care Unit | GEC Idukki">
+  <meta name="twitter:description" content="Student-led palliative care movement at GEC Idukki, Kerala. Companion care, community outreach, and compassionate service.">
+  <meta name="twitter:image" content="https://oasisgecidukki.org/assets/oasis-logo.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Oasis Pain & Palliative Care Unit",
+    "alternateName": "Oasis GEC Idukki",
+    "url": "https://oasisgecidukki.org/",
+    "logo": "https://oasisgecidukki.org/assets/oasis-logo.png",
+    "description": "Student-led palliative care unit at Government Engineering College Idukki, Kerala, promoting compassionate companion care, community outreach, and awareness.",
+    "foundingDate": "2010",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Government Engineering College Idukki, Painavu",
+      "addressLocality": "Idukki",
+      "addressRegion": "Kerala",
+      "postalCode": "685603",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.instagram.com/oasis_geci"
+    ],
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "Government Engineering College Idukki"
+    }
+  }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,6 +74,10 @@
             brandAccent2: '#C4F7CA',
             brandDark: '#031b33',
             brandMuted: '#1e3b5e',
+          },
+          screens: {
+            'xs': '360px',
+            '3xl': '1920px',
           }
         }
       }
@@ -45,33 +102,33 @@
   <link rel="apple-touch-icon" href="assets/oasis-logo.png">
 </head>
 
-<body class="min-h-screen bg-[#30AFFF] text-[#031b33] antialiased">
+<body class="min-h-screen bg-[#30AFFF] text-[#031b33] antialiased w-full overflow-x-hidden">
 
   <!-- ==================== HEADER / NAVBAR ==================== -->
-  <header id="navbar" class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <header id="navbar" class="sticky top-0 z-40 w-full glass-nav transition-all duration-300" role="banner">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 h-16 xs:h-18 sm:h-20 flex items-center justify-between">
 
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group" id="nav-brand">
+      <a href="#" class="flex items-center gap-2 xs:gap-3 group shrink-0" id="nav-brand" aria-label="Oasis GEC Idukki Home">
         <div
-          class="w-11 h-11 rounded-2xl bg-white text-[#031b33] flex items-center justify-center shadow-md border border-[#D8FFC5] p-1 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain">
+          class="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 rounded-xl xs:rounded-2xl bg-white text-[#031b33] flex items-center justify-center shadow-md border border-[#D8FFC5] p-0.5 xs:p-1 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain" width="44" height="44">
         </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-heading font-extrabold text-xl tracking-tight text-[#031b33]">OASIS</span>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 xs:gap-2">
+            <span class="font-heading font-extrabold text-lg xs:text-xl tracking-tight text-[#031b33]">OASIS</span>
             <span
-              class="px-2 py-0.5 text-xs font-bold rounded-full bg-[#C4F7CA] text-[#031b33] border border-[#D8FFC5]">GEC
+              class="px-1.5 xs:px-2 py-0.5 text-[10px] xs:text-xs font-bold rounded-full bg-[#C4F7CA] text-[#031b33] border border-[#D8FFC5] hidden xs:inline-block">GEC
               Idukki</span>
           </div>
-          <p class="text-xs text-[#1e3b5e] font-semibold">Pain & Palliative Care Unit</p>
+          <p class="text-[10px] xs:text-xs text-[#1e3b5e] font-semibold truncate">Pain & Palliative Care Unit</p>
         </div>
       </a>
 
       <!-- Right-Aligned Navigation & Mobile Menu Button -->
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-3 sm:gap-6">
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-bold text-[#031b33]">
+        <nav class="hidden md:flex items-center gap-4 lg:gap-7 text-sm font-bold text-[#031b33]" role="navigation" aria-label="Main navigation">
           <a href="#about" class="hover:underline transition-colors" id="nav-link-about">About</a>
           <a href="#committee" class="hover:underline transition-colors" id="nav-link-committee">Committee</a>
           <a href="#initiatives" class="hover:underline transition-colors" id="nav-link-initiatives">Initiatives</a>
@@ -82,15 +139,15 @@
             target="_blank" rel="noopener noreferrer"
             class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] border border-[#C4F7CA] shadow-sm hover:shadow transition-all hover:-translate-y-0.5"
             id="nav-link-instagram" aria-label="Oasis GEC Idukki Instagram">
-            <img src="assets/instagram-icon.png" alt="Instagram" class="w-4 h-4 rounded-[4px] object-contain shrink-0">
+            <img src="assets/instagram-icon.png" alt="Instagram" class="w-4 h-4 rounded-[4px] object-contain shrink-0" width="16" height="16">
             <span>Instagram</span>
           </a>
         </nav>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Open Mobile Menu"
-          class="md:hidden p-2.5 rounded-xl bg-[#D8FFC5] text-[#031b33]">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="mobile-drawer"
+          class="md:hidden p-2 xs:p-2.5 rounded-xl bg-[#D8FFC5] text-[#031b33]">
+          <i data-lucide="menu" class="w-5 h-5 xs:w-6 xs:h-6"></i>
         </button>
       </div>
     </div>
@@ -98,43 +155,45 @@
 
   <!-- Mobile Drawer Menu -->
   <div id="mobile-drawer"
-    class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
     <div class="absolute inset-0 bg-[#031b33]/60 backdrop-blur-sm" id="close-mobile-menu-btn"></div>
     <nav
-      class="relative ml-auto w-4/5 max-w-sm h-full bg-[#92EEFF] shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l-4 border-[#D8FFC5]">
+      class="relative ml-auto w-[82%] xs:w-4/5 max-w-sm h-full bg-[#92EEFF] shadow-2xl p-4 xs:p-5 sm:p-6 flex flex-col justify-between overflow-y-auto border-l-4 border-[#D8FFC5] safe-area-inset"
+      role="navigation" aria-label="Mobile navigation">
       <div>
-        <div class="flex items-center justify-between pb-6 border-b border-[#D8FFC5]">
-          <div class="flex items-center gap-3">
+        <div class="flex items-center justify-between pb-4 xs:pb-6 border-b border-[#D8FFC5]">
+          <div class="flex items-center gap-2 xs:gap-3 min-w-0">
             <div
-              class="w-9 h-9 rounded-xl bg-white p-0.5 text-[#031b33] flex items-center justify-center font-bold border border-[#D8FFC5] overflow-hidden">
-              <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain">
+              class="w-8 h-8 xs:w-9 xs:h-9 rounded-xl bg-white p-0.5 text-[#031b33] flex items-center justify-center font-bold border border-[#D8FFC5] overflow-hidden shrink-0">
+              <img src="assets/oasis-logo.png" alt="Oasis GEC Idukki Logo" class="w-full h-full object-contain" width="36" height="36">
             </div>
-            <span class="font-heading font-bold text-lg text-[#031b33]">Oasis GEC Idukki</span>
+            <span class="font-heading font-bold text-base xs:text-lg text-[#031b33] truncate">Oasis GEC Idukki</span>
           </div>
-          <button class="p-2 text-[#031b33]" id="mobile-drawer-close">
-            <i data-lucide="x" class="w-6 h-6"></i>
+          <button class="p-1.5 xs:p-2 text-[#031b33]" id="mobile-drawer-close" aria-label="Close mobile menu">
+            <i data-lucide="x" class="w-5 h-5 xs:w-6 xs:h-6"></i>
           </button>
         </div>
 
-        <div class="mt-8 flex flex-col gap-4 text-base font-bold text-[#031b33]">
-          <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">About Us</a>
-          <a href="#committee" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Committee Members</a>
-          <a href="#initiatives" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Key Initiatives</a>
-          <a href="#impact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Impact Metrics</a>
-          <a href="#gallery" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Our Gallery</a>
-          <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5]">Contact & Helpline</a>
+        <div class="mt-5 xs:mt-8 flex flex-col gap-2 xs:gap-3 sm:gap-4 text-sm xs:text-base font-bold text-[#031b33]">
+          <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">About Us</a>
+          <a href="#committee" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">Committee Members</a>
+          <a href="#initiatives" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">Key Initiatives</a>
+          <a href="#impact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">Impact Metrics</a>
+          <a href="#gallery" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">Our Gallery</a>
+          <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] transition-colors">Contact & Helpline</a>
           <a href="https://www.instagram.com/oasis_geci?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
             target="_blank" rel="noopener noreferrer"
-            class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] flex items-center gap-2.5">
-            <img src="assets/instagram-icon.png" alt="Instagram" class="w-5 h-5 rounded-[5px] object-contain shrink-0">
+            class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-[#D8FFC5] active:bg-[#C4F7CA] flex items-center gap-2.5 transition-colors">
+            <img src="assets/instagram-icon.png" alt="Instagram" class="w-5 h-5 rounded-[5px] object-contain shrink-0" width="20" height="20">
             <span>Instagram</span>
           </a>
         </div>
       </div>
 
-      <div class="pt-6 border-t border-[#D8FFC5]">
+      <div class="pt-4 xs:pt-6 border-t border-[#D8FFC5]">
         <a href="#contact"
-          class="mobile-nav-link w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] text-[#031b33] font-bold shadow-md">
+          class="mobile-nav-link w-full flex items-center justify-center gap-2 py-2.5 xs:py-3 rounded-xl bg-[#D8FFC5] hover:bg-[#C4F7CA] active:bg-[#C4F7CA] text-[#031b33] font-bold shadow-md transition-colors">
           <i data-lucide="phone-call" class="w-5 h-5"></i>
           <span>Contact & Helpline</span>
         </a>
@@ -143,55 +202,56 @@
   </div>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[#031b33]">
+  <section id="hero" class="relative min-h-[70vh] xs:min-h-[75vh] sm:min-h-[80vh] md:min-h-[85vh] flex items-center overflow-hidden bg-[#031b33]" role="banner" aria-label="Hero section">
     <!-- Animated Hands Coming Together & Holding Background -->
     <div class="hero-hands-container">
       <!-- Ambient Backdrop -->
       <div class="absolute inset-0 bg-[#031b33]">
-        <img src="assets/hero-bg-hands.jpg" alt="" class="w-full h-full object-cover opacity-25 filter blur-[2px]">
+        <img src="assets/hero-bg-hands.jpg" alt="" class="w-full h-full object-cover opacity-25 filter blur-[2px]" aria-hidden="true" loading="eager">
       </div>
 
       <!-- Left Hand: Glides in from initial bottom-left direction towards center, closing gap to hold -->
       <div class="hero-hand-layer hero-hand-left">
-        <img src="assets/hero-bg-hands.jpg" alt="Left reaching hand holding together">
+        <img src="assets/hero-bg-hands.jpg" alt="Left reaching hand holding together" loading="eager">
       </div>
 
       <!-- Right Hand: Glides in from initial top-right direction towards center, closing gap to hold -->
       <div class="hero-hand-layer hero-hand-right">
-        <img src="assets/hero-bg-hands.jpg" alt="Right reaching hand holding together">
+        <img src="assets/hero-bg-hands.jpg" alt="Right reaching hand holding together" loading="eager">
       </div>
 
       <!-- Compassionate Touch Connection Glow at contact point -->
-      <div class="hands-connection-glow"></div>
+      <div class="hands-connection-glow" aria-hidden="true"></div>
 
       <!-- Gradient Overlay for Contrast -->
       <div
-        class="absolute inset-0 bg-gradient-to-b from-[#031b33]/45 via-[#031b33]/25 to-[#031b33]/65 hero-overlay-anim">
+        class="absolute inset-0 bg-gradient-to-b from-[#031b33]/45 via-[#031b33]/25 to-[#031b33]/65 hero-overlay-anim"
+        aria-hidden="true">
       </div>
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+    <div class="relative z-10 max-w-5xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-16 xs:py-20 sm:py-24 md:py-32 text-center">
 
       <div
-        class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] text-[#031b33] text-xs sm:text-sm font-bold shadow-md mb-6 hero-tag-anim">
-        <img src="assets/oasis-logo.png" alt="Oasis Logo" class="w-5 h-5 object-contain">
+        class="inline-flex items-center gap-1.5 xs:gap-2.5 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-[#D8FFC5]/90 backdrop-blur-sm border border-[#C4F7CA] text-[#031b33] text-[10px] xs:text-xs sm:text-sm font-bold shadow-md mb-4 xs:mb-6 hero-tag-anim">
+        <img src="assets/oasis-logo.png" alt="Oasis Logo" class="w-4 h-4 xs:w-5 xs:h-5 object-contain" width="20" height="20">
         <span>Student-Led Palliative Movement • GEC Idukki</span>
       </div>
 
       <h1
-        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.2] text-white drop-shadow-lg mb-6 hero-title-anim">
+        class="text-[1.75rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold font-heading tracking-tight leading-[1.2] text-white drop-shadow-lg mb-4 xs:mb-6 hero-title-anim">
         Spreading <span
-          class="inline-block bg-[#D8FFC5]/90 px-3 py-1 rounded-xl text-[#031b33] shadow-md">Hope</span>,<br
-          class="hidden sm:inline">
+          class="inline-block bg-[#D8FFC5]/90 px-2 xs:px-3 py-0.5 xs:py-1 rounded-lg xs:rounded-xl text-[#031b33] shadow-md">Hope</span>,<br
+          class="hidden xs:inline">
         Building <span
-          class="inline-block bg-[#C4F7CA]/90 px-3 py-1 rounded-xl text-[#031b33] shadow-md">Empathy.</span>
+          class="inline-block bg-[#C4F7CA]/90 px-2 xs:px-3 py-0.5 xs:py-1 rounded-lg xs:rounded-xl text-[#031b33] shadow-md">Empathy.</span>
       </h1>
 
-      <p class="text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_8px_32px_rgba(0,0,0,0.25)] hero-paragraph-anim"
+      <p class="text-sm xs:text-base sm:text-lg lg:text-xl text-white max-w-3xl mx-auto font-medium leading-relaxed bg-white/10 backdrop-blur-xl p-4 xs:p-5 sm:p-6 md:p-8 rounded-2xl xs:rounded-3xl border border-white/25 shadow-[0_8px_32px_rgba(0,0,0,0.25)] hero-paragraph-anim"
         style="box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);">
         Welcome to OASIS Pain and Palliative Care Unit at Government Engineering College, Idukki — where the precision
         of young engineering minds meets the soft touch of raw human empathy.
-        <strong class="block mt-3 text-[#D8FFC5]">Healing Hands, Resilient Hearts</strong>
+        <strong class="block mt-2 xs:mt-3 text-[#D8FFC5]">Healing Hands, Resilient Hearts</strong>
         We transform ambition into altruism, empowering students to deliver tender
         companion care, vital relief drives, and restored dignity to palliative patients across Idukki and Kerala.
       </p>
@@ -200,14 +260,14 @@
   </section>
 
   <!-- ==================== ABOUT OASIS SECTION ==================== -->
-  <section id="about" class="py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="about" class="py-10 xs:py-12 sm:py-16 md:py-20 bg-[#92EEFF] border-y-4 border-[#D8FFC5]" aria-labelledby="about-heading">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">About
           Oasis Unit</span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+        <h2 id="about-heading" class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           True education does not merely train the mind, It awakens the soul to the pain of others.
         </h2>
         <p class="text-sm sm:text-base md:text-lg text-[#031b33] font-medium leading-relaxed">
@@ -221,7 +281,7 @@
       </div>
 
       <!-- Core Pillars Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 lg:gap-8">
 
         <!-- Pillar 1 -->
         <div
@@ -285,8 +345,8 @@
   </section>
 
   <!-- ==================== COMMITTEE MEMBERS SECTION ==================== -->
-  <section id="committee" class="py-12 sm:py-16 md:py-24 bg-[#92EEFF] border-b-4 border-[#D8FFC5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="committee" class="py-10 xs:py-12 sm:py-16 md:py-24 bg-[#92EEFF] border-b-4 border-[#D8FFC5]" aria-labelledby="committee-heading">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
@@ -294,7 +354,7 @@
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
           Leadership & Governance
         </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+        <h2 id="committee-heading" class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Committee Members
         </h2>
         <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium leading-relaxed">
@@ -313,7 +373,7 @@
           <h3 class="text-lg sm:text-xl font-extrabold font-heading text-[#031b33]">Institutional Advisors</h3>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 lg:gap-8">
 
           <!-- Member 1: Principal -->
           <div
@@ -407,11 +467,11 @@
           </div>
         </div>
 
-        <div class="relative overflow-hidden w-full px-1">
-          <div id="committee-track" class="flex transition-transform duration-500 ease-in-out w-[300%]">
+        <div class="relative overflow-hidden w-full px-0 xs:px-1">
+          <div id="committee-track" class="flex transition-transform duration-500 ease-in-out committee-track-responsive">
 
             <!-- PAGE 1 (Group 1) -->
-            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="committee-page grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
               <!-- Executive 1 -->
               <div
                 class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between group hover:-translate-y-1 transition-all duration-300 shadow-md border-2 border-[#D8FFC5]">
@@ -497,7 +557,7 @@
             </div>
 
             <!-- PAGE 2 (Group 2) -->
-            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="committee-page grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
               <!-- Placeholder 1 -->
               <div
                 class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
@@ -569,7 +629,7 @@
             </div>
 
             <!-- PAGE 3 (Group 3) -->
-            <div class="w-1/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="committee-page grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
               <!-- Placeholder 5 -->
               <div
                 class="glass-card-primary rounded-2xl p-5 text-center flex flex-col items-center justify-between shadow-md border-2 border-[#D8FFC5]/50 opacity-80">
@@ -644,14 +704,14 @@
   </section>
 
   <!-- ==================== KEY INITIATIVES GRID ==================== -->
-  <section id="initiatives" class="py-12 sm:py-16 md:py-24 bg-[#30AFFF]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="initiatives" class="py-10 xs:py-12 sm:py-16 md:py-24 bg-[#30AFFF]" aria-labelledby="initiatives-heading">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Outreach
           & Programs</span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+        <h2 id="initiatives-heading" class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Our Key Initiatives
         </h2>
         <p class="text-sm sm:text-base text-[#031b33] font-medium">
@@ -660,7 +720,7 @@
       </div>
 
       <!-- Initiative Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
 
         <!-- Initiative Card 1: Harsham -->
         <div
@@ -753,14 +813,14 @@
 
 
   <!-- ==================== IMPACT METRICS SECTION ==================== -->
-  <section id="impact" class="py-12 sm:py-16 md:py-20 bg-[#30AFFF]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="impact" class="py-10 xs:py-12 sm:py-16 md:py-20 bg-[#30AFFF]" aria-labelledby="impact-heading">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3 reveal reveal-up">
         <span
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">Our
           Impact</span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+        <h2 id="impact-heading" class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Measuring Our Community Footprint
         </h2>
         <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium">
@@ -769,7 +829,7 @@
       </div>
 
       <!-- Counter Grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 lg:gap-8">
 
         <!-- Metric 1 -->
         <div
@@ -833,8 +893,8 @@
   </section>
 
   <!-- ==================== OUR GALLERY SECTION ==================== -->
-  <section id="gallery" class="py-12 sm:py-16 md:py-24 bg-[#30AFFF] border-t-4 border-[#D8FFC5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="gallery" class="py-10 xs:py-12 sm:py-16 md:py-24 bg-[#30AFFF] border-t-4 border-[#D8FFC5]" aria-labelledby="gallery-heading">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal reveal-up">
@@ -842,7 +902,7 @@
           class="px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D8FFC5] text-[#031b33] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider border border-[#C4F7CA]">
           Visual Memories
         </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
+        <h2 id="gallery-heading" class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#031b33]">
           Our Gallery
         </h2>
         <p class="text-xs sm:text-sm md:text-base text-[#031b33] font-medium leading-relaxed">
@@ -852,7 +912,7 @@
       </div>
 
       <!-- Gallery Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 lg:gap-8">
 
         <!-- Photo 1 -->
         <div
@@ -992,13 +1052,13 @@
   </section>
 
   <!-- ==================== CONTACT & FOOTER ==================== -->
-  <footer id="contact" class="bg-[#92EEFF] text-[#031b33] pt-16 pb-12 border-t-4 border-[#D8FFC5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer id="contact" class="bg-[#92EEFF] text-[#031b33] pt-10 xs:pt-12 sm:pt-16 pb-8 xs:pb-10 sm:pb-12 border-t-4 border-[#D8FFC5]" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b-2 border-[#D8FFC5] text-left">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 xs:gap-10 sm:gap-12 pb-8 xs:pb-10 sm:pb-12 border-b-2 border-[#D8FFC5] text-left">
 
         <!-- Address & Identity -->
-        <div class="md:col-span-5 space-y-4 reveal reveal-left reveal-delay-1">
+        <div class="sm:col-span-2 md:col-span-5 space-y-3 xs:space-y-4 reveal reveal-left reveal-delay-1">
           <div class="flex items-center gap-3">
             <div
               class="w-11 h-11 rounded-2xl bg-white p-1 flex items-center justify-center font-bold text-[#031b33] border border-[#D8FFC5] shadow-sm overflow-hidden">
@@ -1017,7 +1077,7 @@
         </div>
 
         <!-- Emergency Helpline Cards -->
-        <div class="md:col-span-4 space-y-4 reveal reveal-pop reveal-delay-2">
+        <div class="sm:col-span-1 md:col-span-4 space-y-3 xs:space-y-4 reveal reveal-pop reveal-delay-2">
           <h4 class="font-heading font-extrabold text-[#031b33] text-base">Emergency Contacts & Helpline</h4>
           <div class="space-y-3 text-sm">
             <div class="p-3.5 rounded-xl bg-[#30AFFF] border-2 border-[#D8FFC5] flex items-center justify-between">
@@ -1039,7 +1099,7 @@
         </div>
 
         <!-- Quick Links & Social -->
-        <div class="md:col-span-3 space-y-4 reveal reveal-right reveal-delay-3">
+        <div class="sm:col-span-1 md:col-span-3 space-y-3 xs:space-y-4 reveal reveal-right reveal-delay-3">
           <h4 class="font-heading font-extrabold text-[#031b33] text-base">Connect With Oasis</h4>
           <div class="flex items-center gap-4 pt-1">
             <a href="https://www.instagram.com/oasis_geci?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
@@ -1065,9 +1125,9 @@
 
       <!-- Copyright Bottom Bar -->
       <div
-        class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-[#031b33] reveal reveal-up reveal-delay-2">
+        class="pt-6 xs:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 xs:gap-4 text-[10px] xs:text-xs font-bold text-[#031b33] reveal reveal-up reveal-delay-2">
         <p>© 2026 Oasis Pain & Palliative Care Unit, GEC Idukki. All rights reserved.</p>
-        <div class="flex flex-wrap gap-4 sm:gap-6 items-center">
+        <div class="flex flex-wrap gap-3 xs:gap-4 sm:gap-6 items-center justify-center sm:justify-end">
           <a href="#about" class="hover:underline">About</a>
           <a href="#initiatives" class="hover:underline">Initiatives</a>
           <a href="#impact" class="hover:underline">Impact</a>
@@ -1087,13 +1147,14 @@
 
   <!-- ==================== INTERACTIVE INITIATIVE MODAL ==================== -->
   <div id="initiative-modal"
-    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-[#031b33]/70 backdrop-blur-md">
+    class="fixed inset-0 z-50 hidden items-center justify-center p-2 xs:p-3 sm:p-6 bg-[#031b33]/70 backdrop-blur-md"
+    role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div
-      class="w-full max-w-2xl bg-[#92EEFF] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[92vh]">
+      class="w-full max-w-2xl bg-[#92EEFF] rounded-xl xs:rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 xs:border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[90vh] xs:max-h-[92vh]">
 
       <!-- Modal Header Image -->
-      <div class="relative h-48 sm:h-64 md:h-72 overflow-hidden shrink-0 border-b-2 border-[#D8FFC5]">
-        <img id="modal-img" src="" alt="Initiative Image" class="w-full h-full object-cover">
+      <div class="relative h-36 xs:h-44 sm:h-56 md:h-72 overflow-hidden shrink-0 border-b-2 border-[#D8FFC5]">
+        <img id="modal-img" src="" alt="Initiative Image" class="w-full h-full object-cover" loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-t from-[#031b33]/85 via-[#031b33]/20 to-transparent"></div>
         <button id="close-modal-btn"
           class="absolute top-3 sm:top-4 right-3 sm:right-4 p-1.5 sm:p-2 rounded-full bg-[#D8FFC5] text-[#031b33] font-bold hover:bg-[#C4F7CA] transition-colors">
@@ -1108,7 +1169,7 @@
       </div>
 
       <!-- Modal Content Body -->
-      <div class="p-4 sm:p-6 md:p-8 overflow-y-auto space-y-4 sm:space-y-6">
+      <div class="p-3 xs:p-4 sm:p-6 md:p-8 overflow-y-auto space-y-3 xs:space-y-4 sm:space-y-6 overscroll-contain">
         <div>
           <h4 id="modal-subtitle" class="text-sm sm:text-base font-extrabold text-[#031b33]">Subtitle</h4>
           <p id="modal-description"
@@ -1143,9 +1204,10 @@
 
   <!-- ==================== GALLERY LIGHTBOX MODAL ==================== -->
   <div id="gallery-lightbox-modal"
-    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-[#031b33]/85 backdrop-blur-md">
+    class="fixed inset-0 z-50 hidden items-center justify-center p-2 xs:p-3 sm:p-6 bg-[#031b33]/85 backdrop-blur-md"
+    role="dialog" aria-modal="true" aria-labelledby="gallery-lightbox-title">
     <div
-      class="w-full max-w-4xl bg-[#92EEFF] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[92vh] relative">
+      class="w-full max-w-4xl bg-[#92EEFF] rounded-xl xs:rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 xs:border-3 sm:border-4 border-[#D8FFC5] animate-modal text-left flex flex-col max-h-[90vh] xs:max-h-[92vh] relative">
 
       <!-- Modal Close Button -->
       <button id="close-gallery-modal-btn"
@@ -1155,13 +1217,13 @@
 
       <!-- Lightbox Main Image Container -->
       <div
-        class="relative w-full h-[300px] sm:h-[420px] md:h-[480px] bg-[#031b33] flex items-center justify-center overflow-hidden">
-        <img id="gallery-lightbox-img" src="" alt="Gallery Image Preview" class="w-full h-full object-contain">
+        class="relative w-full h-[200px] xs:h-[260px] sm:h-[380px] md:h-[480px] bg-[#031b33] flex items-center justify-center overflow-hidden">
+        <img id="gallery-lightbox-img" src="" alt="Gallery Image Preview" class="w-full h-full object-contain" loading="lazy">
       </div>
 
       <!-- Lightbox Content Details Footer -->
       <div
-        class="p-4 sm:p-6 bg-[#30AFFF] border-t-2 border-[#D8FFC5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shrink-0">
+        class="p-3 xs:p-4 sm:p-6 bg-[#30AFFF] border-t-2 border-[#D8FFC5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 xs:gap-4 shrink-0">
         <div class="space-y-1">
           <div class="flex items-center gap-2">
             <span id="gallery-lightbox-tag"
@@ -1185,13 +1247,13 @@
 
   <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
   <button id="scroll-to-top-btn" aria-label="Scroll to top of page"
-    class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center shadow-xl border-2 border-[#C4F7CA] opacity-0 translate-y-8 pointer-events-none transition-all duration-300 hover:bg-[#C4F7CA] hover:-translate-y-1 hover:shadow-2xl active:scale-95 group focus:outline-none focus:ring-2 focus:ring-[#031b33]">
-    <i data-lucide="arrow-up" class="w-6 h-6 stroke-[2.5] group-hover:-translate-y-0.5 transition-transform"></i>
+    class="fixed bottom-4 right-4 xs:bottom-6 xs:right-6 z-40 w-10 h-10 xs:w-12 xs:h-12 rounded-xl xs:rounded-2xl bg-[#D8FFC5] text-[#031b33] flex items-center justify-center shadow-xl border-2 border-[#C4F7CA] opacity-0 translate-y-8 pointer-events-none transition-all duration-300 hover:bg-[#C4F7CA] hover:-translate-y-1 hover:shadow-2xl active:scale-95 group focus:outline-none focus:ring-2 focus:ring-[#031b33]">
+    <i data-lucide="arrow-up" class="w-5 h-5 xs:w-6 xs:h-6 stroke-[2.5] group-hover:-translate-y-0.5 transition-transform"></i>
   </button>
 
   <!-- ==================== TOAST NOTIFICATION ==================== -->
   <div id="toast"
-    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md opacity-0 translate-y-12 transition-all duration-300 pointer-events-none bg-[#D8FFC5] text-[#031b33] border-2 border-[#C4F7CA]">
+    class="fixed bottom-4 right-4 xs:bottom-6 xs:right-6 left-4 xs:left-auto z-50 flex items-center gap-2 xs:gap-3 px-3 xs:px-5 py-3 xs:py-4 rounded-xl shadow-2xl backdrop-blur-md opacity-0 translate-y-12 transition-all duration-300 pointer-events-none bg-[#D8FFC5] text-[#031b33] border-2 border-[#C4F7CA]" role="alert" aria-live="polite">
     <i data-lucide="check-circle-2" class="w-5 h-5 text-[#031b33]"></i>
     <span id="toast-msg" class="text-sm font-extrabold">Notification Message</span>
   </div>
