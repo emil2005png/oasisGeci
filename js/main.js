@@ -1,61 +1,126 @@
 /**
  * Oasis Pain and Palliative Care Unit - GEC Idukki
- * Main Frontend Interactivity Script
+ * Accessible, Responsive Frontend Functionality
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide Icons
+  // --------------------------------------------------------------------------
+  // 1. Initialize Lucide Icons
+  // --------------------------------------------------------------------------
   if (window.lucide) {
     lucide.createIcons();
   }
 
-  // --- 1. Mobile Navigation Drawer ---
+  // --------------------------------------------------------------------------
+  // 2. Focus Trap Helper for Accessible Modals & Drawers
+  // --------------------------------------------------------------------------
+  function createFocusTrap(element, onEscape) {
+    const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    
+    function handleKeyDown(e) {
+      if (e.key === 'Escape' && typeof onEscape === 'function') {
+        e.preventDefault();
+        onEscape();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusables = Array.from(element.querySelectorAll(focusableSelectors))
+          .filter(el => el.offsetParent !== null);
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    element.addEventListener('keydown', handleKeyDown);
+    return () => element.removeEventListener('keydown', handleKeyDown);
+  }
+
+  // --------------------------------------------------------------------------
+  // 3. Mobile Navigation Drawer
+  // --------------------------------------------------------------------------
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+  const mobileDrawerBackdrop = document.getElementById('mobile-drawer-backdrop');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  let releaseDrawerTrap = null;
+  let lastActiveElementBeforeDrawer = null;
 
   function openMobileMenu() {
-    if (mobileDrawer) {
-      mobileDrawer.classList.remove('translate-x-full');
-      document.body.style.overflow = 'hidden';
-      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    if (!mobileDrawer) return;
+    lastActiveElementBeforeDrawer = document.activeElement;
+    mobileDrawer.classList.remove('translate-x-full');
+    mobileDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (mobileMenuBtn) {
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
     }
+    releaseDrawerTrap = createFocusTrap(mobileDrawer, closeMobileMenu);
+    
+    // Focus first link in drawer
+    const firstLink = mobileDrawer.querySelector('a, button');
+    if (firstLink) firstLink.focus();
   }
 
   function closeMobileMenu() {
-    if (mobileDrawer) {
-      mobileDrawer.classList.add('translate-x-full');
-      document.body.style.overflow = '';
-      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('translate-x-full');
+    mobileDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (mobileMenuBtn) {
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+    if (releaseDrawerTrap) {
+      releaseDrawerTrap();
+      releaseDrawerTrap = null;
+    }
+    if (lastActiveElementBeforeDrawer) {
+      lastActiveElementBeforeDrawer.focus();
     }
   }
 
   if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
-  if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
-
-  // Close button inside the mobile drawer
-  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
   if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileMenu);
+  if (mobileDrawerBackdrop) mobileDrawerBackdrop.addEventListener('click', closeMobileMenu);
 
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // --- 2. Sticky Navbar Background on Scroll ---
-  const navbar = document.getElementById('navbar');
+  // --------------------------------------------------------------------------
+  // 4. Header Background On Scroll & Scrollspy
+  // --------------------------------------------------------------------------
+  const header = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id], footer[id="contact"]');
+  const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
   const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar?.classList.add('shadow-lg');
-    } else {
-      navbar?.classList.remove('shadow-lg');
+  function updateHeaderAndScrollspy() {
+    const scrollY = window.scrollY;
+
+    // Header styling on scroll
+    if (header) {
+      if (scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
 
-    // Scroll to Top Arrow visibility
+    // Scroll to Top visibility
     if (scrollToTopBtn) {
-      if (window.scrollY > 350) {
+      if (scrollY > 350) {
         scrollToTopBtn.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
         scrollToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
       } else {
@@ -63,122 +128,193 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToTopBtn.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
       }
     }
-  }, { passive: true });
+
+    // Scrollspy active section highlighting
+    let currentSectionId = '';
+    const scrollThreshold = scrollY + 140;
+
+    sections.forEach(sec => {
+      const secTop = sec.offsetTop;
+      const secHeight = sec.offsetHeight;
+      if (scrollThreshold >= secTop && scrollThreshold < secTop + secHeight) {
+        currentSectionId = sec.getAttribute('id');
+      }
+    });
+
+    if (currentSectionId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
+          link.classList.add('nav-active');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('nav-active');
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateHeaderAndScrollspy, { passive: true });
+  updateHeaderAndScrollspy();
 
   if (scrollToTopBtn) {
     scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // --- 3. Impact Metrics Counter Animation ---
+  // --------------------------------------------------------------------------
+  // 5. Impact Metrics Counter Animation (Respecting prefers-reduced-motion)
+  // --------------------------------------------------------------------------
   const counterElements = document.querySelectorAll('.counter-value');
-  let animated = false;
+  const impactSection = document.getElementById('impact');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let countersAnimated = false;
 
   function animateCounters() {
-    counterElements.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const duration = 2000; // 2 seconds
-      const stepTime = 20;
-      const steps = duration / stepTime;
-      const increment = target / steps;
-      let current = 0;
+    if (prefersReducedMotion) {
+      // In reduced motion mode, show targets immediately with '+'
+      counterElements.forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        counter.textContent = `${target}+`;
+      });
+      return;
+    }
 
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          counter.textContent = target + '+';
-          clearInterval(timer);
+    counterElements.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+      const duration = 1600;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing out quad
+        const easeProgress = 1 - (1 - progress) * (1 - progress);
+        const currentVal = Math.round(easeProgress * target);
+
+        counter.textContent = `${currentVal}+`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
         } else {
-          counter.textContent = Math.ceil(current) + '+';
+          counter.textContent = `${target}+`;
         }
-      }, stepTime);
+      }
+
+      requestAnimationFrame(update);
     });
   }
 
-  const impactSection = document.getElementById('impact');
   if (impactSection) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
-          animateCounters();
-        }
-      });
-    }, { threshold: 0.3 });
-    observer.observe(impactSection);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !countersAnimated) {
+            countersAnimated = true;
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      observer.observe(impactSection);
+    } else {
+      animateCounters();
+    }
   }
 
-  // --- 4. Interactive Initiatives Modal ---
+  // --------------------------------------------------------------------------
+  // 6. Initiatives Modal (Accessible Keyboard Navigation & Scroll Lock)
+  // --------------------------------------------------------------------------
   const initiativeData = {
     harsham: {
-      title: "Harsham - Annual Palliative Fest & Awareness Drive",
-      subtitle: "GEC Idukki's Flagship Student Palliative Event",
-      image: "assets/harsham-fest.jpg",
-      tag: "Annual Flagship Event",
-      description: `Harsham is the landmark annual palliative care awareness festival organized by Oasis GEC Idukki. It brings together engineering students, faculty, medical professionals, and local palliative care workers in Painavu to spread empathy and break taboos surrounding palliative care.`,
+      title: "Harsham Palliative Fest",
+      subtitle: "Flagship Annual Student Palliative Festival at GEC Idukki",
+      image: "images/harsham-fest.webp",
+      tag: "Flagship Fest",
+      dateLine: "", // Empty: date line is hidden when not specified
+      description: "Harsham is the landmark annual palliative awareness festival organized by Oasis at Government Engineering College Idukki. It brings together engineering students, faculty, medical professionals, and local palliative care workers to spread awareness and empathy across the community.",
       highlights: [
-        "Interactive seminars and compassionate care workshops led by palliative care doctors.",
-        "Cultural competitions, street plays (Nukkad Natak), and floral art exhibitions celebrating human resilience.",
-        "Fundraising drives for essential medical equipment and home-care patient support kits.",
-        "Inter-college youth convention on palliative volunteering in Kerala."
+        "Interactive seminars and compassionate care sessions led by palliative care clinicians.",
+        "Cultural street plays and art presentations highlighting dignity in palliative care.",
+        "Equipment pooling drives collecting wheelchair, waterbed, and care funds.",
+        "Student volunteer mobilization across all engineering departments."
       ]
     },
     outreach: {
-      title: "Old Age Home Outreach & Home Visits",
-      subtitle: "Companion Care & Compassionate Support in Idukki",
-      image: "assets/outreach-care.jpg",
-      tag: "Weekly Outreach",
-      description: `Our dedicated student volunteers regularly visit elder care homes and bedridden palliative patients across Painavu and surrounding Panchayaths in Idukki. Beyond medical supplies, we focus on emotional companionship and active listening.`,
+      title: "Old Age Home Outreach",
+      subtitle: "Companion Care & Elder Fellowship Across Painavu",
+      image: "images/outreach-care.webp",
+      tag: "Community Visits",
+      dateLine: "",
+      description: "Regular student visits to elderly homes and palliative patients in Idukki. Student volunteers provide companion care, warm conversations, life-story listening, and patient comfort kits.",
       highlights: [
-        "Bi-weekly weekend visits to elderly care homes for companionship and recreational activities.",
-        "Material pooling drives collecting bedsheets, hygiene products, adult diapers, and nutritious food.",
-        "Assisting local palliative nurses during home-care medical rounds.",
-        "Recording patient stories and offering compassionate presence to reduce loneliness."
+        "Fortnightly companion visits providing emotional support and friendship.",
+        "Distribution of daily hygiene supplies, adult diapers, and comfort kits.",
+        "Assisting local government palliative nurses during routine health checks.",
+        "Fostering generational connection between young engineers and elders."
       ]
     },
     festive: {
-      title: "Festive Care (Oasis Onam & Christmas Drives)",
-      subtitle: "Bringing Festival Warmth to Every Homebound Patient",
-      image: "assets/festive-care.jpg",
-      tag: "Seasonal Initiative",
-      description: `No patient should feel isolated during Kerala's grand celebrations. Through Oasis Festive Care, our student teams prepare and hand-deliver customized festival kits, Onam Sadya treats, and Christmas gifts to homebound patients.`,
+      title: "Festive Care Drives",
+      subtitle: "Bringing Festival Cheer to Homebound Bedridden Patients",
+      image: "images/festive-care.webp",
+      tag: "Festive Joy",
+      dateLine: "",
+      description: "Ensuring no patient feels isolated during festive seasons. Student teams prepare and hand-deliver customized Onam feast kits and Christmas gifts directly to homebound patients in remote hill tracts.",
       highlights: [
-        "Oasis Onam Kit Supply: Essential grocery kits, banana chips, and traditional new clothes (Kasavu/Dhoti).",
-        "Cultural performances with family members of bedridden patients in their homes.",
-        "Christmas cake distribution and caroling in remote hill-tract homes of Idukki.",
-        "Spreading festive joy, smiles, and community solidarity."
+        "Hand-delivery of Onam Sadya kits, groceries, and traditional wear to bedridden families.",
+        "Christmas cake distribution and fellowship visits across remote hill communities.",
+        "Musical visits and shared moments with family caregivers.",
+        "Restoring smiles and festive celebration to isolated households."
       ]
     }
   };
 
-  const modal = document.getElementById('initiative-modal');
-  const modalImage = document.getElementById('modal-img');
-  const modalTag = document.getElementById('modal-tag');
-  const modalTitle = document.getElementById('modal-title');
-  const modalSubtitle = document.getElementById('modal-subtitle');
-  const modalDescription = document.getElementById('modal-description');
-  const modalHighlights = document.getElementById('modal-highlights');
-  const closeModalBtn = document.getElementById('close-modal-btn');
-  const closeModalFooterBtn = document.getElementById('close-modal-footer-btn');
+  const initModal = document.getElementById('initiative-modal');
+  const initModalImg = document.getElementById('init-modal-img');
+  const initModalTag = document.getElementById('init-modal-tag');
+  const initModalDate = document.getElementById('init-modal-date');
+  const initModalTitle = document.getElementById('init-modal-title');
+  const initModalSubtitle = document.getElementById('init-modal-subtitle');
+  const initModalDesc = document.getElementById('init-modal-description');
+  const initModalHighlights = document.getElementById('init-modal-highlights');
+  const initModalCloseBtn = document.getElementById('init-modal-close-btn');
+  const initModalCloseFooter = document.getElementById('init-modal-close-footer');
+  let releaseInitTrap = null;
+  let lastInitiativeTrigger = null;
 
-  function openModal(key) {
+  function openInitiativeModal(key, triggerBtn) {
     const data = initiativeData[key];
-    if (!data || !modal) return;
+    if (!data || !initModal) return;
 
-    if (modalImage) modalImage.src = data.image;
-    if (modalTag) modalTag.textContent = data.tag;
-    if (modalTitle) modalTitle.textContent = data.title;
-    if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
-    if (modalDescription) modalDescription.textContent = data.description;
+    lastInitiativeTrigger = triggerBtn;
 
-    if (modalHighlights) {
-      modalHighlights.innerHTML = data.highlights
-        .map(h => `<li class="flex items-start gap-2 text-sm text-[#031b33] font-medium">
-          <i data-lucide="check-circle-2" class="w-4 h-4 text-[#031b33] mt-0.5 shrink-0"></i>
+    if (initModalImg) {
+      initModalImg.src = data.image;
+      initModalImg.alt = data.title;
+    }
+    if (initModalTag) initModalTag.textContent = data.tag;
+    
+    // Optional date line: hide if empty
+    if (initModalDate) {
+      if (data.dateLine && data.dateLine.trim() !== "") {
+        initModalDate.textContent = data.dateLine;
+        initModalDate.classList.remove('hidden');
+      } else {
+        initModalDate.classList.add('hidden');
+      }
+    }
+
+    if (initModalTitle) initModalTitle.textContent = data.title;
+    if (initModalSubtitle) initModalSubtitle.textContent = data.subtitle;
+    if (initModalDesc) initModalDesc.textContent = data.description;
+
+    if (initModalHighlights) {
+      initModalHighlights.innerHTML = data.highlights
+        .map(h => `<li class="flex items-start gap-2.5 text-sm font-medium text-[#132D46]">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-[#30AFFF] mt-0.5 shrink-0" aria-hidden="true"></i>
           <span>${h}</span>
         </li>`)
         .join('');
@@ -186,357 +322,271 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.lucide) lucide.createIcons();
 
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+    initModal.classList.add('active');
+    initModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    releaseInitTrap = createFocusTrap(initModal, closeInitiativeModal);
+    if (initModalCloseBtn) initModalCloseBtn.focus();
   }
 
-  function closeModal() {
-    if (!modal) return;
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
+  function closeInitiativeModal() {
+    if (!initModal) return;
+    initModal.classList.remove('active');
+    initModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-  }
 
-  document.querySelectorAll('.open-initiative-modal').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const key = e.currentTarget.getAttribute('data-initiative');
-      openModal(key);
-    });
-  });
-
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-  if (closeModalFooterBtn) closeModalFooterBtn.addEventListener('click', closeModal);
-
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-      closeModal();
+    if (releaseInitTrap) {
+      releaseInitTrap();
+      releaseInitTrap = null;
     }
+    if (lastInitiativeTrigger) {
+      lastInitiativeTrigger.focus();
+    }
+  }
+
+  document.querySelectorAll('.open-initiative-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const key = e.currentTarget.getAttribute('data-initiative');
+      openInitiativeModal(key, e.currentTarget);
+    });
   });
 
-  // --- 5. Volunteer Form Photo Upload Preview ---
-  const photoInput = document.getElementById('photo-input');
-  const photoPreview = document.getElementById('photo-preview');
-  const photoPlaceholder = document.getElementById('photo-placeholder');
-
-  if (photoInput) {
-    photoInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          if (photoPreview) {
-            photoPreview.style.backgroundImage = `url('${event.target.result}')`;
-            photoPreview.classList.remove('hidden');
-          }
-          if (photoPlaceholder) photoPlaceholder.classList.add('hidden');
-        };
-        reader.readAsDataURL(file);
-      }
+  if (initModalCloseBtn) initModalCloseBtn.addEventListener('click', closeInitiativeModal);
+  if (initModalCloseFooter) initModalCloseFooter.addEventListener('click', closeInitiativeModal);
+  if (initModal) {
+    initModal.addEventListener('click', (e) => {
+      if (e.target === initModal) closeInitiativeModal();
     });
   }
 
-  // --- 6. Volunteer Form Submission & Toast ---
-  const volunteerForm = document.getElementById('volunteer-form');
-  const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toast-msg');
-
-  function showToast(message, isSuccess = true) {
-    if (!toast) return;
-    if (toastMsg) toastMsg.textContent = message;
-    
-    toast.className = `fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl backdrop-blur-md transition-all duration-300 transform translate-y-0 opacity-100 border-2 ${
-      isSuccess ? 'bg-[#D8FFC5] text-[#031b33] border-[#C4F7CA]' : 'bg-rose-500 text-white border-rose-700'
-    }`;
-
-    setTimeout(() => {
-      toast.classList.add('translate-y-12', 'opacity-0');
-    }, 4500);
-  }
-
-  if (volunteerForm) {
-    volunteerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('vol-name')?.value.trim();
-      const dept = document.getElementById('vol-dept')?.value;
-      const year = document.getElementById('vol-year')?.value;
-      const phone = document.getElementById('vol-phone')?.value.trim();
-
-      if (!name || !dept || !year || !phone) {
-        showToast("Please complete all required fields.", false);
-        return;
-      }
-
-      // Successful registration simulate
-      showToast(`Welcome to Oasis, ${name}! Your volunteer application has been submitted successfully.`);
-      volunteerForm.reset();
-      
-      if (photoPreview) photoPreview.classList.add('hidden');
-      if (photoPlaceholder) photoPlaceholder.classList.remove('hidden');
-    });
-  }
-
-  // --- 7. Hero Section Background & Card Auto-Slideshow ---
-  const heroSlidesData = [
+  // --------------------------------------------------------------------------
+  // 7. Gallery Data Array & Accessible Lightbox
+  // --------------------------------------------------------------------------
+  /**
+   * Single array of gallery photos (does not duplicate images used in Initiatives).
+   * Thumbnails use WebP with explicit width & height. Full images loaded in lightbox.
+   */
+  const galleryPhotos = [
     {
-      bg: 'assets/hero-slide-1.jpg',
-      tag: 'Hrudayathil Ennum',
-      caption: '"Hrudayathil Ennum - Oasis GEC Idukki team united in compassion, care, and lifelong brotherhood."',
-      badge: '1 / 3'
+      id: 1,
+      thumb: 'images/hero-slide-1.webp',
+      full: 'images/hero-slide-1.webp',
+      title: 'Hrudayathil Ennum - Farewell & Gratitude',
+      category: 'Fest',
+      alt: 'Oasis team gathering celebrating palliative service at GEC Idukki',
+      caption: 'Celebrating lifelong fellowship, empathy, and service with our student volunteers.'
     },
     {
-      bg: 'assets/hero-slide-2.jpg',
-      tag: 'Farewell Celebration',
-      caption: '"Bringing warmth, smiles, and unity to every event at Government Engineering College Idukki."',
-      badge: '2 / 3'
+      id: 2,
+      thumb: 'images/hero-slide-2.webp',
+      full: 'images/hero-slide-2.webp',
+      title: 'Volunteer Fellowship Gathering',
+      category: 'Fest',
+      alt: 'Student volunteers celebrating community impact at GEC Idukki',
+      caption: 'Student volunteers unite to celebrate teamwork and collective palliative outreach.'
     },
     {
-      bg: 'assets/hero-palliative.jpg',
-      tag: 'Palliative Care Mission',
-      caption: '"Palliative care is not just medical support; it is human connection, dignity, and unconditional warmth."',
-      badge: '3 / 3'
+      id: 3,
+      thumb: 'images/hero-palliative.webp',
+      full: 'images/hero-palliative.webp',
+      title: 'Palliative Companion Home Visit',
+      category: 'Visits',
+      alt: 'Student volunteer offering gentle companion support during home care visit',
+      caption: 'Offering quiet companionship, active listening, and warmth to homebound patients in Idukki.'
     }
   ];
 
-  let currentHeroIndex = 0;
-  let heroSlideshowInterval = null;
-  let isSlideshowPlaying = true;
+  const galleryGrid = document.getElementById('gallery-grid');
+  const galleryFiltersContainer = document.getElementById('gallery-filters');
+  const lightboxModal = document.getElementById('gallery-lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxTag = document.getElementById('lightbox-tag');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+  const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+  const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+  let currentLightboxIndex = 0;
+  let activeCategory = 'All';
+  let filteredPhotos = [...galleryPhotos];
+  let releaseLightboxTrap = null;
+  let lastGalleryTrigger = null;
 
-  const bgSlides = document.querySelectorAll('.hero-bg-slide');
-  const cardSlides = document.querySelectorAll('.hero-card-slide');
-  const slideBadge = document.getElementById('hero-slide-badge');
-  const slideTag = document.getElementById('hero-slide-tag');
-  const slideCaption = document.getElementById('hero-slide-caption');
-  const dotBtns = document.querySelectorAll('.hero-dot-btn');
-  const prevBtn = document.getElementById('hero-prev-btn');
-  const nextBtn = document.getElementById('hero-next-btn');
-  const togglePlayBtn = document.getElementById('hero-toggle-play');
-  const playPauseIcon = document.getElementById('play-pause-icon');
-  const heroCardContainer = document.getElementById('hero-card-container');
+  // Extract unique categories from array
+  const availableCategories = Array.from(new Set(galleryPhotos.map(p => p.category)));
 
-  function showHeroSlide(index) {
-    currentHeroIndex = (index + heroSlidesData.length) % heroSlidesData.length;
-    const currentData = heroSlidesData[currentHeroIndex];
+  // Render Category Filter Buttons (hide if only one category exists)
+  if (galleryFiltersContainer) {
+    if (availableCategories.length > 1) {
+      const allCategories = ['All', ...availableCategories];
+      galleryFiltersContainer.innerHTML = allCategories.map(cat => `
+        <button type="button" class="gallery-filter-btn ${cat === 'All' ? 'active' : ''}" data-category="${cat}">
+          ${cat}
+        </button>
+      `).join('');
 
-    // 1. Update background slide opacities
-    bgSlides.forEach((slide, i) => {
-      if (i === currentHeroIndex) {
-        slide.classList.remove('opacity-0');
-        slide.classList.add('opacity-100');
-      } else {
-        slide.classList.remove('opacity-100');
-        slide.classList.add('opacity-0');
-      }
-    });
-
-    // 2. Update card slide opacities
-    cardSlides.forEach((slide, i) => {
-      if (i === currentHeroIndex) {
-        slide.classList.remove('opacity-0');
-        slide.classList.add('opacity-100');
-      } else {
-        slide.classList.remove('opacity-100');
-        slide.classList.add('opacity-0');
-      }
-    });
-
-    // 3. Update text details
-    if (slideBadge) slideBadge.textContent = currentData.badge;
-    if (slideTag) slideTag.textContent = currentData.tag;
-    if (slideCaption) slideCaption.textContent = currentData.caption;
-
-    // 4. Update dot indicators
-    dotBtns.forEach((dot, i) => {
-      if (i === currentHeroIndex) {
-        dot.className = 'hero-dot-btn w-2.5 h-2.5 rounded-full bg-[#031b33] transition-all scale-125';
-      } else {
-        dot.className = 'hero-dot-btn w-2.5 h-2.5 rounded-full bg-[#031b33]/30 hover:bg-[#031b33]/60 transition-all';
-      }
-    });
-  }
-
-  function startHeroSlideshow() {
-    if (heroSlideshowInterval) clearInterval(heroSlideshowInterval);
-    heroSlideshowInterval = setInterval(() => {
-      showHeroSlide(currentHeroIndex + 1);
-    }, 4500);
-    isSlideshowPlaying = true;
-    if (playPauseIcon) {
-      playPauseIcon.setAttribute('data-lucide', 'pause');
-      if (window.lucide) lucide.createIcons();
-    }
-  }
-
-  function pauseHeroSlideshow() {
-    if (heroSlideshowInterval) {
-      clearInterval(heroSlideshowInterval);
-      heroSlideshowInterval = null;
-    }
-    isSlideshowPlaying = false;
-    if (playPauseIcon) {
-      playPauseIcon.setAttribute('data-lucide', 'play');
-      if (window.lucide) lucide.createIcons();
-    }
-  }
-
-  if (bgSlides.length > 0) {
-    startHeroSlideshow();
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        showHeroSlide(currentHeroIndex - 1);
-        if (isSlideshowPlaying) startHeroSlideshow();
+      galleryFiltersContainer.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          galleryFiltersContainer.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.getAttribute('data-category');
+          renderGalleryGrid();
+        });
       });
+    } else {
+      galleryFiltersContainer.classList.add('hidden');
     }
+  }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        showHeroSlide(currentHeroIndex + 1);
-        if (isSlideshowPlaying) startHeroSlideshow();
-      });
-    }
+  // Render Grid Cards
+  function renderGalleryGrid() {
+    if (!galleryGrid) return;
 
-    if (togglePlayBtn) {
-      togglePlayBtn.addEventListener('click', () => {
-        if (isSlideshowPlaying) {
-          pauseHeroSlideshow();
-        } else {
-          startHeroSlideshow();
+    filteredPhotos = activeCategory === 'All'
+      ? galleryPhotos
+      : galleryPhotos.filter(p => p.category === activeCategory);
+
+    galleryGrid.innerHTML = filteredPhotos.map((photo, index) => `
+      <article class="gallery-card group reveal revealed" data-gallery-index="${index}" tabindex="0" role="button" aria-label="View photo: ${photo.title}">
+        <div class="gallery-thumb-wrapper">
+          <img src="${photo.thumb}" alt="${photo.alt}" width="800" height="533" loading="lazy" class="group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[#0B3C5D] text-xs font-bold shadow-sm border border-[#E5EBF0]">
+            ${photo.category}
+          </span>
+          <div class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white/95 text-[#0B3C5D] flex items-center justify-center shadow-md opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
+            <i data-lucide="maximize-2" class="w-4 h-4" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <h3 class="font-heading text-lg font-bold text-[#0B3C5D] leading-snug group-hover:text-[#30AFFF] transition-colors">
+            ${photo.title}
+          </h3>
+          <p class="text-xs text-[#4B637A] mt-2 line-clamp-2 leading-relaxed">
+            ${photo.caption}
+          </p>
+        </div>
+      </article>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+
+    // Attach click and enter/space key listeners
+    galleryGrid.querySelectorAll('.gallery-card').forEach((card, idx) => {
+      card.addEventListener('click', () => openLightbox(idx, card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(idx, card);
         }
       });
-    }
-
-    dotBtns.forEach(dot => {
-      dot.addEventListener('click', (e) => {
-        const idx = parseInt(e.currentTarget.getAttribute('data-slide-index'), 10);
-        showHeroSlide(idx);
-        if (isSlideshowPlaying) startHeroSlideshow();
-      });
     });
+  }
 
-    if (heroCardContainer) {
-      heroCardContainer.addEventListener('mouseenter', () => {
-        if (isSlideshowPlaying && heroSlideshowInterval) {
-          clearInterval(heroSlideshowInterval);
-        }
-      });
-      heroCardContainer.addEventListener('mouseleave', () => {
-        if (isSlideshowPlaying) {
-          startHeroSlideshow();
-        }
-      });
+  renderGalleryGrid();
+
+  function updateLightboxContent(idx) {
+    if (idx < 0 || idx >= filteredPhotos.length) return;
+    currentLightboxIndex = idx;
+    const photo = filteredPhotos[idx];
+
+    if (lightboxImg) {
+      lightboxImg.src = photo.full;
+      lightboxImg.alt = photo.alt;
     }
+    if (lightboxTitle) lightboxTitle.textContent = photo.title;
+    if (lightboxTag) lightboxTag.textContent = photo.category;
+    if (lightboxCaption) lightboxCaption.textContent = photo.caption;
   }
 
-  // --- 8. Committee Carousel ---
-  const commTrack = document.getElementById('committee-track');
-  const commPrev = document.getElementById('comm-prev');
-  const commNext = document.getElementById('comm-next');
-  const COMM_PAGES = 3;
-  let commPage = 0;
+  function openLightbox(index, triggerElement) {
+    if (!lightboxModal) return;
+    lastGalleryTrigger = triggerElement;
+    updateLightboxContent(index);
 
-  function updateCommCarousel() {
-    if (!commTrack) return;
-    commTrack.style.transform = `translateX(-${(commPage * 100) / COMM_PAGES}%)`;
-    if (commPrev) commPrev.disabled = commPage === 0;
-    if (commNext) commNext.disabled = commPage === COMM_PAGES - 1;
-  }
-
-  if (commPrev) commPrev.addEventListener('click', () => { if (commPage > 0) { commPage--; updateCommCarousel(); } });
-  if (commNext) commNext.addEventListener('click', () => { if (commPage < COMM_PAGES - 1) { commPage++; updateCommCarousel(); } });
-  updateCommCarousel();
-
-  // Touch swipe support for committee carousel
-  let commTouchStartX = 0;
-  let commTouchEndX = 0;
-  if (commTrack) {
-    commTrack.addEventListener('touchstart', (e) => {
-      commTouchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    commTrack.addEventListener('touchend', (e) => {
-      commTouchEndX = e.changedTouches[0].screenX;
-      const swipeDistance = commTouchStartX - commTouchEndX;
-      if (Math.abs(swipeDistance) > 50) {
-        if (swipeDistance > 0 && commPage < COMM_PAGES - 1) {
-          commPage++;
-          updateCommCarousel();
-        } else if (swipeDistance < 0 && commPage > 0) {
-          commPage--;
-          updateCommCarousel();
-        }
-      }
-    }, { passive: true });
-  }
-
-  // Reset carousel page on window resize to prevent layout issues
-  window.addEventListener('resize', () => {
-    updateCommCarousel();
-  }, { passive: true });
-
-  // --- 9. Gallery Lightbox Modal Handler ---
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const galleryModal = document.getElementById('gallery-lightbox-modal');
-  const galleryImg = document.getElementById('gallery-lightbox-img');
-  const galleryTitle = document.getElementById('gallery-lightbox-title');
-  const galleryTag = document.getElementById('gallery-lightbox-tag');
-  const galleryDesc = document.getElementById('gallery-lightbox-desc');
-  const closeGalleryBtn = document.getElementById('close-gallery-modal-btn');
-  const closeGalleryFooterBtn = document.getElementById('close-gallery-modal-footer');
-
-  function openGalleryModal(item) {
-    if (!galleryModal) return;
-    const imgSrc = item.getAttribute('data-image');
-    const title = item.getAttribute('data-title');
-    const tag = item.getAttribute('data-tag');
-    const desc = item.getAttribute('data-desc');
-
-    if (galleryImg) galleryImg.src = imgSrc;
-    if (galleryTitle) galleryTitle.textContent = title;
-    if (galleryTag) galleryTag.textContent = tag;
-    if (galleryDesc) galleryDesc.textContent = desc;
-
-    galleryModal.classList.remove('hidden');
-    galleryModal.classList.add('flex');
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    releaseLightboxTrap = createFocusTrap(lightboxModal, closeLightbox);
+    if (lightboxCloseBtn) lightboxCloseBtn.focus();
   }
 
-  function closeGalleryModal() {
-    if (!galleryModal) return;
-    galleryModal.classList.add('hidden');
-    galleryModal.classList.remove('flex');
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-  }
 
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => openGalleryModal(item));
-  });
-
-  if (closeGalleryBtn) closeGalleryBtn.addEventListener('click', closeGalleryModal);
-  if (closeGalleryFooterBtn) closeGalleryFooterBtn.addEventListener('click', closeGalleryModal);
-
-  if (galleryModal) {
-    galleryModal.addEventListener('click', (e) => {
-      if (e.target === galleryModal) closeGalleryModal();
-    });
-  }
-
-  // Escape key closes gallery modal
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && galleryModal && !galleryModal.classList.contains('hidden')) {
-      closeGalleryModal();
+    if (releaseLightboxTrap) {
+      releaseLightboxTrap();
+      releaseLightboxTrap = null;
     }
-  });
+    if (lastGalleryTrigger) {
+      lastGalleryTrigger.focus();
+    }
+  }
 
-  // --- 10. Buttery Smooth Scroll Reveal Intersection Observer ---
+  function nextLightbox() {
+    if (filteredPhotos.length <= 1) return;
+    const nextIdx = (currentLightboxIndex + 1) % filteredPhotos.length;
+    updateLightboxContent(nextIdx);
+  }
+
+  function prevLightbox() {
+    if (filteredPhotos.length <= 1) return;
+    const prevIdx = (currentLightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
+    updateLightboxContent(prevIdx);
+  }
+
+  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', nextLightbox);
+  if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', prevLightbox);
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+
+    // Arrow keys navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevLightbox();
+      }
+    });
+
+    // Touch Swipe on mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    lightboxModal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchStartX - touchEndX;
+      if (Math.abs(swipeDistance) > 45) {
+        if (swipeDistance > 0) {
+          nextLightbox(); // Swiped left -> next
+        } else {
+          prevLightbox(); // Swiped right -> prev
+        }
+      }
+    }, { passive: true });
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. Subtle Scroll Reveal (Respecting prefers-reduced-motion)
+  // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  if (prefersReducedMotion) {
+    revealElements.forEach(el => el.classList.add('revealed'));
+  } else if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -545,51 +595,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      root: null,
       rootMargin: '0px 0px -40px 0px',
-      threshold: 0.12
+      threshold: 0.08
     });
-
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback for older browsers
     revealElements.forEach(el => el.classList.add('revealed'));
   }
-
-  // --- 11. Interactive Ripple Effect on Click ---
-  function createRipple(e, target) {
-    const rect = target.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple-wave');
-    const diameter = Math.max(rect.width, rect.height);
-    const radius = diameter / 2;
-
-    ripple.style.width = ripple.style.height = `${diameter}px`;
-    ripple.style.left = `${e.clientX - rect.left - radius}px`;
-    ripple.style.top = `${e.clientY - rect.top - radius}px`;
-
-    if (!target.classList.contains('ripple-target')) {
-      target.classList.add('ripple-target');
-    }
-
-    const existingRipple = target.querySelector('.ripple-wave');
-    if (existingRipple) {
-      existingRipple.remove();
-    }
-
-    target.appendChild(ripple);
-
-    ripple.addEventListener('animationend', () => {
-      ripple.remove();
-    });
-  }
-
-  const interactiveTargets = document.querySelectorAll(
-    'button, .open-initiative-modal, a.inline-flex, a.flex, .glass-card, .gallery-item'
-  );
-  interactiveTargets.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      createRipple(e, btn);
-    });
-  });
 });
