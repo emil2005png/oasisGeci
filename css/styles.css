@@ -421,10 +421,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
   display: block;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 /* --------------------------------------------------------------------------
