@@ -425,6 +425,19 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   display: block;
 }
 
+/* Individual framing adjustments for non-standard photo crops */
+.member-photo-container img[alt*="Emil"] {
+  object-position: 51% 38% !important;
+  transform: scale(1.25);
+  transform-origin: 51% 38%;
+}
+
+.member-photo-container img[alt*="Shanih"] {
+  object-position: 46% 54% !important;
+  transform: scale(1.6);
+  transform-origin: 46% 54%;
+}
+
 /* --------------------------------------------------------------------------
    8. Gallery Responsive Grid & Filter Bar
    -------------------------------------------------------------------------- */

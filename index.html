@@ -487,7 +487,7 @@
             <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
                 <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
-                  <img src="https://lh3.googleusercontent.com/d/1WWycXNBrhhhy93T_-2cqezLrvhv6JM6Q" alt="Shanih, Sub Treasurer, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; class=&quot;w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40&quot; aria-hidden=&quot;true&quot;><path d=&quot;M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2&quot;/><circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/></svg>';">
+                  <img src="https://lh3.googleusercontent.com/d/1WWycXNBrhhhy93T_-2cqezLrvhv6JM6Q" alt="Shanih, Sub Treasurer, Oasis GEC Idukki" class="w-full h-full object-cover" style="object-position: 46% 54%; transform: scale(1.6); transform-origin: 46% 54%;" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; class=&quot;w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40&quot; aria-hidden=&quot;true&quot;><path d=&quot;M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2&quot;/><circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
                   Sub Treasurer
@@ -674,7 +674,7 @@
             <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
                 <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
-                  <img src="https://lh3.googleusercontent.com/d/1a1WYcl_r7IMVT-JlDYpytproUsCGz2MD" alt="Emil, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; class=&quot;w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40&quot; aria-hidden=&quot;true&quot;><path d=&quot;M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2&quot;/><circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/></svg>';">
+                  <img src="https://lh3.googleusercontent.com/d/1a1WYcl_r7IMVT-JlDYpytproUsCGz2MD" alt="Emil, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" style="object-position: 51% 38%; transform: scale(1.25); transform-origin: 51% 38%;" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; class=&quot;w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40&quot; aria-hidden=&quot;true&quot;><path d=&quot;M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2&quot;/><circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
                   Department Representative
@@ -1172,8 +1172,15 @@
                   deptText = escapeTxt(deptText);
 
                   const photoUrl = formatDriveUrl(member.PhotoURL);
+                  let customStyle = '';
+                  if (name === 'Emil') {
+                    customStyle = ' style="object-position: 51% 38%; transform: scale(1.25); transform-origin: 51% 38%;"';
+                  } else if (name === 'Shanih') {
+                    customStyle = ' style="object-position: 46% 54%; transform: scale(1.6); transform-origin: 46% 54%;"';
+                  }
+
                   const photoHtml = photoUrl
-                    ? '<img src="' + photoUrl + '" alt="' + name + ', ' + role + ', Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\'' + userSvg + '\';">'
+                    ? '<img src="' + photoUrl + '" alt="' + name + ', ' + role + ', Oasis GEC Idukki" class="w-full h-full object-cover"' + customStyle + ' width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\'' + userSvg + '\';">'
                     : userSvg;
 
                   return (
