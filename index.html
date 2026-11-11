@@ -349,8 +349,8 @@
             <!-- Member 1: Principal -->
             <article class="oasis-card p-6 text-center flex flex-col items-center justify-between reveal">
               <div class="w-full flex flex-col items-center">
-                <div class="w-24 h-24 rounded-2xl overflow-hidden border border-[#E5EBF0] shadow-sm mb-4 bg-[#FAF8F5]">
-                  <img src="images/committee-principal.webp" alt="Dr. Manju Manuel, Principal, GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy">
+                <div class="member-photo-container w-36 h-36 sm:w-40 sm:h-40 mb-4 bg-[#FAF8F5]">
+                  <img src="images/manju_manuel.png" alt="Dr. Manju Manuel, Principal, GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy">
                 </div>
                 <span class="px-3 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-xs font-bold border border-[#30AFFF]/30 mb-2">
                   Principal
@@ -366,8 +366,8 @@
             <!-- Member 2: Staff Advisor -->
             <article class="oasis-card p-6 text-center flex flex-col items-center justify-between reveal">
               <div class="w-full flex flex-col items-center">
-                <div class="w-24 h-24 rounded-2xl overflow-hidden border border-[#E5EBF0] shadow-sm mb-4 bg-[#FAF8F5]">
-                  <img src="images/committee-advisor.webp" alt="Prince V Jose, Staff Advisor, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy">
+                <div class="member-photo-container w-36 h-36 sm:w-40 sm:h-40 mb-4 bg-[#FAF8F5]">
+                  <img src="images/prince_jose.png" alt="Prince V Jose, Staff Advisor, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy">
                 </div>
                 <!-- TODO (Needs User Confirmation): Confirm if Prof. Mubarak A.K. was previously associated or if Prince V Jose is current Staff Advisor. -->
                 <span class="px-3 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-xs font-bold border border-[#30AFFF]/30 mb-2">
@@ -384,8 +384,8 @@
             <!-- Member 3: Founder & Chief Mentor (Using Initials Avatar instead of logo) -->
             <article class="oasis-card p-6 text-center flex flex-col items-center justify-between reveal">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-24 h-24 mb-4">
-                  <span>LR</span>
+                <div class="member-photo-container w-36 h-36 sm:w-40 sm:h-40 mb-4 bg-[#FAF8F5]">
+                  <img src="images/latha-teacher-1024x497-1-e1606356462176.jpg" alt="Dr. Latha Raj, Founder & Chief Mentor, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy">
                 </div>
                 <span class="px-3 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-xs font-bold border border-[#30AFFF]/30 mb-2">
                   Founder & Chief Mentor
@@ -413,94 +413,697 @@
             </span>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-            
-            <!-- Executive 1: Ebin Mathews -->
-            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal">
+          <!-- Student Executive Committee Grid (Live rendered & synced with OpenSheet API) -->
+          <div id="committee-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6" aria-live="polite">
+            <!-- Member: Emil -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-20 h-20 mb-3 text-xl">
-                  <span>EM</span>
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1a1WYcl_r7IMVT-JlDYpytproUsCGz2MD" alt="Emil, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
-                  Student Convenor
+                  Department Representative
                 </span>
-                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Ebin Mathews</h4>
-                <p class="text-xs text-[#4B637A] font-medium mt-0.5">Final Year • Computer Science</p>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Emil</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Information Technology</p>
               </div>
               <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
-                Directs volunteer teams, event planning, and outreach operations.
+                Palliative care volunteer team member.
               </p>
             </article>
 
-            <!-- Executive 2: Daniya O V -->
-            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal">
+            <!-- Member: Sona -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-20 h-20 mb-3 text-xl">
-                  <span>DO</span>
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1FdNkeWGT2OwpTRv8-ZP0XhiUe57Mu9aN" alt="Sona, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
-                  Joint Convenor
+                  Executive Member
                 </span>
-                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Daniya O V</h4>
-                <p class="text-xs text-[#4B637A] font-medium mt-0.5">Final Year • Electronics & Comm.</p>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sona</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Information Technology</p>
               </div>
               <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
-                Coordinates volunteer mobilization and palliative festival planning.
+                Palliative care volunteer team member.
               </p>
             </article>
 
-            <!-- Executive 3: Prethyush Babu -->
-            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal">
+            <!-- Member: Riza -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-20 h-20 mb-3 text-xl">
-                  <span>PB</span>
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1CGhsZyoR3-SwsCrcO5fUB3csMgl2lw7B" alt="Riza, Sub Convener, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Sub Convener
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Riza</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Robotics & AI</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Amarnath -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1WSJYPuSFdJyyeUasjKzMP5np3Qrc_T3h" alt="Amarnath, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Executive Member
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Amarnath</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Prethyush -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/15vi4lhVhxR1PNB4JYcGov8JU3m-DkrlU" alt="Prethyush, Treasurer, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
                   Treasurer
                 </span>
-                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Prethyush Babu</h4>
-                <p class="text-xs text-[#4B637A] font-medium mt-0.5">Final Year • Information Tech.</p>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Prethyush</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Information Technology</p>
               </div>
               <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
-                Manages patient relief funds, equipment pooling, and accounts.
+                Palliative care volunteer team member.
               </p>
             </article>
 
-            <!-- Executive 4: Shanih -->
-            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal">
+            <!-- Member: Shamla -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-20 h-20 mb-3 text-xl">
-                  <span>S</span>
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1ZmpXoLdm4fqPQM0QA-FBpSeCG_9lL8bO" alt="Shamla, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
-                  Joint Treasurer
+                  Department Representative
                 </span>
-                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Shanih</h4>
-                <p class="text-xs text-[#4B637A] font-medium mt-0.5">Third Year • Electronics Engg</p>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Shamla</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Information Technology</p>
               </div>
               <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
-                Oversees donation collection and care kit procurement for home visits.
+                Palliative care volunteer team member.
               </p>
             </article>
 
-            <!-- Executive 5: Neha Varghese -->
-            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal">
+            <!-- Member: Niya -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
-                <div class="initials-avatar w-20 h-20 mb-3 text-xl">
-                  <span>NV</span>
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1mpS6PqLuFF8LmTMy0dMXF0BMLC-VjoAi" alt="Niya, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Executive Member
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Niya</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Sanad -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1o0DLFBD9bD4wAYq8_g5g_xICz76PzEkA" alt="Sanad, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sanad</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Mechanical Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Saffa -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1va4TAWY27Hjdl6jnpRsTTF0BEzyLgFNn" alt="Saffa, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Saffa</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Computer Science & Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Akhil Siby -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1Kc_M5cbgi_PSjqB8r9574cHJrCWRiglF" alt="Akhil Siby, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Akhil Siby</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Computer Science</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Nandana -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1FMC-OLtdmkeH-p3d5tBK2F4xjFsWQ8KO" alt="Nandana, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Nandana</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Diya -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1Np742bmWX_s0a4KENDd-v_1n3qy75wyb" alt="Diya, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Diya</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Computer Science & Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Anil S -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/18kGOwWmlJlK13I4u7_Hg_n8zYBL4BLle" alt="Anil S, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Anil S</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Nidhin Gireesh -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1fDu4W_J3MmBKlc2JVLri24XAu64AUMMx" alt="Nidhin Gireesh, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Nidhin Gireesh</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Computer Science & Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Maheswar Manij -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1BoELKonTX9FI-LRcpsjyJGdNxEMPbqkZ" alt="Maheswar Manij, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Maheswar Manij</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Mechanical Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Hiba Febi -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1E7mWWELr8LGBNKcxXFNqZdMtg18JiboF" alt="Hiba Febi, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Hiba Febi</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Alan -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1mgFr_HG6RvLi0LzeKrVtBfJEuFXkvY7T" alt="Alan, Media Lead, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Media Lead
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Alan</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Mechanical Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Divak -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1cgZl-K3_C6hcNm0u3FvXHWlD6_paC_37" alt="Divak, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Divak</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Aby Jenson -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1yKr8cTd4290VuOr-vgHAzkyybtbL-D9v" alt="Aby Jenson, Volunteer Lead, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Volunteer Lead
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Aby Jenson</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Sana Siddique -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1AV8krm17tmGn5ORLAo0wbcNgG_QFE1js" alt="Sana Siddique, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sana Siddique</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Aadilakshmi -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/13Hx4iHml0_hg50miaBLdNSF9y3zeQXgB" alt="Aadilakshmi, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Executive Member
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Aadilakshmi</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Junia Vinod -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1MAy_EP5591HImgmQbz9qK3j0Y0TrU40i" alt="Junia Vinod, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Junia Vinod</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Amritha -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1fWy1NGvXj5PSGeG-zUP0oaN2ygwatw0k" alt="Amritha, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Amritha</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Sana -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1f5MVs0EzUXbns90V8G7Vr7ynBqjvIMK8" alt="Sana, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sana</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Nathul -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1kZQQO00MQ-ja0DhLybanRpIkwDpmxkYN" alt="Nathul, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Nathul</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Aliya -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1Kwvtro5dXHRafNdEz0UwKGRQghYafyOx" alt="Aliya, Conduct Lead, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Conduct Lead
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Aliya</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Jishnu -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1ZT3_hCCIF1anOfrmfApx40kDQqUtkBaw" alt="Jishnu, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Jishnu</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Sanu -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1bZElO8ZdlqHVKO1477XbTRhaoMj3UlDd" alt="Sanu, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Executive Member
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sanu</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Computer Science & Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Abhishek -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1DV1tN9RXcFgYQvy-GH6GTDVWCwzx_R7l" alt="Abhishek, Executive Member, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Executive Member
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Abhishek</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Neha -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1M8jK_2fBckOa7wcN_nAhVoEtTMQLvKLa" alt="Neha, Content Lead, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
                   Content Lead
                 </span>
-                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Neha Varghese</h4>
-                <p class="text-xs text-[#4B637A] font-medium mt-0.5">Third Year • Computer Science</p>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Neha</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S7 • Mechanical Engineering</p>
               </div>
               <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
-                Manages communication, documentation, and digital outreach for Oasis.
+                Palliative care volunteer team member.
               </p>
             </article>
 
+            <!-- Member: Yaseen -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1S8YdeqAlJT2aWOYc5maqWlLNoK4cDRp4" alt="Yaseen, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Yaseen</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Information Technology</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Hari -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1hSKFClriq9CngiSI0MKkrbn7vGVMYwRt" alt="Hari, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Hari</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Vismaya -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1AMxZx3BksWb6PiIXVnoXzFICyM08mH7k" alt="Vismaya, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Vismaya</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Robotics & Automation</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Sreeprabha -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1Ol5Uq7y8gy68OLtbD_HxslgyjpuWM5-j" alt="Sreeprabha, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Sreeprabha</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S1 • Robotics & Automation</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Surya -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1wEI8GhzuVf31Ysra9rfnkwf28q3Nk5ir" alt="Surya, Department Representative, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Department Representative
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Surya</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S3 • Electrical & Electronics Engineering</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
+
+            <!-- Member: Shanih -->
+            <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
+              <div class="w-full flex flex-col items-center">
+                <div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">
+                  <img src="https://lh3.googleusercontent.com/d/1WWycXNBrhhhy93T_-2cqezLrvhv6JM6Q" alt="Shanih, Sub Treasurer, Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';">
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">
+                  Sub Treasurer
+                </span>
+                <h4 class="text-base font-bold font-heading text-[#0B3C5D]">Shanih</h4>
+                <p class="text-xs text-[#4B637A] font-medium mt-0.5">S5 • Electronics & Communication</p>
+              </div>
+              <p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">
+                Palliative care volunteer team member.
+              </p>
+            </article>
           </div>
+
+          <script>
+            // Live background sync from OpenSheet & Google Drive
+            async function syncCommitteeData() {
+              const container = document.getElementById('committee-grid');
+              if (!container) return;
+
+              try {
+                const response = await fetch('https://opensheet.elk.sh/1Je6LozGf25788YbbD7dTFjuk95WgtDOKHg6Wi_whPOg/Sheet1');
+                if (!response.ok) return;
+                const liveMembers = await response.json();
+                if (!Array.isArray(liveMembers) || liveMembers.length === 0) return;
+
+                function formatDriveUrl(url) {
+                  if (!url || typeof url !== 'string') return '';
+                  const trimmed = url.trim();
+                  if (!trimmed) return '';
+                  if (trimmed.includes('lh3.googleusercontent.com/d/')) return trimmed;
+                  const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
+                  return (match && match[1]) ? ('https://lh3.googleusercontent.com/d/' + match[1]) : trimmed;
+                }
+
+                function escapeTxt(s) {
+                  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                }
+
+                const userSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+
+                container.innerHTML = liveMembers.map((member, i) => {
+                  const name = escapeTxt(member.Name || ('Member ' + (i + 1)));
+                  const role = escapeTxt(member.Role || 'Executive Member');
+                  const sem = member.Semester ? member.Semester.trim() : '';
+                  const dept = member.Department ? member.Department.trim() : '';
+                  let deptText = 'Student Volunteer • GEC Idukki';
+                  if (sem && dept) deptText = sem + ' • ' + dept;
+                  else if (dept) deptText = dept;
+                  else if (sem) deptText = sem + ' • Student Volunteer';
+                  deptText = escapeTxt(deptText);
+
+                  const photoUrl = formatDriveUrl(member.PhotoURL);
+                  const photoHtml = photoUrl
+                    ? '<img src="' + photoUrl + '" alt="' + name + ', ' + role + ', Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\'' + userSvg + '\';">'
+                    : userSvg;
+
+                  return (
+                    '<article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">' +
+                      '<div class="w-full flex flex-col items-center">' +
+                        '<div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">' +
+                          photoHtml +
+                        '</div>' +
+                        '<span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">' +
+                          role +
+                        '</span>' +
+                        '<h4 class="text-base font-bold font-heading text-[#0B3C5D]">' + name + '</h4>' +
+                        '<p class="text-xs text-[#4B637A] font-medium mt-0.5">' + deptText + '</p>' +
+                      </div>' +
+                      '<p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">' +
+                        'Palliative care volunteer team member.' +
+                      '</p>' +
+                    '</article>'
+                  );
+                }).join('');
+
+                if (window.lucide) {
+                  lucide.createIcons();
+                }
+              } catch (err) {
+                // Fallback remains fully visible
+              }
+            }
+
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', syncCommitteeData);
+            } else {
+              syncCommitteeData();
+            }
+          </script>
         </div>
 
       </div>
@@ -525,7 +1128,7 @@
           <!-- Initiative 1: Harsham -->
           <article class="oasis-card flex flex-col justify-between overflow-hidden reveal">
             <div>
-              <div class="relative aspect-video overflow-hidden bg-[#FAF8F5]">
+              <div class="relative h-60 sm:h-72 overflow-hidden bg-[#FAF8F5]">
                 <img src="images/harsham-fest.webp" alt="Harsham Palliative Care Festival at GEC Idukki"
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   width="800" height="598" loading="lazy">
@@ -554,7 +1157,7 @@
           <!-- Initiative 2: Old Age Home Outreach -->
           <article class="oasis-card flex flex-col justify-between overflow-hidden reveal">
             <div>
-              <div class="relative aspect-video overflow-hidden bg-[#FAF8F5]">
+              <div class="relative h-60 sm:h-72 overflow-hidden bg-[#FAF8F5]">
                 <img src="images/outreach-care.webp" alt="Student volunteers on an elderly care home visit in Idukki"
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   width="800" height="598" loading="lazy">
@@ -582,7 +1185,7 @@
           <!-- Initiative 3: Festive Care Drives -->
           <article class="oasis-card flex flex-col justify-between overflow-hidden reveal">
             <div>
-              <div class="relative aspect-video overflow-hidden bg-[#FAF8F5]">
+              <div class="relative h-60 sm:h-72 overflow-hidden bg-[#FAF8F5]">
                 <img src="images/festive-care.webp" alt="Festive care kit distribution for homebound patients"
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   width="800" height="598" loading="lazy">
