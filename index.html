@@ -203,17 +203,9 @@
 
     <!-- ==================== 1. HERO SECTION ==================== -->
     <section id="hero" class="hero-wrapper" role="region" aria-label="Hero - Spreading Hope, Building Empathy">
-      <!-- Animated Hero Background (YouTube Video) with Dark Overlay -->
+      <!-- Animated Hero Background (YouTube Video via IFrame Player API) with Dark Overlay -->
       <div class="hero-video-container" aria-hidden="true">
-        <iframe
-          class="hero-video-frame"
-          src="https://www.youtube.com/embed/rPat78RH0aM?autoplay=1&mute=1&controls=0&loop=1&playlist=rPat78RH0aM&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3"
-          title="OASIS animated hero background"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          tabindex="-1">
-        </iframe>
+        <div id="hero-video"></div>
       </div>
       <div class="hero-dark-overlay" aria-hidden="true"></div>
 
