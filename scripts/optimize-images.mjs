@@ -42,6 +42,10 @@ async function optimizeImages() {
     if (m.photo && fs.existsSync(m.photo)) {
       const ext = path.extname(m.photo);
       const webpPath = m.photo.replace(ext, '.webp');
+      if (fs.existsSync(webpPath)) {
+        m.photo = webpPath;
+        continue;
+      }
       try {
         await sharp(m.photo)
           .resize(320, 320, { fit: 'cover', position: 'center' })
