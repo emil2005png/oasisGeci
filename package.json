@@ -1,0 +1,31 @@
+{
+  "name": "oasis-gec-idukki",
+  "version": "1.0.0",
+  "description": "Official website of Oasis GEC Idukki palliative care unit",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && npx serve .",
+    "build:data": "node scripts/build.mjs",
+    "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/styles.css --minify",
+    "build": "npm run build:data && npm run build:css",
+    "check": "node --check js/main.js && node --check scripts/build.mjs",
+    "lint": "eslint js/ scripts/",
+    "format": "prettier --write \"**/*.{html,css,js,mjs,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,mjs,json,md}\""
+  },
+  "keywords": [
+    "palliative-care",
+    "gec-idukki",
+    "oasis"
+  ],
+  "author": "Oasis GEC Idukki",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.3.3",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^3.4.15"
+  }
+}

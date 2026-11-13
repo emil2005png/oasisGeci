@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "thumb": "images/hero-slide-1.webp",
+    "full": "images/hero-slide-1.webp",
+    "title": "Hrudayathil Ennum - Farewell & Gratitude",
+    "category": "Fest",
+    "alt": "Oasis team gathering celebrating palliative service at GEC Idukki",
+    "caption": "Celebrating lifelong fellowship, empathy, and service with our student volunteers."
+  },
+  {
+    "id": 2,
+    "thumb": "images/hero-slide-2.webp",
+    "full": "images/hero-slide-2.webp",
+    "title": "Care Kit Assembly & Packaging",
+    "category": "Outreach",
+    "alt": "Student volunteers packing medicine and daily necessity kits",
+    "caption": "Students sorting and packing hygiene and nutritional essentials for local distribution."
+  },
+  {
+    "id": 3,
+    "thumb": "images/hero-palliative.webp",
+    "full": "images/hero-palliative.webp",
+    "title": "Palliative Companion Home Visit",
+    "category": "Visits",
+    "alt": "Student volunteer offering gentle companion support during home care visit",
+    "caption": "Offering quiet companionship, active listening, and warmth to homebound patients in Idukki."
+  }
+]

@@ -203,11 +203,19 @@
 
     <!-- ==================== 1. HERO SECTION ==================== -->
     <section id="hero" class="hero-wrapper" role="region" aria-label="Hero - Spreading Hope, Building Empathy">
-      <!-- Background Image with Compliant Dark Overlay (WCAG AA Contrast > 10:1 for White Text) -->
-      <div class="hero-bg-container" aria-hidden="true">
-        <img src="images/hero-bg-hands.webp" alt="" class="hero-bg-image" width="1024" height="682" loading="eager">
-        <div class="hero-dark-overlay"></div>
+      <!-- Animated Hero Background (YouTube Video) with Dark Overlay -->
+      <div class="hero-video-container" aria-hidden="true">
+        <iframe
+          class="hero-video-frame"
+          src="https://www.youtube.com/embed/rPat78RH0aM?autoplay=1&mute=1&controls=0&loop=1&playlist=rPat78RH0aM&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3"
+          title="OASIS animated hero background"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          tabindex="-1">
+        </iframe>
       </div>
+      <div class="hero-dark-overlay" aria-hidden="true"></div>
 
       <div class="hero-content max-w-[1100px] mx-auto px-4 sm:px-6 py-20 sm:py-28 md:py-36 text-center text-white">
         <!-- Campus Badge -->

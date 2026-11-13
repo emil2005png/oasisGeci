@@ -1,0 +1,587 @@
+@import "./fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   OASIS PAIN & PALLIATIVE CARE UNIT - GEC IDUKKI
+   Core Stylesheet & Accessible Visual Design System
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand & Theme Colors */
+  --color-navy: #0B3C5D;
+  --color-navy-dark: #07263B;
+  --color-navy-deep: #051928;
+  --color-brand-blue: #30AFFF;
+  --color-brand-blue-accessible: #0875B8;
+  --color-brand-blue-hover: #1A9DE6;
+  --color-brand-blue-tint: #EBF7FF;
+  
+  /* Warm Page & Card Backgrounds */
+  --color-bg-page: #FAF8F5;
+  --color-bg-card: #FFFFFF;
+  --color-bg-subtle: #F2EFE9;
+  
+  /* High-Contrast Typography Colors */
+  --color-text-main: #132D46;
+  --color-text-headings: #0B3C5D;
+  --color-text-muted: #4B637A;
+  
+  /* Borders & Dividers */
+  --color-border: #E5EBF0;
+  --color-border-hover: #CBD7E2;
+  
+  /* Primary Action Button (Warm Accent - WCAG AA Compliant 4.9:1) */
+  --color-warm-primary: #C8421F;
+  --color-warm-primary-hover: #AF3716;
+  --color-warm-tint: #FDF3F0;
+
+  /* Elevation Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(11, 60, 93, 0.07);
+  --shadow-card-hover: 0 12px 30px -4px rgba(11, 60, 93, 0.12);
+  --shadow-nav: 0 2px 16px rgba(11, 60, 93, 0.08);
+
+  /* Geometry */
+  --radius-card: 14px;
+  --radius-btn: 10px;
+  --radius-pill: 9999px;
+
+  /* Animation Timings */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-smooth: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Document Resets & Accessible Typography
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-page);
+  line-height: 1.6;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--color-text-headings);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, input, textarea, button {
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Accessible Focus Indicators & Skip Link
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-warm-primary);
+  color: #FFFFFF !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-btn);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: top var(--transition-normal);
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-brand-blue-accessible);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-brand-blue-accessible);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation Styles
+   -------------------------------------------------------------------------- */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.site-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-nav);
+  border-bottom-color: rgba(229, 235, 240, 0.8);
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  padding: 0.5rem 0.25rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brand-blue-accessible);
+  transition: width var(--transition-normal);
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--color-brand-blue-accessible);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-brand-blue-accessible);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Buttons & Accessible Touch Targets
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.625rem 1.375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #FFFFFF !important;
+  background-color: var(--color-warm-primary);
+  border: 1px solid var(--color-warm-primary);
+  border-radius: var(--radius-btn);
+  box-shadow: 0 2px 8px rgba(200, 66, 31, 0.25);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-warm-primary-hover);
+  border-color: var(--color-warm-primary-hover);
+  box-shadow: 0 4px 14px rgba(200, 66, 31, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy) !important;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-navy);
+  border-radius: var(--radius-btn);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brand-blue-tint);
+  border-color: var(--color-brand-blue-accessible);
+  color: var(--color-navy) !important;
+  transform: translateY(-1px);
+}
+
+.btn-secondary-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-btn);
+  backdrop-filter: blur(8px);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary-light:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-btn);
+  color: var(--color-navy);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background-color: var(--color-brand-blue-tint);
+  color: var(--color-brand-blue-accessible);
+}
+
+/* --------------------------------------------------------------------------
+   6. Accessible Card Design
+   -------------------------------------------------------------------------- */
+.oasis-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.oasis-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-hover);
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero Animated Background & Accessible Layers
+   -------------------------------------------------------------------------- */
+.hero-wrapper {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-navy-deep);
+}
+
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--color-navy-deep);
+}
+
+.hero-video-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 25, 40, 0.78) 0%,
+    rgba(11, 60, 93, 0.66) 55%,
+    rgba(11, 60, 93, 0.56) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   8. Component Helpers & Member Avatars
+   -------------------------------------------------------------------------- */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brand-blue-accessible);
+  background-color: var(--color-brand-blue-tint);
+  border: 1px solid rgba(8, 117, 184, 0.25);
+  border-radius: var(--radius-pill);
+}
+
+.unit-quote {
+  border-left: 3px solid var(--color-brand-blue-accessible);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.unit-quote cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-top: 0.375rem;
+}
+
+.member-photo-container {
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 4px 12px rgba(11, 60, 93, 0.12);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Details / Disclosure Group for Department Representatives */
+details.disclosure-group summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.disclosure-group summary::-webkit-details-marker {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   9. Gallery Components & Accessible Lightbox
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.gallery-thumb-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+}
+
+.gallery-thumb-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--transition-smooth);
+}
+
+.gallery-filter-btn {
+  padding: 0.375rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background-color: #FFFFFF;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  min-height: 38px;
+}
+
+.gallery-filter-btn:hover {
+  border-color: var(--color-brand-blue-accessible);
+  color: var(--color-navy);
+}
+
+.gallery-filter-btn.active {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   10. Accessible Modal Dialogs & Lightbox Overlays
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(5, 25, 40, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-card);
+  box-shadow: 0 20px 40px rgba(5, 25, 40, 0.3);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.96) translateY(10px);
+  transition: transform var(--transition-normal);
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border: 1px solid var(--color-border);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-warm-primary);
+  color: #FFFFFF;
+  border-color: var(--color-warm-primary);
+}
+
+/* --------------------------------------------------------------------------
+   11. Scroll Animations (.reveal) with 100% No-JS Fallback
+   -------------------------------------------------------------------------- */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--transition-smooth), transform 0.6s var(--transition-smooth);
+  will-change: opacity, transform;
+}
+
+html.js .reveal.revealed,
+html.no-js .reveal,
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   12. Reduced Motion & High Contrast Media Queries
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  
+  html.js .reveal,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .hero-bg-image {
+    transition: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn-primary,
+  .btn-secondary,
+  .oasis-card,
+  .section-badge,
+  .gallery-card {
+    forced-color-adjust: auto;
+    border: 2px solid ButtonText;
+  }
+  
+  *:focus-visible {
+    outline: 3px solid Highlight !important;
+  }
+}

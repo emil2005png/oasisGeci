@@ -602,4 +602,27 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealElements.forEach(el => el.classList.add('revealed'));
   }
+
+  // --------------------------------------------------------------------------
+  // 9. Hero Background Video Cover-Fit (16:9 YouTube embed)
+  // --------------------------------------------------------------------------
+  const heroWrapper = document.getElementById('hero');
+  const heroVideoFrame = document.querySelector('.hero-video-frame');
+  if (heroWrapper && heroVideoFrame) {
+    const ASPECT = 16 / 9;
+    const fitHeroVideo = () => {
+      const rect = heroWrapper.getBoundingClientRect();
+      const width = Math.max(rect.width, 1);
+      const height = Math.max(rect.height, 1);
+      const scale = Math.max(width, height * ASPECT);
+      heroVideoFrame.style.width = scale + 'px';
+      heroVideoFrame.style.height = (scale / ASPECT) + 'px';
+    };
+    fitHeroVideo();
+    let heroVideoResizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(heroVideoResizeTimer);
+      heroVideoResizeTimer = setTimeout(fitHeroVideo, 150);
+    }, { passive: true });
+  }
 });
