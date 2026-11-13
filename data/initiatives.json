@@ -1,0 +1,59 @@
+[
+  {
+    "id": "harsham",
+    "badge": "Flagship Fest",
+    "title": "Harsham Palliative Fest",
+    "image": "images/harsham-fest.webp",
+    "imageWidth": 800,
+    "imageHeight": 598,
+    "alt": "Harsham Palliative Care Festival at GEC Idukki",
+    "description": "The annual palliative awareness festival at GEC Idukki featuring interactive workshops, street plays, and care kit fundraising.",
+    "date": "",
+    "modal": {
+      "summary": "Harsham is our flagship campus and community festival designed to build empathy and demystify palliative care among university students.",
+      "points": [
+        "Interactive volunteer orientation and patient communication workshops.",
+        "Cultural performances and street plays raising awareness across Idukki.",
+        "Fundraising care kit stalls to sponsor monthly medicine packages for bedridden patients."
+      ]
+    }
+  },
+  {
+    "id": "outreach",
+    "badge": "Community Visits",
+    "title": "Old Age Home Outreach",
+    "image": "images/outreach-care.webp",
+    "imageWidth": 800,
+    "imageHeight": 598,
+    "alt": "Student volunteers on an elderly care home visit in Idukki",
+    "description": "Fortnightly visits to elder care homes in Idukki. Student volunteers provide companion care, listen to life stories, and supply comfort kits.",
+    "date": "",
+    "modal": {
+      "summary": "Our bi-weekly companionship initiative directly addresses the severe emotional isolation experienced by elder home residents.",
+      "points": [
+        "Dedicated one-on-one listening sessions and recreational storytelling.",
+        "Distribution of essential comfort toiletries, blankets, and nutrition packs.",
+        "Coordination with local medical teams for primary health and vitals checkups."
+      ]
+    }
+  },
+  {
+    "id": "festive",
+    "badge": "Festive Joy",
+    "title": "Festive Care Drives",
+    "image": "images/festive-care.webp",
+    "imageWidth": 800,
+    "imageHeight": 598,
+    "alt": "Festive care kit distribution for homebound patients",
+    "description": "Spreading festive warmth to homebound bedridden patients with customized Onam feast kits, traditional wear, and musical visits.",
+    "date": "",
+    "modal": {
+      "summary": "Festive Care Drives ensure that bedridden patients and their caregivers never feel forgotten during major cultural celebrations.",
+      "points": [
+        "Curated Onam and festive feast kits delivered right to patient doorsteps.",
+        "Distribution of comfortable clothing, bedding, and celebratory essentials.",
+        "Small musical and cultural gatherings brought into patient living rooms."
+      ]
+    }
+  }
+]
