@@ -626,8 +626,8 @@ html.no-js .reveal,
 
 /* 
  * Responsive card widths maintaining exact original card proportions:
- * Desktop (>= 1280px / xl): EXACTLY 5 cards per row visible
- * Large Tablet (1024px - 1279px / lg): 4 cards visible
+ * Desktop (>= 1280px / xl): 7 cards per row visible
+ * Large (1024px - 1279px / lg): 5 cards visible
  * Medium Tablet (768px - 1023px / md): 3 cards visible
  * Mobile Landscape (480px - 767px / sm): 2 cards visible
  * Mobile Portrait (< 480px): 1 card visible
@@ -635,7 +635,7 @@ html.no-js .reveal,
 .committee-carousel-track > article {
   flex: 0 0 calc(100% - 1.5rem);
   max-width: 290px;
-  min-width: 240px;
+  min-width: 200px;
   box-sizing: border-box;
 }
 
@@ -655,13 +655,13 @@ html.no-js .reveal,
 
 @media (min-width: 1024px) {
   .committee-carousel-track > article {
-    flex: 0 0 calc((100% - 3 * 1.25rem) / 4);
+    flex: 0 0 calc((100% - 4 * 1.25rem) / 5);
   }
 }
 
 @media (min-width: 1280px) {
   .committee-carousel-track > article {
-    flex: 0 0 calc((100% - 4 * 1.25rem) / 5);
+    flex: 0 0 calc((100% - 6 * 1.25rem) / 7);
   }
 }
 

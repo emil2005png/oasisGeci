@@ -370,8 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryPhotos = [
     {
       id: 1,
-      thumb: 'images/hero-slide-1.webp',
-      full: 'images/hero-slide-1.webp',
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517217',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=f-auto&updatedAt=1794587517217',
       title: 'Hrudayathil Ennum - Farewell & Gratitude',
       category: 'Fest',
       alt: 'Oasis team gathering celebrating palliative service at GEC Idukki',
@@ -379,21 +379,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 2,
-      thumb: 'images/hero-slide-2.webp',
-      full: 'images/hero-slide-2.webp',
-      title: 'Volunteer Fellowship Gathering',
-      category: 'Fest',
-      alt: 'Student volunteers celebrating community impact at GEC Idukki',
-      caption: 'Student volunteers unite to celebrate teamwork and collective palliative outreach.'
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517237',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=f-auto&updatedAt=1794587517237',
+      title: 'Isha – Palliative Awareness Programme',
+      category: 'Outreach',
+      alt: 'Oasis GEC Idukki Isha palliative awareness programme',
+      caption: 'Reaching out to the community with warmth and compassionate palliative awareness.'
     },
     {
       id: 3,
-      thumb: 'images/hero-palliative.webp',
-      full: 'images/hero-palliative.webp',
-      title: 'Palliative Companion Home Visit',
-      category: 'Visits',
-      alt: 'Student volunteer offering gentle companion support during home care visit',
-      caption: 'Offering quiet companionship, active listening, and warmth to homebound patients in Idukki.'
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517278',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=f-auto&updatedAt=1794587517278',
+      title: 'Odyssey – Annual Cultural Fest',
+      category: 'Fest',
+      alt: 'Oasis GEC Idukki students at Odyssey annual cultural festival',
+      caption: 'Oasis volunteers bringing hope and care to the stage at the annual college fest.'
     }
   ];
 
@@ -628,8 +628,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getVisibleCount() {
       const width = window.innerWidth;
-      if (width >= 1280) return 5;
-      if (width >= 1024) return 4;
+      if (width >= 1280) return 7;
+      if (width >= 1024) return 5;
       if (width >= 768) return 3;
       if (width >= 480) return 2;
       return 1;

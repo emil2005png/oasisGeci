@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "thumb": "images/hero-slide-1.webp",
-    "full": "images/hero-slide-1.webp",
+    "thumb": "https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517217",
+    "full": "https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=f-auto&updatedAt=1794587517217",
     "title": "Hrudayathil Ennum - Farewell & Gratitude",
     "category": "Fest",
     "alt": "Oasis team gathering celebrating palliative service at GEC Idukki",
@@ -10,20 +10,20 @@
   },
   {
     "id": 2,
-    "thumb": "images/hero-slide-2.webp",
-    "full": "images/hero-slide-2.webp",
-    "title": "Care Kit Assembly & Packaging",
+    "thumb": "https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517237",
+    "full": "https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=f-auto&updatedAt=1794587517237",
+    "title": "Isha – Palliative Awareness Programme",
     "category": "Outreach",
-    "alt": "Student volunteers packing medicine and daily necessity kits",
-    "caption": "Students sorting and packing hygiene and nutritional essentials for local distribution."
+    "alt": "Oasis GEC Idukki Isha palliative awareness programme",
+    "caption": "Reaching out to the community with warmth and compassionate palliative awareness."
   },
   {
     "id": 3,
-    "thumb": "images/hero-palliative.webp",
-    "full": "images/hero-palliative.webp",
-    "title": "Palliative Companion Home Visit",
-    "category": "Visits",
-    "alt": "Student volunteer offering gentle companion support during home care visit",
-    "caption": "Offering quiet companionship, active listening, and warmth to homebound patients in Idukki."
+    "thumb": "https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517278",
+    "full": "https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=f-auto&updatedAt=1794587517278",
+    "title": "Odyssey – Annual Cultural Fest",
+    "category": "Fest",
+    "alt": "Oasis GEC Idukki students at Odyssey annual cultural festival",
+    "caption": "Oasis volunteers bringing hope and care to the stage at the annual college fest."
   }
 ]
