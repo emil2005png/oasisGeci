@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { icons } from './icons.mjs';
 
 function escapeHtml(str) {
@@ -19,7 +18,7 @@ function getInitials(name) {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-function renderInitialsAvatar(name, role) {
+function renderInitialsAvatar(name, _role) {
   const initials = escapeHtml(getInitials(name));
   return `
     <div class="w-full h-full rounded-full bg-[#EBF7FF] border border-[#30AFFF]/30 flex items-center justify-center text-[#0B3C5D] font-bold select-none" aria-label="${escapeHtml(name)} avatar">

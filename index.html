@@ -407,20 +407,43 @@
           </div>
         </div>
 
-        <!-- Part 2: Student Executive Committee (5 real members, label "2026-27", no TBA cards) -->
+        <!-- Part 2: Student Executive Committee -->
         <div>
           <div class="flex items-center justify-between mb-6 pb-2 border-b border-[#E5EBF0]">
-            <h3 class="text-lg font-bold font-heading text-[#0B3C5D] flex items-center gap-2">
-              <i data-lucide="users" class="w-5 h-5 text-[#30AFFF]" aria-hidden="true"></i>
-              <span>Student Executive Committee</span>
-            </h3>
-            <span class="px-3 py-1 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-xs font-bold border border-[#30AFFF]/30">
-              2026–27 Session
-            </span>
+            <div class="flex items-center gap-3">
+              <h3 class="text-lg font-bold font-heading text-[#0B3C5D] flex items-center gap-2">
+                <i data-lucide="users" class="w-5 h-5 text-[#30AFFF]" aria-hidden="true"></i>
+                <span>Student Executive Committee</span>
+              </h3>
+              <span class="px-3 py-1 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-xs font-bold border border-[#30AFFF]/30 hidden sm:inline-block">
+                2026–27 Session
+              </span>
+            </div>
+
+            <!-- Subtle Left and Right Navigation Arrows -->
+            <div class="flex items-center gap-2" role="group" aria-label="Committee carousel controls">
+              <button
+                type="button"
+                id="committee-prev"
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+                aria-label="Previous committee members"
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                id="committee-next"
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+                aria-label="Next committee members"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
 
-          <!-- Student Executive Committee Grid (Live rendered & synced with OpenSheet API) -->
-          <div id="committee-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6" aria-live="polite">
+          <!-- Student Executive Committee Horizontal Carousel Viewport & Track -->
+          <div class="committee-carousel-viewport overflow-hidden relative w-full" id="committee-carousel-viewport" tabindex="0" role="region" aria-label="Student Executive Committee carousel">
+            <div id="committee-track" class="committee-carousel-track flex" style="gap: 1.25rem;">
             <!-- Member: Ebin -->
             <article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">
               <div class="w-full flex flex-col items-center">
@@ -1134,90 +1157,8 @@
                 Palliative care volunteer team member.
               </p>
             </article>
+            </div>
           </div>
-
-          <script>
-            // Live background sync from OpenSheet & Google Drive
-            async function syncCommitteeData() {
-              const container = document.getElementById('committee-grid');
-              if (!container) return;
-
-              try {
-                const response = await fetch('https://opensheet.elk.sh/1Je6LozGf25788YbbD7dTFjuk95WgtDOKHg6Wi_whPOg/Sheet1');
-                if (!response.ok) return;
-                const liveMembers = await response.json();
-                if (!Array.isArray(liveMembers) || liveMembers.length === 0) return;
-
-                function formatDriveUrl(url) {
-                  if (!url || typeof url !== 'string') return '';
-                  const trimmed = url.trim();
-                  if (!trimmed) return '';
-                  if (trimmed.includes('lh3.googleusercontent.com/d/')) return trimmed;
-                  const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
-                  return (match && match[1]) ? ('https://lh3.googleusercontent.com/d/' + match[1]) : trimmed;
-                }
-
-                function escapeTxt(s) {
-                  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-                }
-
-                const userSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 sm:w-10 sm:h-10 text-[#0B3C5D]/40" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
-
-                const rolePriority = {'Convener':0,'Vice Convener':1,'Sub Convener':2,'Treasurer':3,'Sub Treasurer':4,'Media Lead':5,'Content Lead':6,'Conduct Lead':7,'Volunteer Lead':8,'Executive Member':9,'Department Representative':10};
-                liveMembers.sort((a, b) => (rolePriority[a.Role] ?? 99) - (rolePriority[b.Role] ?? 99));
-
-                container.innerHTML = liveMembers.map((member, i) => {
-                  const name = escapeTxt(member.Name || ('Member ' + (i + 1)));
-                  const role = escapeTxt(member.Role || 'Executive Member');
-                  const sem = member.Semester ? member.Semester.trim() : '';
-                  const dept = member.Department ? member.Department.trim() : '';
-                  let deptText = 'Student Volunteer • GEC Idukki';
-                  if (sem && dept) deptText = sem + ' • ' + dept;
-                  else if (dept) deptText = dept;
-                  else if (sem) deptText = sem + ' • Student Volunteer';
-                  deptText = escapeTxt(deptText);
-
-                  const photoUrl = formatDriveUrl(member.PhotoURL);
-                  const localPhotos = { 'Emil': 'images/emil.jpg', 'Dhaniya': 'images/dhaniya.jpg', 'Prethyush': 'images/prethyush.jpg', 'Shamla': 'images/shamla.jpg', 'Aliya': 'images/aliya.jpg', 'Hiba Febi': 'images/hiba.jpg', 'Junia Vinod': 'images/junia.jpg', 'Surya': 'images/surya.jpg', 'Shahid': 'images/shahid.jpg', 'Niya': 'images/niya.jpg', 'Sona': 'images/sona.jpg', 'Riza': 'images/riza.jpg', 'Neha': 'images/neha.jpg' };
-                  const localPhoto = localPhotos[name] || photoUrl;
-
-                  const photoHtml = localPhoto
-                    ? '<img src="' + localPhoto + '" alt="' + name + ', ' + role + ', Oasis GEC Idukki" class="w-full h-full object-cover" width="600" height="600" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\'' + userSvg + '\';">'
-                    : userSvg;
-
-                  return (
-                    '<article class="oasis-card p-5 text-center flex flex-col items-center justify-between reveal revealed">' +
-                      '<div class="w-full flex flex-col items-center">' +
-                        '<div class="member-photo-container w-28 h-28 sm:w-32 sm:h-32 mb-3.5 text-xl sm:text-2xl">' +
-                          photoHtml +
-                        '</div>' +
-                        '<span class="px-2.5 py-0.5 rounded-full bg-[#EBF7FF] text-[#0B3C5D] text-[11px] font-bold border border-[#30AFFF]/25 mb-1.5">' +
-                          role +
-                        '</span>' +
-                        '<h4 class="text-base font-bold font-heading text-[#0B3C5D]">' + name + '</h4>' +
-                        '<p class="text-xs text-[#4B637A] font-medium mt-0.5">' + deptText + '</p>' +
-                      </div>' +
-                      '<p class="text-xs text-[#4B637A] leading-relaxed pt-3 border-t border-[#E5EBF0] mt-3 w-full">' +
-                        'Palliative care volunteer team member.' +
-                      '</p>' +
-                    '</article>'
-                  );
-                }).join('');
-
-                if (window.lucide) {
-                  lucide.createIcons();
-                }
-              } catch (err) {
-                // Fallback remains fully visible
-              }
-            }
-
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', syncCommitteeData);
-            } else {
-              syncCommitteeData();
-            }
-          </script>
         </div>
 
       </div>

@@ -611,4 +611,203 @@ document.addEventListener('DOMContentLoaded', () => {
     heroVideo.pause();
     heroVideo.removeAttribute('autoplay');
   }
+
+  // --------------------------------------------------------------------------
+  // 10. Committee Members Horizontal Carousel (5 Cards Desktop, Loop, Touch)
+  // --------------------------------------------------------------------------
+  const committeeViewport = document.getElementById('committee-carousel-viewport');
+  const committeeTrack = document.getElementById('committee-track');
+  const committeePrevBtn = document.getElementById('committee-prev');
+  const committeeNextBtn = document.getElementById('committee-next');
+
+  if (committeeViewport && committeeTrack) {
+    const cards = Array.from(committeeTrack.children);
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    const AUTOPLAY_INTERVAL = 4000;
+
+    function getVisibleCount() {
+      const width = window.innerWidth;
+      if (width >= 1280) return 5;
+      if (width >= 1024) return 4;
+      if (width >= 768) return 3;
+      if (width >= 480) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+
+    function getStep() {
+      if (cards.length > 1) {
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+      }
+      return cards[0] ? cards[0].offsetWidth : 0;
+    }
+
+    function updateCarousel(smooth = true) {
+      if (!committeeTrack || !cards.length) return;
+      committeeTrack.style.transition =
+        smooth && !prefersReducedMotion
+          ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+          : 'none';
+
+      const maxIndex = getMaxIndex();
+      currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
+      const step = getStep();
+      const offset = currentIndex * step;
+      committeeTrack.style.transform = `translateX(-${offset}px)`;
+    }
+
+    function nextMember() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0; // Loop continuously back to first member
+      } else {
+        currentIndex++;
+      }
+      updateCarousel(true);
+    }
+
+    function prevMember() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex <= 0) {
+        currentIndex = maxIndex; // Loop continuously to last set of members
+      } else {
+        currentIndex--;
+      }
+      updateCarousel(true);
+    }
+
+    // Autoplay logic (~4s interval)
+    function startAutoplay() {
+      stopAutoplay();
+      if (!prefersReducedMotion) {
+        autoplayTimer = setInterval(nextMember, AUTOPLAY_INTERVAL);
+      }
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    // Arrow button listeners
+    if (committeePrevBtn) {
+      committeePrevBtn.addEventListener('click', () => {
+        prevMember();
+        startAutoplay();
+      });
+      committeePrevBtn.addEventListener('mouseenter', stopAutoplay);
+      committeePrevBtn.addEventListener('mouseleave', startAutoplay);
+      committeePrevBtn.addEventListener('focusin', stopAutoplay);
+      committeePrevBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    if (committeeNextBtn) {
+      committeeNextBtn.addEventListener('click', () => {
+        nextMember();
+        startAutoplay();
+      });
+      committeeNextBtn.addEventListener('mouseenter', stopAutoplay);
+      committeeNextBtn.addEventListener('mouseleave', startAutoplay);
+      committeeNextBtn.addEventListener('focusin', stopAutoplay);
+      committeeNextBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    // Pause on hover & focus
+    committeeViewport.addEventListener('mouseenter', stopAutoplay);
+    committeeViewport.addEventListener('mouseleave', startAutoplay);
+    committeeViewport.addEventListener('focusin', stopAutoplay);
+    committeeViewport.addEventListener('focusout', startAutoplay);
+
+    // Keyboard navigation (ArrowLeft & ArrowRight)
+    committeeViewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevMember();
+        startAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextMember();
+        startAutoplay();
+      }
+    });
+
+    // Touch & Swipe gestures on mobile
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+    let isTouchSwiping = false;
+
+    committeeViewport.addEventListener(
+      'touchstart',
+      (e) => {
+        stopAutoplay();
+        touchStartX = e.touches[0].clientX;
+        touchDeltaX = 0;
+        isTouchSwiping = true;
+      },
+      { passive: true }
+    );
+
+    committeeViewport.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!isTouchSwiping) return;
+        touchDeltaX = e.touches[0].clientX - touchStartX;
+      },
+      { passive: true }
+    );
+
+    committeeViewport.addEventListener('touchend', () => {
+      if (!isTouchSwiping) return;
+      isTouchSwiping = false;
+      if (touchDeltaX < -40) {
+        nextMember();
+      } else if (touchDeltaX > 40) {
+        prevMember();
+      }
+      startAutoplay();
+    });
+
+    // Mouse drag support for desktop/trackpad
+    let isMouseDown = false;
+    let mouseStartX = 0;
+    let mouseDeltaX = 0;
+
+    committeeViewport.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      mouseStartX = e.clientX;
+      mouseDeltaX = 0;
+      stopAutoplay();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      mouseDeltaX = e.clientX - mouseStartX;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      if (mouseDeltaX < -40) {
+        nextMember();
+      } else if (mouseDeltaX > 40) {
+        prevMember();
+      }
+      startAutoplay();
+    });
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      updateCarousel(false);
+    });
+
+    // Initial setup
+    updateCarousel(false);
+    startAutoplay();
+  }
 });
