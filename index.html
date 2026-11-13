@@ -203,9 +203,15 @@
 
     <!-- ==================== 1. HERO SECTION ==================== -->
     <section id="hero" class="hero-wrapper" role="region" aria-label="Hero - Spreading Hope, Building Empathy">
-      <!-- Animated Hero Background (YouTube Video via IFrame Player API) with Dark Overlay -->
+      <!-- Animated Hero Background (self-hosted video) with Dark Overlay -->
       <div class="hero-video-container" aria-hidden="true">
-        <div id="hero-video"></div>
+        <video
+          class="hero-video"
+          autoplay muted loop playsinline preload="metadata"
+          poster="images/hero-bg-hands.webp"
+          aria-hidden="true">
+          <source src="video/hero.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero-dark-overlay" aria-hidden="true"></div>
 

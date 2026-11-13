@@ -317,13 +317,28 @@ a:focus-visible {
   pointer-events: none;
 }
 
-.hero-video-iframe {
+.hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 0;
-  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-video {
+    animation: hero-video-fade 1s ease-out both;
+  }
+}
+
+@keyframes hero-video-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-dark-overlay {

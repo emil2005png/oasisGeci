@@ -604,84 +604,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 9. Hero Background Video (YouTube IFrame Player API, 16:9 cover-fit)
+  // 9. Hero Background Video (self-hosted) — pause under reduced motion
   // --------------------------------------------------------------------------
-  const HERO_VIDEO_ID = 'rPat78RH0aM';
-  const HERO_VIDEO_ASPECT = 16 / 9;
-  const heroWrapper = document.getElementById('hero');
-  const hasHeroVideoHost = !!document.getElementById('hero-video');
-  let heroPlayer = null;
-  let heroFrame = null;
-  let heroFitBound = false;
-
-  const fitHeroVideo = () => {
-    if (!heroFrame || !heroWrapper) return;
-    const rect = heroWrapper.getBoundingClientRect();
-    const scale = Math.max(Math.max(rect.width, 1), Math.max(rect.height, 1) * HERO_VIDEO_ASPECT);
-    heroFrame.style.width = scale + 'px';
-    heroFrame.style.height = scale / HERO_VIDEO_ASPECT + 'px';
-  };
-
-  const startHeroVideo = () => {
-    if (!heroWrapper || !hasHeroVideoHost || heroPlayer) return;
-    heroPlayer = new window.YT.Player('hero-video', {
-      videoId: HERO_VIDEO_ID,
-      playerVars: {
-        autoplay: 1,
-        mute: 1,
-        controls: 0,
-        rel: 0,
-        playsinline: 1,
-        modestbranding: 1,
-        disablekb: 1,
-        fs: 0,
-        iv_load_policy: 3,
-        cc_load_policy: 0,
-        loop: 1,
-        playlist: HERO_VIDEO_ID
-      },
-      events: {
-        onReady: (e) => {
-          heroFrame = e.target.getIframe();
-          heroFrame.className = 'hero-video-iframe';
-          heroFrame.style.pointerEvents = 'none';
-          e.target.setVolume(0);
-          e.target.mute();
-          e.target.playVideo();
-          fitHeroVideo();
-          if (!heroFitBound) {
-            heroFitBound = true;
-            let heroVideoResizeTimer = null;
-            window.addEventListener('resize', () => {
-              clearTimeout(heroVideoResizeTimer);
-              heroVideoResizeTimer = setTimeout(fitHeroVideo, 150);
-            }, { passive: true });
-          }
-        },
-        onStateChange: (e) => {
-          if (e.data === window.YT.PlayerState.ENDED) {
-            e.target.seekTo(0);
-            e.target.playVideo();
-          }
-        }
-      }
-    });
-  };
-
-  if (hasHeroVideoHost && heroWrapper) {
-    if (window.YT && window.YT.Player) {
-      startHeroVideo();
-    } else {
-      const prevApiReady = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
-        if (typeof prevApiReady === 'function') prevApiReady();
-        startHeroVideo();
-      };
-      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
-        const apiScript = document.createElement('script');
-        apiScript.src = 'https://www.youtube.com/iframe_api';
-        document.head.appendChild(apiScript);
-      }
-    }
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo && prefersReducedMotion) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('autoplay');
   }
 });
