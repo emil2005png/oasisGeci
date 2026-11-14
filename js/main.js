@@ -12,6 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
+  // 1.1 HTML Sanitizer Helper for Safe DOM Injection
+  // --------------------------------------------------------------------------
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // --------------------------------------------------------------------------
   // 2. Focus Trap Helper for Accessible Modals & Drawers
   // --------------------------------------------------------------------------
   function createFocusTrap(element, onEscape) {
@@ -315,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
       initModalHighlights.innerHTML = data.highlights
         .map(h => `<li class="flex items-start gap-2.5 text-sm font-medium text-[#132D46]">
           <i data-lucide="check-circle-2" class="w-4 h-4 text-[#30AFFF] mt-0.5 shrink-0" aria-hidden="true"></i>
-          <span>${h}</span>
+          <span>${escapeHtml(h)}</span>
         </li>`)
         .join('');
     }
@@ -358,6 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initModal.addEventListener('click', (e) => {
       if (e.target === initModal) closeInitiativeModal();
     });
+    const initModalContactLink = initModal.querySelector('a[href="#contact"]');
+    if (initModalContactLink) {
+      initModalContactLink.addEventListener('click', closeInitiativeModal);
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -493,8 +510,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (availableCategories.length > 1) {
       const allCategories = ['All', ...availableCategories];
       galleryFiltersContainer.innerHTML = allCategories.map(cat => `
-        <button type="button" class="gallery-filter-btn ${cat === 'All' ? 'active' : ''}" data-category="${cat}">
-          ${cat}
+        <button type="button" class="gallery-filter-btn ${cat === 'All' ? 'active' : ''}" data-category="${escapeHtml(cat)}">
+          ${escapeHtml(cat)}
         </button>
       `).join('');
 
@@ -520,11 +537,11 @@ document.addEventListener('DOMContentLoaded', () => {
       : galleryPhotos.filter(p => p.category === activeCategory);
 
     galleryGrid.innerHTML = filteredPhotos.map((photo, index) => `
-      <article class="gallery-card group reveal revealed" data-gallery-index="${index}" tabindex="0" role="button" aria-label="View photo: ${photo.title}">
+      <article class="gallery-card group reveal revealed" data-gallery-index="${index}" tabindex="0" role="button" aria-label="View photo: ${escapeHtml(photo.title)}">
         <div class="gallery-thumb-wrapper">
-          <img src="${photo.thumb}" alt="${photo.alt}" width="800" height="533" loading="lazy" class="group-hover:scale-105 transition-transform duration-500">
+          <img src="${escapeHtml(photo.thumb)}" alt="${escapeHtml(photo.alt)}" width="800" height="533" loading="lazy" class="group-hover:scale-105 transition-transform duration-500">
           <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[#0B3C5D] text-xs font-bold shadow-sm border border-[#E5EBF0]">
-            ${photo.category}
+            ${escapeHtml(photo.category)}
           </span>
           <div class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white/95 text-[#0B3C5D] flex items-center justify-center shadow-md opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all">
             <i data-lucide="maximize-2" class="w-4 h-4" aria-hidden="true"></i>
@@ -532,10 +549,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="p-5 flex-1 flex flex-col justify-between">
           <h3 class="font-heading text-lg font-bold text-[#0B3C5D] leading-snug group-hover:text-[#30AFFF] transition-colors">
-            ${photo.title}
+            ${escapeHtml(photo.title)}
           </h3>
           <p class="text-xs text-[#4B637A] mt-2 line-clamp-2 leading-relaxed">
-            ${photo.caption}
+            ${escapeHtml(photo.caption)}
           </p>
         </div>
       </article>

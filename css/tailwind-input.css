@@ -251,6 +251,7 @@ a:focus-visible {
   border: 1.5px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-btn);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
   cursor: pointer;
   text-decoration: none;
@@ -453,6 +454,9 @@ details.disclosure-group summary::-webkit-details-marker {
 }
 
 .gallery-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.375rem 1rem;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -462,7 +466,7 @@ details.disclosure-group summary::-webkit-details-marker {
   color: var(--color-text-muted);
   transition: all var(--transition-fast);
   cursor: pointer;
-  min-height: 38px;
+  min-height: 44px;
 }
 
 .gallery-filter-btn:hover {
@@ -521,8 +525,10 @@ details.disclosure-group summary::-webkit-details-marker {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.9);
   color: var(--color-navy);

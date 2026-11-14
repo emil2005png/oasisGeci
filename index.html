@@ -12,6 +12,11 @@
   <meta name="theme-color" content="#0B3C5D">
   <meta name="color-scheme" content="light">
 
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://ik.imagekit.io https://lh3.googleusercontent.com; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- TODO (Needs User Confirmation): Once custom domain https://oasisgecidukki.org/ is configured and active, update canonical, og:url, twitter:url, and schema back from the GitHub Pages URL. -->
   <link rel="canonical" href="https://emil2005png.github.io/oasisGeci/">
 
@@ -62,52 +67,16 @@
   }
   </script>
 
-  <!-- Google Fonts: Lora (headings) & Inter (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap"
-    rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandNavy: '#0B3C5D',
-            brandNavyDark: '#07263B',
-            brandPrimary: '#30AFFF',
-            brandWarm: '#D9532F',
-            brandWarmHover: '#BF4422',
-            pageBg: '#FAF8F5',
-            cardBg: '#FFFFFF',
-            textMain: '#132D46',
-            textMuted: '#4B637A',
-            borderSubtle: '#E5EBF0'
-          },
-          fontFamily: {
-            heading: ['Lora', 'Georgia', 'serif'],
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-          },
-          screens: {
-            'xs': '360px',
-          }
-        }
-      }
-    }
-  </script>
-
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Core Precompiled Stylesheet (Fonts self-hosted via css/fonts.css) -->
+  <link rel="stylesheet" href="css/styles.css?v=2">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/oasis-logo.png">
-  <link rel="apple-touch-icon" href="images/oasis-logo.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
 
 <body class="min-h-screen text-[#132D46] antialiased w-full overflow-x-hidden">
@@ -151,8 +120,8 @@
         <!-- Instagram Icon Link (Small, clean URL, with aria-label) -->
         <a href="https://www.instagram.com/oasis_geci" target="_blank" rel="noopener noreferrer" class="btn-icon"
           aria-label="Follow Oasis GEC Idukki on Instagram">
-          <img src="images/instagram-icon.webp" alt="" class="w-5 h-5 rounded-[4px] object-contain" width="20"
-            height="20" aria-hidden="true">
+          <img src="images/instagram-icon.webp" alt="Instagram" class="w-5 h-5 rounded-[4px] object-contain" width="20"
+            height="20">
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -201,8 +170,8 @@
             class="mobile-nav-link flex items-center min-h-[44px] px-3.5 py-2.5 rounded-lg text-base font-semibold text-[#0B3C5D] hover:bg-[#EBF7FF] transition-colors">Contact</a>
           <a href="https://www.instagram.com/oasis_geci" target="_blank" rel="noopener noreferrer"
             class="mobile-nav-link flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-lg text-base font-semibold text-[#0B3C5D] hover:bg-[#EBF7FF] transition-colors">
-            <img src="images/instagram-icon.webp" alt="" class="w-5 h-5 rounded-[4px] object-contain shrink-0"
-              width="20" height="20" aria-hidden="true">
+            <img src="images/instagram-icon.webp" alt="Instagram" class="w-5 h-5 rounded-[4px] object-contain shrink-0"
+              width="20" height="20">
             <span>Instagram</span>
           </a>
         </div>
@@ -228,8 +197,7 @@
         <!-- Campus Badge -->
         <div
           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold mb-6">
-          <img src="images/oasis-logo.webp" alt="" class="w-4 h-4 object-contain" width="16" height="16"
-            aria-hidden="true">
+          <img src="images/oasis-logo.webp" alt="Oasis Logo" class="w-4 h-4 object-contain" width="16" height="16">
           <span>Student-Led Palliative Movement • GEC Idukki</span>
         </div>
 
@@ -458,12 +426,12 @@
             <!-- Subtle Left and Right Navigation Arrows -->
             <div class="flex items-center gap-2" role="group" aria-label="Committee carousel controls">
               <button type="button" id="committee-prev"
-                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+                class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
                 aria-label="Previous committee members">
                 <i data-lucide="chevron-left" class="w-5 h-5" aria-hidden="true"></i>
               </button>
               <button type="button" id="committee-next"
-                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+                class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
                 aria-label="Next committee members">
                 <i data-lucide="chevron-right" class="w-5 h-5" aria-hidden="true"></i>
               </button>
@@ -1631,8 +1599,8 @@
             <div class="flex items-center gap-3">
               <a href="https://www.instagram.com/oasis_geci" target="_blank" rel="noopener noreferrer" class="btn-icon"
                 aria-label="Follow Oasis GEC Idukki on Instagram">
-                <img src="images/instagram-icon.webp" alt="" class="w-5 h-5 rounded-[4px] object-contain" width="20"
-                  height="20" aria-hidden="true">
+                <img src="images/instagram-icon.webp" alt="Instagram" class="w-5 h-5 rounded-[4px] object-contain" width="20"
+                  height="20">
               </a>
               <!-- TODO (Needs User Confirmation): Generic Facebook and YouTube links removed. Supply official Oasis GEC Idukki channel URLs to display those social buttons. -->
             </div>
@@ -1659,8 +1627,8 @@
           <a href="#contact" class="hover:text-[#0B3C5D] transition-colors">Contact</a>
           <a href="https://www.instagram.com/oasis_geci" target="_blank" rel="noopener noreferrer"
             class="hover:text-[#0B3C5D] transition-colors flex items-center gap-1.5" aria-label="Instagram">
-            <img src="images/instagram-icon.webp" alt="" class="w-3.5 h-3.5 rounded-[3px] object-contain" width="14"
-              height="14" aria-hidden="true">
+            <img src="images/instagram-icon.webp" alt="Instagram" class="w-3.5 h-3.5 rounded-[3px] object-contain" width="14"
+              height="14">
             <span>Instagram</span>
           </a>
         </div>
@@ -1682,7 +1650,7 @@
       <!-- Modal Image Header -->
       <div
         class="relative aspect-video max-h-64 sm:max-h-72 overflow-hidden bg-[#FAF8F5] shrink-0 border-b border-[#E5EBF0]">
-        <img id="init-modal-img" src="" alt="" class="w-full h-full object-cover">
+        <img id="init-modal-img" src="" alt="Initiative photo preview" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-[#07263B]/85 via-transparent to-transparent"></div>
         <div class="absolute bottom-4 left-6 right-6 text-white">
           <span id="init-modal-tag"
@@ -1714,8 +1682,7 @@
 
       <!-- Modal Footer -->
       <div class="p-4 bg-[#FAF8F5] border-t border-[#E5EBF0] flex items-center justify-between shrink-0">
-        <a href="#contact" class="btn-secondary text-xs py-2 px-4"
-          onclick="document.getElementById('initiative-modal').classList.remove('active'); document.body.style.overflow='';">
+        <a href="#contact" class="btn-secondary text-xs py-2 px-4">
           Contact us
         </a>
         <button id="init-modal-close-footer" type="button" class="btn-primary text-xs py-2 px-4">
@@ -1739,7 +1706,7 @@
       <!-- Lightbox Main Image Display -->
       <div
         class="relative w-full h-[240px] xs:h-[300px] sm:h-[420px] md:h-[500px] bg-[#051928] flex items-center justify-center overflow-hidden">
-        <img id="lightbox-img" src="" alt="" class="w-full h-full object-contain">
+        <img id="lightbox-img" src="" alt="Gallery photo enlarged view" class="w-full h-full object-contain">
 
         <!-- Navigation Buttons inside Lightbox -->
         <button id="lightbox-prev-btn"
@@ -1784,7 +1751,7 @@
   </button>
 
   <!-- JavaScript File -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 
 </html>
