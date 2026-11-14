@@ -1,24 +1,17 @@
+import globals from 'globals';
+
 export default [
   {
-    ignores: ['node_modules/**', 'assets/**', 'css/styles.css', '.originals/**'],
+    ignores: ['node_modules/**', 'assets/**', 'css/styles.css', '.originals/**', 'fonts/**'],
   },
   {
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
-        window: 'readonly',
-        document: 'readonly',
-        console: 'readonly',
-        fetch: 'readonly',
+        ...globals.browser,
+        ...globals.node,
         lucide: 'readonly',
-        setTimeout: 'readonly',
-        clearTimeout: 'readonly',
-        IntersectionObserver: 'readonly',
-        ResizeObserver: 'readonly',
-        HTMLElement: 'readonly',
-        process: 'readonly',
-        URL: 'readonly',
       },
     },
     rules: {

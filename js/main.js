@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     harsham: {
       title: "Harsham Palliative Fest",
       subtitle: "Flagship Annual Student Palliative Festival at GEC Idukki",
-      image: "images/harsham-fest.webp",
+      image: "images/harsham-fest-new.jpg",
       tag: "Flagship Fest",
       dateLine: "", // Empty: date line is hidden when not specified
       description: "Harsham is the landmark annual palliative awareness festival organized by Oasis at Government Engineering College Idukki. It brings together engineering students, faculty, medical professionals, and local palliative care workers to spread awareness and empathy across the community.",
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outreach: {
       title: "Old Age Home Outreach",
       subtitle: "Companion Care & Elder Fellowship Across Painavu",
-      image: "images/outreach-care.webp",
+      image: "images/outreach-care-new.jpg",
       tag: "Community Visits",
       dateLine: "",
       description: "Regular student visits to elderly homes and palliative patients in Idukki. Student volunteers provide companion care, warm conversations, life-story listening, and patient comfort kits.",
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     festive: {
       title: "Festive Care Drives",
       subtitle: "Bringing Festival Cheer to Homebound Bedridden Patients",
-      image: "images/festive-care.webp",
+      image: "images/festive-care-new.jpg",
       tag: "Festive Joy",
       dateLine: "",
       description: "Ensuring no patient feels isolated during festive seasons. Student teams prepare and hand-deliver customized Onam feast kits and Christmas gifts directly to homebound patients in remote hill tracts.",
@@ -370,8 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryPhotos = [
     {
       id: 1,
-      thumb: 'images/hero-slide-1.webp',
-      full: 'images/hero-slide-1.webp',
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517217',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/kaithangu.jpg?tr=f-auto&updatedAt=1794587517217',
       title: 'Hrudayathil Ennum - Farewell & Gratitude',
       category: 'Fest',
       alt: 'Oasis team gathering celebrating palliative service at GEC Idukki',
@@ -379,21 +379,93 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 2,
-      thumb: 'images/hero-slide-2.webp',
-      full: 'images/hero-slide-2.webp',
-      title: 'Volunteer Fellowship Gathering',
-      category: 'Fest',
-      alt: 'Student volunteers celebrating community impact at GEC Idukki',
-      caption: 'Student volunteers unite to celebrate teamwork and collective palliative outreach.'
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517237',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/isha.jpg?tr=f-auto&updatedAt=1794587517237',
+      title: 'Isha – Palliative Awareness Programme',
+      category: 'Outreach',
+      alt: 'Oasis GEC Idukki Isha palliative awareness programme',
+      caption: 'Reaching out to the community with warmth and compassionate palliative awareness.'
     },
     {
       id: 3,
-      thumb: 'images/hero-palliative.webp',
-      full: 'images/hero-palliative.webp',
-      title: 'Palliative Companion Home Visit',
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517278',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/odyssy.jpg?tr=f-auto&updatedAt=1794587517278',
+      title: 'Odyssey – Annual Cultural Fest',
+      category: 'Fest',
+      alt: 'Oasis GEC Idukki students at Odyssey annual cultural festival',
+      caption: 'Oasis volunteers bringing hope and care to the stage at the annual college fest.'
+    },
+    {
+      id: 4,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/manjadi.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517159',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/manjadi.jpg?tr=f-auto&updatedAt=1794587517159',
+      title: 'Manjadi – Cultural Outreach Activity',
+      category: 'Outreach',
+      alt: 'Oasis GEC Idukki Manjadi cultural outreach activity',
+      caption: 'Connecting tradition and compassion through student-led community engagement.'
+    },
+    {
+      id: 5,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/harsham-fest.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517096',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/harsham-fest.jpg?tr=f-auto&updatedAt=1794587517096',
+      title: 'Harsham – Joy & Service Celebration',
+      category: 'Fest',
+      alt: 'Oasis GEC Idukki Harsham fest celebration',
+      caption: 'A joyful gathering that celebrates the spirit of service, unity, and palliative compassion.'
+    },
+    {
+      id: 6,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/swantanam.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517119',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/swantanam.jpg?tr=f-auto&updatedAt=1794587517119',
+      title: 'Swantanam – Companion Care Visit',
       category: 'Visits',
-      alt: 'Student volunteer offering gentle companion support during home care visit',
-      caption: 'Offering quiet companionship, active listening, and warmth to homebound patients in Idukki.'
+      alt: 'Oasis GEC Idukki Swantanam companion care home visit',
+      caption: 'Offering comfort, presence, and heartfelt support to patients and their families.'
+    },
+    {
+      id: 7,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_826989422_18116601710590464_2339232382542875650_n_1080.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517161',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_826989422_18116601710590464_2339232382542875650_n_1080.jpg?tr=f-auto&updatedAt=1794587517161',
+      title: 'Oasis in Action – Community Programme',
+      category: 'Events',
+      alt: 'Oasis GEC Idukki volunteers at a community programme',
+      caption: 'Students from Oasis GEC Idukki engaged in meaningful community service and palliative outreach.'
+    },
+    {
+      id: 8,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_684430466_18095795492590464_1684878151952308457_n_1080.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587516926',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_684430466_18095795492590464_1684878151952308457_n_1080.jpg?tr=f-auto&updatedAt=1794587516926',
+      title: 'Volunteer Moments – Palliative Outreach',
+      category: 'Outreach',
+      alt: 'Oasis GEC Idukki student volunteers during palliative outreach',
+      caption: 'Every visit, every gesture of care—our volunteers make a lasting difference in lives.'
+    },
+    {
+      id: 9,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_684777165_18095795504590464_8845942030792633549_n_1080.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587516916',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_684777165_18095795504590464_8845942030792633549_n_1080.jpg?tr=f-auto&updatedAt=1794587516916',
+      title: 'Oasis Outreach – Compassionate Service',
+      category: 'Outreach',
+      alt: 'Oasis GEC Idukki compassionate service programme',
+      caption: 'Reaching hearts and homes—Oasis volunteers dedicated to spreading palliative care awareness.'
+    },
+    {
+      id: 10,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_591155320_18077129666590464_3636558550757354006_n.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587517016',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_591155320_18077129666590464_3636558550757354006_n.jpg?tr=f-auto&updatedAt=1794587517016',
+      title: 'Student Volunteers – Care in Community',
+      category: 'Events',
+      alt: 'Oasis GEC Idukki student volunteers in community care programme',
+      caption: 'Building bonds of empathy and care one visit and programme at a time.'
+    },
+    {
+      id: 11,
+      thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_570598195_18072626093590464_6508552308412545166_n.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587516926',
+      full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_570598195_18072626093590464_6508552308412545166_n.jpg?tr=f-auto&updatedAt=1794587516926',
+      title: 'Together in Care – Oasis Community',
+      category: 'Events',
+      alt: 'Oasis GEC Idukki community gathering and palliative care activity',
+      caption: 'United in purpose—Oasis volunteers fostering hope, compassion, and community well-being.'
     }
   ];
 
@@ -610,5 +682,274 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroVideo && prefersReducedMotion) {
     heroVideo.pause();
     heroVideo.removeAttribute('autoplay');
+  }
+
+  // --------------------------------------------------------------------------
+  // 10. Committee Members Horizontal Carousel (5 Cards Desktop, Loop, Touch)
+  // --------------------------------------------------------------------------
+  const committeeViewport = document.getElementById('committee-carousel-viewport');
+  const committeeTrack = document.getElementById('committee-track');
+  const committeePrevBtn = document.getElementById('committee-prev');
+  const committeeNextBtn = document.getElementById('committee-next');
+
+  if (committeeViewport && committeeTrack) {
+    const cards = Array.from(committeeTrack.children);
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    const AUTOPLAY_INTERVAL = 4000;
+
+    function getVisibleCount() {
+      const width = window.innerWidth;
+      if (width >= 1280) return 5;
+      if (width >= 1024) return 4;
+      if (width >= 768) return 3;
+      if (width >= 480) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+
+    function getStep() {
+      if (cards.length > 1) {
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+      }
+      return cards[0] ? cards[0].offsetWidth : 0;
+    }
+
+    function updateCarousel(smooth = true) {
+      if (!committeeTrack || !cards.length) return;
+      committeeTrack.style.transition =
+        smooth && !prefersReducedMotion
+          ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+          : 'none';
+
+      const maxIndex = getMaxIndex();
+      currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
+      const step = getStep();
+      const offset = currentIndex * step;
+      committeeTrack.style.transform = `translateX(-${offset}px)`;
+    }
+
+    function nextMember() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0; // Loop continuously back to first member
+      } else {
+        currentIndex++;
+      }
+      updateCarousel(true);
+    }
+
+    function prevMember() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex <= 0) {
+        currentIndex = maxIndex; // Loop continuously to last set of members
+      } else {
+        currentIndex--;
+      }
+      updateCarousel(true);
+    }
+
+    // Autoplay logic (~4s interval)
+    function startAutoplay() {
+      stopAutoplay();
+      if (!prefersReducedMotion) {
+        autoplayTimer = setInterval(nextMember, AUTOPLAY_INTERVAL);
+      }
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    // Arrow button listeners
+    if (committeePrevBtn) {
+      committeePrevBtn.addEventListener('click', () => {
+        prevMember();
+        startAutoplay();
+      });
+      committeePrevBtn.addEventListener('mouseenter', stopAutoplay);
+      committeePrevBtn.addEventListener('mouseleave', startAutoplay);
+      committeePrevBtn.addEventListener('focusin', stopAutoplay);
+      committeePrevBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    if (committeeNextBtn) {
+      committeeNextBtn.addEventListener('click', () => {
+        nextMember();
+        startAutoplay();
+      });
+      committeeNextBtn.addEventListener('mouseenter', stopAutoplay);
+      committeeNextBtn.addEventListener('mouseleave', startAutoplay);
+      committeeNextBtn.addEventListener('focusin', stopAutoplay);
+      committeeNextBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    // Pause on hover & focus
+    committeeViewport.addEventListener('mouseenter', stopAutoplay);
+    committeeViewport.addEventListener('mouseleave', startAutoplay);
+    committeeViewport.addEventListener('focusin', stopAutoplay);
+    committeeViewport.addEventListener('focusout', startAutoplay);
+
+    // Keyboard navigation (ArrowLeft & ArrowRight)
+    committeeViewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevMember();
+        startAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextMember();
+        startAutoplay();
+      }
+    });
+
+    // Touch & Swipe gestures with 1:1 finger tracking
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchDeltaX = 0;
+    let isTouchSwiping = false;
+    let isHorizontalGesture = null;
+
+    committeeViewport.addEventListener(
+      'touchstart',
+      (e) => {
+        stopAutoplay();
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchDeltaX = 0;
+        isTouchSwiping = true;
+        isHorizontalGesture = null;
+      },
+      { passive: true }
+    );
+
+    committeeViewport.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!isTouchSwiping) return;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        touchDeltaX = currentX - touchStartX;
+        const deltaY = currentY - touchStartY;
+
+        if (isHorizontalGesture === null) {
+          if (Math.abs(touchDeltaX) > 6 || Math.abs(deltaY) > 6) {
+            isHorizontalGesture = Math.abs(touchDeltaX) > Math.abs(deltaY);
+          }
+        }
+
+        if (isHorizontalGesture) {
+          if (e.cancelable) e.preventDefault();
+          const step = getStep();
+          const baseOffset = currentIndex * step;
+          const targetOffset = baseOffset - touchDeltaX;
+          committeeTrack.style.transition = 'none';
+          committeeTrack.style.transform = `translateX(-${targetOffset}px)`;
+        }
+      },
+      { passive: false }
+    );
+
+    committeeViewport.addEventListener('touchend', () => {
+      if (!isTouchSwiping) return;
+      isTouchSwiping = false;
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (touchDeltaX < -threshold) {
+        nextMember();
+      } else if (touchDeltaX > threshold) {
+        prevMember();
+      } else {
+        updateCarousel(true);
+      }
+      startAutoplay();
+    });
+
+    // Trackpad horizontal sliding (two-finger swipe) & Shift + Wheel
+    let wheelAccumulator = 0;
+    let wheelTimeout = null;
+
+    committeeViewport.addEventListener(
+      'wheel',
+      (e) => {
+        const deltaX = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+        if (Math.abs(deltaX) > 4) {
+          e.preventDefault();
+          stopAutoplay();
+          wheelAccumulator += deltaX;
+
+          const step = getStep();
+          const threshold = Math.min(60, step * 0.3);
+
+          if (wheelAccumulator > threshold) {
+            nextMember();
+            wheelAccumulator = 0;
+          } else if (wheelAccumulator < -threshold) {
+            prevMember();
+            wheelAccumulator = 0;
+          }
+
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            wheelAccumulator = 0;
+            startAutoplay();
+          }, 350);
+        }
+      },
+      { passive: false }
+    );
+
+    // Mouse drag support for desktop
+    let isMouseDown = false;
+    let mouseStartX = 0;
+    let mouseDeltaX = 0;
+
+    committeeViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      isMouseDown = true;
+      mouseStartX = e.clientX;
+      mouseDeltaX = 0;
+      stopAutoplay();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      mouseDeltaX = e.clientX - mouseStartX;
+      const step = getStep();
+      const baseOffset = currentIndex * step;
+      const targetOffset = baseOffset - mouseDeltaX;
+      committeeTrack.style.transition = 'none';
+      committeeTrack.style.transform = `translateX(-${targetOffset}px)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (mouseDeltaX < -threshold) {
+        nextMember();
+      } else if (mouseDeltaX > threshold) {
+        prevMember();
+      } else {
+        updateCarousel(true);
+      }
+      startAutoplay();
+    });
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      updateCarousel(false);
+    });
+
+    // Initial setup
+    updateCarousel(false);
+    startAutoplay();
   }
 });
