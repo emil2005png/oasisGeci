@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     harsham: {
       title: "Harsham Palliative Fest",
       subtitle: "Flagship Annual Student Palliative Festival at GEC Idukki",
-      image: "images/harsham-fest.webp",
+      image: "images/harsham-fest-new.jpg",
       tag: "Flagship Fest",
       dateLine: "", // Empty: date line is hidden when not specified
       description: "Harsham is the landmark annual palliative awareness festival organized by Oasis at Government Engineering College Idukki. It brings together engineering students, faculty, medical professionals, and local palliative care workers to spread awareness and empathy across the community.",
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     outreach: {
       title: "Old Age Home Outreach",
       subtitle: "Companion Care & Elder Fellowship Across Painavu",
-      image: "images/outreach-care.webp",
+      image: "images/outreach-care-new.jpg",
       tag: "Community Visits",
       dateLine: "",
       description: "Regular student visits to elderly homes and palliative patients in Idukki. Student volunteers provide companion care, warm conversations, life-story listening, and patient comfort kits.",
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     festive: {
       title: "Festive Care Drives",
       subtitle: "Bringing Festival Cheer to Homebound Bedridden Patients",
-      image: "images/festive-care.webp",
+      image: "images/festive-care-new.jpg",
       tag: "Festive Joy",
       dateLine: "",
       description: "Ensuring no patient feels isolated during festive seasons. Student teams prepare and hand-deliver customized Onam feast kits and Christmas gifts directly to homebound patients in remote hill tracts.",
