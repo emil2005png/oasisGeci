@@ -713,7 +713,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = Array.from(committeeTrack.children);
     let currentIndex = 0;
     let autoplayTimer = null;
-    const AUTOPLAY_INTERVAL = 4000;
+    const AUTOPLAY_INTERVAL = 5500;
 
     function getVisibleCount() {
       const width = window.innerWidth;
@@ -739,7 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!committeeTrack || !cards.length) return;
       committeeTrack.style.transition =
         smooth && !prefersReducedMotion
-          ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+          ? 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)'
           : 'none';
 
       const maxIndex = getMaxIndex();
@@ -965,8 +965,27 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCarousel(false);
     });
 
-    // Initial setup
+    // Initial setup: ensure Convener (index 0) displays first
+    currentIndex = 0;
     updateCarousel(false);
-    startAutoplay();
+
+    // Only start autoplay once the user scrolls into the committee section
+    if ('IntersectionObserver' in window) {
+      const committeeObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAutoplay();
+            } else {
+              stopAutoplay();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      committeeObserver.observe(committeeViewport);
+    } else {
+      startAutoplay();
+    }
   }
 });
