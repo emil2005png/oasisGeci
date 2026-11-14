@@ -700,8 +700,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getVisibleCount() {
       const width = window.innerWidth;
-      if (width >= 1280) return 7;
-      if (width >= 1024) return 5;
+      if (width >= 1280) return 5;
+      if (width >= 1024) return 4;
       if (width >= 768) return 3;
       if (width >= 480) return 2;
       return 1;
@@ -809,18 +809,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Touch & Swipe gestures on mobile
+    // Touch & Swipe gestures with 1:1 finger tracking
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchDeltaX = 0;
     let isTouchSwiping = false;
+    let isHorizontalGesture = null;
 
     committeeViewport.addEventListener(
       'touchstart',
       (e) => {
         stopAutoplay();
         touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
         touchDeltaX = 0;
         isTouchSwiping = true;
+        isHorizontalGesture = null;
       },
       { passive: true }
     );
@@ -829,28 +833,85 @@ document.addEventListener('DOMContentLoaded', () => {
       'touchmove',
       (e) => {
         if (!isTouchSwiping) return;
-        touchDeltaX = e.touches[0].clientX - touchStartX;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        touchDeltaX = currentX - touchStartX;
+        const deltaY = currentY - touchStartY;
+
+        if (isHorizontalGesture === null) {
+          if (Math.abs(touchDeltaX) > 6 || Math.abs(deltaY) > 6) {
+            isHorizontalGesture = Math.abs(touchDeltaX) > Math.abs(deltaY);
+          }
+        }
+
+        if (isHorizontalGesture) {
+          if (e.cancelable) e.preventDefault();
+          const step = getStep();
+          const baseOffset = currentIndex * step;
+          const targetOffset = baseOffset - touchDeltaX;
+          committeeTrack.style.transition = 'none';
+          committeeTrack.style.transform = `translateX(-${targetOffset}px)`;
+        }
       },
-      { passive: true }
+      { passive: false }
     );
 
     committeeViewport.addEventListener('touchend', () => {
       if (!isTouchSwiping) return;
       isTouchSwiping = false;
-      if (touchDeltaX < -40) {
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (touchDeltaX < -threshold) {
         nextMember();
-      } else if (touchDeltaX > 40) {
+      } else if (touchDeltaX > threshold) {
         prevMember();
+      } else {
+        updateCarousel(true);
       }
       startAutoplay();
     });
 
-    // Mouse drag support for desktop/trackpad
+    // Trackpad horizontal sliding (two-finger swipe) & Shift + Wheel
+    let wheelAccumulator = 0;
+    let wheelTimeout = null;
+
+    committeeViewport.addEventListener(
+      'wheel',
+      (e) => {
+        const deltaX = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+        if (Math.abs(deltaX) > 4) {
+          e.preventDefault();
+          stopAutoplay();
+          wheelAccumulator += deltaX;
+
+          const step = getStep();
+          const threshold = Math.min(60, step * 0.3);
+
+          if (wheelAccumulator > threshold) {
+            nextMember();
+            wheelAccumulator = 0;
+          } else if (wheelAccumulator < -threshold) {
+            prevMember();
+            wheelAccumulator = 0;
+          }
+
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            wheelAccumulator = 0;
+            startAutoplay();
+          }, 350);
+        }
+      },
+      { passive: false }
+    );
+
+    // Mouse drag support for desktop
     let isMouseDown = false;
     let mouseStartX = 0;
     let mouseDeltaX = 0;
 
     committeeViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
       isMouseDown = true;
       mouseStartX = e.clientX;
       mouseDeltaX = 0;
@@ -860,15 +921,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', (e) => {
       if (!isMouseDown) return;
       mouseDeltaX = e.clientX - mouseStartX;
+      const step = getStep();
+      const baseOffset = currentIndex * step;
+      const targetOffset = baseOffset - mouseDeltaX;
+      committeeTrack.style.transition = 'none';
+      committeeTrack.style.transform = `translateX(-${targetOffset}px)`;
     });
 
     window.addEventListener('mouseup', () => {
       if (!isMouseDown) return;
       isMouseDown = false;
-      if (mouseDeltaX < -40) {
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (mouseDeltaX < -threshold) {
         nextMember();
-      } else if (mouseDeltaX > 40) {
+      } else if (mouseDeltaX > threshold) {
         prevMember();
+      } else {
+        updateCarousel(true);
       }
       startAutoplay();
     });
