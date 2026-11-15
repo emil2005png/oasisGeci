@@ -71,7 +71,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Core Precompiled Stylesheet (Fonts self-hosted via css/fonts.css) -->
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -1527,6 +1527,47 @@
       </div>
     </section>
 
+    <!-- ==================== 6B. COMMUNITY MOMENTS SLIDESHOW ==================== -->
+    <section id="moments-slideshow" class="py-14 sm:py-20 bg-white border-t border-[#E5EBF0]" aria-labelledby="slideshow-heading">
+      <div class="max-w-[1100px] mx-auto px-4 sm:px-6">
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 reveal">
+          <div>
+            <span class="section-badge mb-3">Community Archive</span>
+            <h2 id="slideshow-heading" class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-heading text-[#0B3C5D]">
+              Captured Moments
+            </h2>
+            <p class="text-sm sm:text-base text-[#4B637A] mt-2">
+              Everyday compassion, volunteer field visits, and campus activities from Oasis GEC Idukki.
+            </p>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <div class="flex items-center gap-2 shrink-0" role="group" aria-label="Slideshow controls">
+            <button type="button" id="slideshow-prev-btn"
+              class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+              aria-label="Previous photos">
+              <i data-lucide="chevron-left" class="w-5 h-5" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="slideshow-next-btn"
+              class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#CBD7E2] bg-white text-[#0B3C5D] hover:bg-[#EBF7FF] hover:border-[#30AFFF] shadow-sm flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#30AFFF]"
+              aria-label="Next photos">
+              <i data-lucide="chevron-right" class="w-5 h-5" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal Image Slideshow Viewport -->
+        <div id="slideshow-viewport" class="photo-slideshow-viewport" tabindex="0" role="region"
+          aria-label="Community moments photo slideshow">
+          <div id="slideshow-track" class="photo-slideshow-track">
+            <!-- Dynamically populated from ImageKit collection via js/main.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- ==================== 7. CONTACT & FOOTER ==================== -->
@@ -1751,7 +1792,7 @@
   </button>
 
   <!-- JavaScript File -->
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 
 </html>

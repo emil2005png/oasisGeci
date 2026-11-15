@@ -479,10 +479,391 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 11,
       thumb: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_570598195_18072626093590464_6508552308412545166_n.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794587516926',
       full: 'https://ik.imagekit.io/qf5fl2l1e/gallery/SaveVid.Net_570598195_18072626093590464_6508552308412545166_n.jpg?tr=f-auto&updatedAt=1794587516926',
-      title: 'Together in Care – Oasis Community',
-      category: 'Events',
-      alt: 'Oasis GEC Idukki community gathering and palliative care activity',
-      caption: 'United in purpose—Oasis volunteers fostering hope, compassion, and community well-being.'
+       title: 'Together in Care – Oasis Community',
+       category: 'Events',
+       alt: 'Oasis GEC Idukki community gathering and palliative care activity',
+       caption: 'United in purpose—Oasis volunteers fostering hope, compassion, and community well-being.'
+     },
+     {
+       id: 12,
+       thumb: 'https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20260718150354.jpg?tr=w-600,h-400,fo-auto&updatedAt=1794757845294',
+       full: 'https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20260718150354.jpg?tr=f-auto&updatedAt=1794757845294',
+       title: 'Captured Moments – Community Visits',
+       category: 'Moments',
+       alt: 'Oasis GEC Idukki captured moment from community visits and palliative outreach',
+       caption: 'A captured moment from Oasis GEC Idukki community visits, campus drives, and palliative outreach.'
+     }
+   ];
+
+  const slideshowPhotos = [
+    {
+      id: 1,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20260718150354.jpg?updatedAt=1794757845294&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20260718150354.jpg?updatedAt=1794757845294&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 1",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 2,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20250823170050%20(1).jpg?updatedAt=1794757843639&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG20250823170050%20(1).jpg?updatedAt=1794757843639&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 2",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 3,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20260928_221846.jpg?updatedAt=1794757842274&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20260928_221846.jpg?updatedAt=1794757842274&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 3",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 4,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/Picsart_26-07-18_19-26-36-817.jpg?updatedAt=1794757842033&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/Picsart_26-07-18_19-26-36-817.jpg?updatedAt=1794757842033&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 4",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 5,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20260928_221705.jpg?updatedAt=1794757842009&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20260928_221705.jpg?updatedAt=1794757842009&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 5",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 6,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4719.HEIC.heif?updatedAt=1794757841286&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4719.HEIC.heif?updatedAt=1794757841286&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 6",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 7,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20261003_135052.jpg?updatedAt=1794757840638&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_20261003_135052.jpg?updatedAt=1794757840638&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 7",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 8,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/1000200648.jpg?updatedAt=1794757840337&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/1000200648.jpg?updatedAt=1794757840337&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 8",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 9,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/1000200636.jpg?updatedAt=1794757840302&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/1000200636.jpg?updatedAt=1794757840302&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 9",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 10,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_1034.JPG?updatedAt=1794757840177&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_1034.JPG?updatedAt=1794757840177&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 10",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 11,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_6462.JPG?updatedAt=1794757839721&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_6462.JPG?updatedAt=1794757839721&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 11",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 12,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0150.jpg?updatedAt=1794757839775&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0150.jpg?updatedAt=1794757839775&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 12",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 13,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4754.HEIC.heif?updatedAt=1794757840125&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4754.HEIC.heif?updatedAt=1794757840125&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 13",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 14,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_0678.HEIC.heif?updatedAt=1794757840182&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_0678.HEIC.heif?updatedAt=1794757840182&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 14",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 15,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0159.jpg?updatedAt=1794757839612&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0159.jpg?updatedAt=1794757839612&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 15",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 16,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0148.jpg?updatedAt=1794757839605&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0148.jpg?updatedAt=1794757839605&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 16",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 17,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0187.jpg?updatedAt=1794757839529&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0187.jpg?updatedAt=1794757839529&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 17",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 18,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4794.HEIC.heif?updatedAt=1794757839848&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4794.HEIC.heif?updatedAt=1794757839848&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 18",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 19,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0242.jpg?updatedAt=1794757839339&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0242.jpg?updatedAt=1794757839339&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 19",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 20,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0155.jpg?updatedAt=1794757839182&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0155.jpg?updatedAt=1794757839182&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 20",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 21,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4723.HEIC.heif?updatedAt=1794757839550&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG_4723.HEIC.heif?updatedAt=1794757839550&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 21",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 22,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0162.jpg?updatedAt=1794757837867&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0162.jpg?updatedAt=1794757837867&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 22",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 23,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0225.jpg?updatedAt=1794757837717&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0225.jpg?updatedAt=1794757837717&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 23",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 24,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0140.jpg?updatedAt=1794757837503&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261102-WA0140.jpg?updatedAt=1794757837503&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 24",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 25,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0154.jpg?updatedAt=1794757837371&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0154.jpg?updatedAt=1794757837371&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 25",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 26,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260505-WA0030.jpg?updatedAt=1794757837164&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260505-WA0030.jpg?updatedAt=1794757837164&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 26",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 27,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0228.jpg?updatedAt=1794757836978&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0228.jpg?updatedAt=1794757836978&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 27",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 28,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0153.jpg?updatedAt=1794757837022&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0153.jpg?updatedAt=1794757837022&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 28",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 29,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0149.jpg?updatedAt=1794757836813&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260307-WA0149.jpg?updatedAt=1794757836813&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 29",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 30,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260209-WA0031.jpg?updatedAt=1794757836381&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260209-WA0031.jpg?updatedAt=1794757836381&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 30",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 31,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260505-WA0019.jpg?updatedAt=1794757836236&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260505-WA0019.jpg?updatedAt=1794757836236&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 31",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 32,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261005-WA0054.jpg?updatedAt=1794757834689&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20261005-WA0054.jpg?updatedAt=1794757834689&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 32",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 33,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0013.jpg?updatedAt=1794757834573&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0013.jpg?updatedAt=1794757834573&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 33",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 34,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0068.jpg?updatedAt=1794757834484&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0068.jpg?updatedAt=1794757834484&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 34",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 35,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0105.jpg?updatedAt=1794757834488&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0105.jpg?updatedAt=1794757834488&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 35",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 36,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0004.jpg?updatedAt=1794757834337&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0004.jpg?updatedAt=1794757834337&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 36",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 37,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251013-WA0140.jpg?updatedAt=1794757834318&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251013-WA0140.jpg?updatedAt=1794757834318&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 37",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 38,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251017-WA0204.jpg?updatedAt=1794757834174&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251017-WA0204.jpg?updatedAt=1794757834174&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 38",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 39,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0000.jpg?updatedAt=1794757834163&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20260308-WA0000.jpg?updatedAt=1794757834163&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 39",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 40,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251013-WA0135.jpg?updatedAt=1794757833590&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/IMG-20251013-WA0135.jpg?updatedAt=1794757833590&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 40",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
+    },
+    {
+      id: 41,
+      thumb: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/93c74f24-0f75-4a06-85c8-1a9968938fe1.jpg?updatedAt=1794757833055&tr=w-600,h-450,fo-auto,q-80,f-auto",
+      full: "https://ik.imagekit.io/qf5fl2l1e/photo%20slide%20gallery/93c74f24-0f75-4a06-85c8-1a9968938fe1.jpg?updatedAt=1794757833055&tr=w-1600,q-90,f-auto",
+      title: "Community Moments",
+      category: "Moments",
+      alt: "Oasis GEC Idukki community moments photo 41",
+      caption: "Captured moments from Oasis GEC Idukki community visits, campus drives, and palliative outreach."
     }
   ];
 
@@ -501,6 +882,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let filteredPhotos = [...galleryPhotos];
   let releaseLightboxTrap = null;
   let lastGalleryTrigger = null;
+  let activeLightboxSource = 'gallery';
+
+  function getActivePhotoList() {
+    return activeLightboxSource === 'slideshow' ? slideshowPhotos : filteredPhotos;
+  }
 
   // Extract unique categories from array
   const availableCategories = Array.from(new Set(galleryPhotos.map(p => p.category)));
@@ -574,24 +960,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderGalleryGrid();
 
-  function updateLightboxContent(idx) {
-    if (idx < 0 || idx >= filteredPhotos.length) return;
+  function updateLightboxContent(idx, source = activeLightboxSource) {
+    activeLightboxSource = source;
+    const photoList = getActivePhotoList();
+    if (idx < 0 || idx >= photoList.length) return;
     currentLightboxIndex = idx;
-    const photo = filteredPhotos[idx];
+    const photo = photoList[idx];
 
     if (lightboxImg) {
       lightboxImg.src = photo.full;
       lightboxImg.alt = photo.alt;
     }
     if (lightboxTitle) lightboxTitle.textContent = photo.title;
-    if (lightboxTag) lightboxTag.textContent = photo.category;
+    if (lightboxTag) lightboxTag.textContent = photo.category || 'Moments';
     if (lightboxCaption) lightboxCaption.textContent = photo.caption;
   }
 
-  function openLightbox(index, triggerElement) {
+  function openLightbox(index, triggerElement, source = 'gallery') {
     if (!lightboxModal) return;
     lastGalleryTrigger = triggerElement;
-    updateLightboxContent(index);
+    updateLightboxContent(index, source);
 
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
@@ -617,15 +1005,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextLightbox() {
-    if (filteredPhotos.length <= 1) return;
-    const nextIdx = (currentLightboxIndex + 1) % filteredPhotos.length;
-    updateLightboxContent(nextIdx);
+    const photoList = getActivePhotoList();
+    if (photoList.length <= 1) return;
+    const nextIdx = (currentLightboxIndex + 1) % photoList.length;
+    updateLightboxContent(nextIdx, activeLightboxSource);
   }
 
   function prevLightbox() {
-    if (filteredPhotos.length <= 1) return;
-    const prevIdx = (currentLightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
-    updateLightboxContent(prevIdx);
+    const photoList = getActivePhotoList();
+    if (photoList.length <= 1) return;
+    const prevIdx = (currentLightboxIndex - 1 + photoList.length) % photoList.length;
+    updateLightboxContent(prevIdx, activeLightboxSource);
   }
 
   if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
@@ -988,4 +1378,292 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     }
   }
+
+  // --------------------------------------------------------------------------
+  // 11. ImageKit Community Moments Slideshow (2.5s Autoplay, Touch, Loop)
+  // --------------------------------------------------------------------------
+  const slideshowViewport = document.getElementById('slideshow-viewport');
+  const slideshowTrack = document.getElementById('slideshow-track');
+  const slideshowPrevBtn = document.getElementById('slideshow-prev-btn');
+  const slideshowNextBtn = document.getElementById('slideshow-next-btn');
+
+  if (slideshowViewport && slideshowTrack && slideshowPhotos.length) {
+    let hasDragged = false;
+
+    // Render cards
+    slideshowTrack.innerHTML = slideshowPhotos.map((photo, index) => `
+      <article class="photo-slideshow-card" data-slideshow-index="${index}" tabindex="0" role="button" aria-label="View photo ${index + 1}: ${escapeHtml(photo.title)}">
+        <img src="${escapeHtml(photo.thumb)}" alt="${escapeHtml(photo.alt)}" width="600" height="450" loading="lazy">
+        <div class="slideshow-zoom-pill" aria-hidden="true">
+          <i data-lucide="maximize-2" class="w-4 h-4" aria-hidden="true"></i>
+        </div>
+      </article>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+
+    // Attach click listeners to cards to open lightbox
+    slideshowTrack.querySelectorAll('.photo-slideshow-card').forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        if (hasDragged) return;
+        openLightbox(idx, card, 'slideshow');
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(idx, card, 'slideshow');
+        }
+      });
+    });
+
+    const cards = Array.from(slideshowTrack.children);
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    const SLIDESHOW_INTERVAL = 2500; // Automatically slide every 2.5s
+
+    function getVisibleCount() {
+      const width = window.innerWidth;
+      if (width >= 1280) return 5;
+      if (width >= 1024) return 4;
+      if (width >= 768) return 3;
+      if (width >= 480) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+
+    function getStep() {
+      if (cards.length > 1) {
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+      }
+      return cards[0] ? cards[0].offsetWidth : 0;
+    }
+
+    function updateCarousel(smooth = true) {
+      if (!slideshowTrack || !cards.length) return;
+      slideshowTrack.style.transition =
+        smooth && !prefersReducedMotion
+          ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)'
+          : 'none';
+
+      const maxIndex = getMaxIndex();
+      currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
+      const step = getStep();
+      const offset = currentIndex * step;
+      slideshowTrack.style.transform = `translateX(-${offset}px)`;
+    }
+
+    function nextSlide() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0; // Continuous loop from end to beginning
+      } else {
+        currentIndex++;
+      }
+      updateCarousel(true);
+    }
+
+    function prevSlide() {
+      const maxIndex = getMaxIndex();
+      if (currentIndex <= 0) {
+        currentIndex = maxIndex; // Continuous loop from start to end
+      } else {
+        currentIndex--;
+      }
+      updateCarousel(true);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (!prefersReducedMotion) {
+        autoplayTimer = setInterval(nextSlide, SLIDESHOW_INTERVAL);
+      }
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    // Button controls
+    if (slideshowPrevBtn) {
+      slideshowPrevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoplay();
+      });
+      slideshowPrevBtn.addEventListener('mouseenter', stopAutoplay);
+      slideshowPrevBtn.addEventListener('mouseleave', startAutoplay);
+      slideshowPrevBtn.addEventListener('focusin', stopAutoplay);
+      slideshowPrevBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    if (slideshowNextBtn) {
+      slideshowNextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoplay();
+      });
+      slideshowNextBtn.addEventListener('mouseenter', stopAutoplay);
+      slideshowNextBtn.addEventListener('mouseleave', startAutoplay);
+      slideshowNextBtn.addEventListener('focusin', stopAutoplay);
+      slideshowNextBtn.addEventListener('focusout', startAutoplay);
+    }
+
+    // Pause autoplay on hover and focus
+    slideshowViewport.addEventListener('mouseenter', stopAutoplay);
+    slideshowViewport.addEventListener('mouseleave', startAutoplay);
+    slideshowViewport.addEventListener('focusin', stopAutoplay);
+    slideshowViewport.addEventListener('focusout', startAutoplay);
+
+    // Keyboard navigation
+    slideshowViewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+        startAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextSlide();
+        startAutoplay();
+      }
+    });
+
+    // Touch & Swipe gestures with 1:1 finger tracking
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchDeltaX = 0;
+    let isTouchSwiping = false;
+    let isHorizontalGesture = null;
+
+    slideshowViewport.addEventListener(
+      'touchstart',
+      (e) => {
+        stopAutoplay();
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchDeltaX = 0;
+        isTouchSwiping = true;
+        isHorizontalGesture = null;
+      },
+      { passive: true }
+    );
+
+    slideshowViewport.addEventListener(
+      'touchmove',
+      (e) => {
+        if (!isTouchSwiping) return;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        touchDeltaX = currentX - touchStartX;
+        const deltaY = currentY - touchStartY;
+
+        if (isHorizontalGesture === null) {
+          if (Math.abs(touchDeltaX) > 6 || Math.abs(deltaY) > 6) {
+            isHorizontalGesture = Math.abs(touchDeltaX) > Math.abs(deltaY);
+          }
+        }
+
+        if (isHorizontalGesture) {
+          if (e.cancelable) e.preventDefault();
+          const step = getStep();
+          const baseOffset = currentIndex * step;
+          const targetOffset = baseOffset - touchDeltaX;
+          slideshowTrack.style.transition = 'none';
+          slideshowTrack.style.transform = `translateX(-${targetOffset}px)`;
+        }
+      },
+      { passive: false }
+    );
+
+    slideshowViewport.addEventListener('touchend', () => {
+      if (!isTouchSwiping) return;
+      isTouchSwiping = false;
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (touchDeltaX < -threshold) {
+        nextSlide();
+      } else if (touchDeltaX > threshold) {
+        prevSlide();
+      } else {
+        updateCarousel(true);
+      }
+      startAutoplay();
+    });
+
+    // Mouse drag support for desktop
+    let isMouseDown = false;
+    let mouseStartX = 0;
+    let mouseDeltaX = 0;
+
+    slideshowViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      isMouseDown = true;
+      mouseStartX = e.clientX;
+      mouseDeltaX = 0;
+      hasDragged = false;
+      stopAutoplay();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      mouseDeltaX = e.clientX - mouseStartX;
+      if (Math.abs(mouseDeltaX) > 6) {
+        hasDragged = true;
+        const step = getStep();
+        const baseOffset = currentIndex * step;
+        const targetOffset = baseOffset - mouseDeltaX;
+        slideshowTrack.style.transition = 'none';
+        slideshowTrack.style.transform = `translateX(-${targetOffset}px)`;
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      const step = getStep();
+      const threshold = Math.min(50, step * 0.25);
+      if (mouseDeltaX < -threshold) {
+        nextSlide();
+      } else if (mouseDeltaX > threshold) {
+        prevSlide();
+      } else {
+        updateCarousel(true);
+      }
+      setTimeout(() => {
+        hasDragged = false;
+      }, 50);
+      startAutoplay();
+    });
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      updateCarousel(false);
+    });
+
+    // Initial setup
+    updateCarousel(false);
+
+    // Only autoplay when the slideshow section is visible in viewport
+    if ('IntersectionObserver' in window) {
+      const slideshowObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAutoplay();
+            } else {
+              stopAutoplay();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      slideshowObserver.observe(slideshowViewport);
+    } else {
+      startAutoplay();
+    }
+  }
+
 });
